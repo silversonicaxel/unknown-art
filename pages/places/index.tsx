@@ -2,7 +2,7 @@ import { server } from '../../server/config'
 import { Place } from '../../server/api/types'
 import Link from 'next/link'
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(`${server}api/places`)
   const places = await res.json()
 

@@ -15,6 +15,12 @@ const handle = app.getRequestHandler()
     appServer.all('/api/places', (_: Request, res: Response) => {
       return res.json(places)
     })
+
+    appServer.all('/api/place/:place', (req: Request, res: Response) => {
+      const placeId = req.params.place
+      return res.json(places.filter(place => place.id === placeId)[0])
+    })
+
     appServer.all('*', (req: Request, res: Response) => {
       return handle(req, res)
     })
