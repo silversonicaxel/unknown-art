@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "_old_dev": "next dev",
     "dev": "ts-node --project server/tsconfig.json server/index.ts",
     "build": "next build",
     "start": "next start",
