@@ -1,28 +1,27 @@
 import express, { Request, Response } from 'express'
 import next from 'next'
-import { dev } from './config'
+import { dev, port, server } from './config'
 import { places } from './api/places'
 
 const app = next({ dev })
 const handle = app.getRequestHandler()
-const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 
-(async () => {
+;(async () => {
   try {
     await app.prepare()
 
-    const server = express()
+    const appServer = express()
     
-    server.all('/api/places', (req: Request, res: Response) => {
+    appServer.all('/api/places', (_: Request, res: Response) => {
       return res.json(places)
     })
-    server.all('*', (req: Request, res: Response) => {
+    appServer.all('*', (req: Request, res: Response) => {
       return handle(req, res)
     })
 
-    server.listen(port, (err?: any) => {
+    appServer.listen(port, (err?: any) => {
       if (err) throw err
-      console.log(`> Ready on localhost:${port} - env ${process.env.NODE_ENV}`)
+      console.log(`Express server ready on ${server} for the environment ${dev ? 'development' : 'production'}`)
     })
   } catch (e) {
     console.error(e)
