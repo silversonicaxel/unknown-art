@@ -1,9 +1,14 @@
+import { memo } from 'react'
 import { Place } from '../../server/api/types'
-import { server } from '../../server/config'
+import Header from '../../views/header'
+//import { server } from '../../server/config'
+import { getPlaceData } from '../api/places'
 
 export const getServerSideProps = async (context: any) => {
-  const res = await fetch(`${server}api/place/${context.params.placeId}`)
-  const place = await res.json()
+  //const res = await fetch(`${server}api/place/${context.params.placeId}`)
+  //const place = await res.json()
+
+  const place = await getPlaceData(context.params.placeId)
 
   return {
     props: {
@@ -12,16 +17,25 @@ export const getServerSideProps = async (context: any) => {
   }
 }
 
-
 const PlaceId = ({ place }: { place: Place }) => (
   <>
-    <h1>Place {place.name}</h1>
-    <main>
-      {place.address}
+    <Header title={place.name} />
 
-      <a href={place.site} target="_blank" rel="noreferrer">{place.site}</a>
+    <h1>{place.name}</h1>
+    <main>
+      <a
+        href={`https://www.google.com/maps/place/${place.address}`}
+        target='_blank'
+        rel='noreferrer'
+      >
+        {place.address}
+      </a>
+      <br />
+      <a href={place.site} target='_blank' rel='noreferrer'>
+        {place.site}
+      </a>
     </main>
   </>
 )
 
-export default PlaceId
+export default memo(PlaceId)

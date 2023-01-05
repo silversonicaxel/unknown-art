@@ -1,10 +1,12 @@
-import { server } from '../../server/config'
+//import { server } from '../../server/config'
 import { Place } from '../../server/api/types'
 import Link from 'next/link'
+import { getPlacesData } from '../api/places'
 
 export const getServerSideProps = async () => {
-  const res = await fetch(`${server}api/places`)
-  const places = await res.json()
+  //const res = await fetch(`${server}api/places`)
+  //const places = await res.json()
+  const places = await getPlacesData()
 
   return {
     props: {
@@ -15,12 +17,12 @@ export const getServerSideProps = async () => {
 
 const Places = ({ places }: { places: Place[] }) => (
   <>
-    <h1>Places</h1>
+    <h1>book shops</h1>
     {places.map((place, idx) => (
       <div key={idx}>
         <Link href={`places/${place.id}`}>{place.name}</Link>
-      </div>))
-    }
+      </div>
+    ))}
   </>
 )
 
