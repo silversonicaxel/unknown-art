@@ -11,6 +11,7 @@ body {
 
 a {
   color: inherit;
+  cursor: cell;
   text-decoration: none;
 }
 
