@@ -17,7 +17,7 @@ export const getServerSideProps = async () => {
 
 const Places = ({ places }: { places: Place[] }) => (
   <>
-    <h1>book shops</h1>
+    <h1>places</h1>
     {places.map((place, idx) => (
       <div key={idx}>
         <Link href={`places/${place.id}`}>{place.name}</Link>

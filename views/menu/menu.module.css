@@ -1,0 +1,7 @@
+.uanav ul {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
