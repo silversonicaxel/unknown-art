@@ -1,5 +1,7 @@
 html,
 body {
+  color: white;
+  background: black;
   padding: 0;
   margin: 0 20px;
   font-family: 'Space Mono', Helvetica Neue, sans-serif;
@@ -13,14 +15,8 @@ a {
   color: inherit;
   cursor: cell;
   text-decoration: none;
+  transition: background-color 0.5s ease-in-out;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+a:hover {
+  background-color: #2d2d2d;
 }
