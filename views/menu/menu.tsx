@@ -9,7 +9,7 @@ const Menu = () => {
       <Link href='/'>
         <Image
           src='/logo.png'
-          alt='ACME Inc.'
+          alt='logo unknown art'
           width={80}
           height={80}
           className={styles.ualogo}
