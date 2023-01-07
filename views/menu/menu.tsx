@@ -1,7 +1,7 @@
-import styles from './menu.module.css'
 import { memo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import styles from './menu.module.css'
 
 const Menu = () => {
   return (
