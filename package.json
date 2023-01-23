@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "ts-node --project server/tsconfig.json server/index.ts",
+    "dev:express": "ts-node --project server/tsconfig.json server/index.ts",
+    "dev:standalone": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
