@@ -1,5 +1,5 @@
 //import { server } from '../../server/config'
-import { Place, PlaceCountries } from '../../server/api/types'
+import type { Place, PlaceCountries } from '../../server/api/types'
 import Link from 'next/link'
 import { getPlacesData } from '../api/places'
 import styles from './places.module.css'

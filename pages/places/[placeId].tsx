@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Place } from '../../server/api/types'
+import type { Place } from '../../server/api/types'
 import Header from '../../views/header'
 //import { server } from '../../server/config'
 import { getPlaceData } from '../api/places'
