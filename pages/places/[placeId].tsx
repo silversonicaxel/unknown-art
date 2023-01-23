@@ -3,6 +3,10 @@ import { Place } from '../../server/api/types'
 import Header from '../../views/header'
 //import { server } from '../../server/config'
 import { getPlaceData } from '../api/places'
+import { Suspense } from 'react'
+import Loading from '../../views/loading/loading'
+
+type PlaceProps = { place: Place }
 
 export const getServerSideProps = async (context: any) => {
   //const res = await fetch(`${server}api/place/${context.params.placeId}`)
@@ -17,8 +21,8 @@ export const getServerSideProps = async (context: any) => {
   }
 }
 
-const PlaceId = ({ place }: { place: Place }) => (
-  <>
+const PlaceId = ({ place }: PlaceProps) => (
+  <Suspense fallback={<Loading text='place' />}>
     <Header title={place.name} />
 
     <h1>{place.name}</h1>
@@ -35,7 +39,7 @@ const PlaceId = ({ place }: { place: Place }) => (
         {place.site}
       </a>
     </main>
-  </>
+  </Suspense>
 )
 
 export default memo(PlaceId)
