@@ -34,10 +34,14 @@ const PlaceId = ({ place }: PlaceProps) => (
       >
         {place.address}
       </a>
-      <br />
-      <a href={place.site} target='_blank' rel='noreferrer'>
-        {place.site}
-      </a>
+      {place.site && (
+        <>
+          <br />
+          <a href={place.site} target='_blank' rel='noreferrer'>
+            {place.site}
+          </a>
+        </>
+      )}
     </main>
   </Suspense>
 )
