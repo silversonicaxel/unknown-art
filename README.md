@@ -45,5 +45,3 @@ Network Access -> IP Access List -> 0.0.0.0/0
 ### MongoDb
 
 /
-
-Network Access -> IP Access List 0.0.0.0/0
