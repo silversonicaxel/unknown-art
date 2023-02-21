@@ -5,8 +5,10 @@ import Header from '../../views/header'
 import { getPlaceData } from '../api/places'
 import { Suspense } from 'react'
 import Loading from '../../views/loading/loading'
+import * as FetchMeta from 'fetch-meta-tags'
+import Image from 'next/image'
 
-type PlaceProps = { place: Place }
+type PlaceProps = { place: Place; metas: any }
 
 export const getServerSideProps = async (context: any) => {
   //const res = await fetch(`${server}api/place/${context.params.placeId}`)
@@ -14,14 +16,17 @@ export const getServerSideProps = async (context: any) => {
 
   const place = await getPlaceData(context.params.placeId)
 
+  const metas = place.site ? await FetchMeta.default(place.site) : {}
+
   return {
     props: {
-      place: place
+      place: place,
+      metas: metas
     }
   }
 }
 
-const PlaceId = ({ place }: PlaceProps) => (
+const PlaceId = ({ place, metas }: PlaceProps) => (
   <Suspense fallback={<Loading text='place' />}>
     <Header title={place.name} />
 
@@ -42,6 +47,21 @@ const PlaceId = ({ place }: PlaceProps) => (
           </a>
         </>
       )}
+
+      <Suspense fallback={<Loading text='info' />}>
+        {metas.description && <p>{metas.description}</p>}
+
+        {metas.image && (
+          <Image
+            src={metas.image}
+            loader={() => metas.image}
+            alt={place.name}
+            role='img'
+            aria-label={place.name}
+            fill
+          />
+        )}
+      </Suspense>
     </main>
   </Suspense>
 )
