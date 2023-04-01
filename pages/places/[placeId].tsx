@@ -7,6 +7,7 @@ import { Suspense } from 'react'
 import Loading from '../../views/loading/loading'
 import * as FetchMeta from 'fetch-meta-tags'
 import Image from 'next/image'
+import styles from './place.module.css'
 
 type PlaceProps = { place: Place; metas: any }
 
@@ -31,7 +32,7 @@ const PlaceId = ({ place, metas }: PlaceProps) => (
     <Header title={place.name} />
 
     <h1>{place.name}</h1>
-    <main>
+    <main className={styles.uaplace}>
       <a
         href={`https://www.google.com/maps/place/${place.address}`}
         target='_blank'

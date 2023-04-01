@@ -39,7 +39,7 @@ const Places = ({ places, countryCodes }: PlacesProps) => {
     <Suspense fallback={<Loading text='places' />}>
       <h1>places</h1>
       {places.map((place, idx) => (
-        <div key={`place-${idx}`} className={styles.uaplace}>
+        <div key={`place-${idx}`} className={styles.uaplaces}>
           <Link href={`places/${place.id}`}>
             {place.name} - {countryCodes[place.iso]}
           </Link>
