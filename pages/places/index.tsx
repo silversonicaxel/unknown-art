@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { getPlacesData } from '../api/places'
 import styles from './places.module.css'
 import { Suspense } from 'react'
-import Loading from '../../views/loading/loading'
+import { Loading } from '../../views/loading'
 import type { FC } from 'react'
 
 type PlacesProps = {

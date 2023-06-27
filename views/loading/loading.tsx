@@ -5,8 +5,8 @@ type LoadingProps = {
   text: string
 }
 
-const Loading: FC<LoadingProps> = ({ text }) => {
+export const Loading: FC<LoadingProps> = memo(({ text }) => {
   return <>{`Loading...${text}`}</>
-}
+})
 
-export default memo(Loading)
+Loading.displayName = 'Loading'

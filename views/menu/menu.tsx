@@ -4,7 +4,7 @@ import Image from 'next/image'
 import styles from './menu.module.css'
 import type { FC } from 'react'
 
-const Menu: FC = () => {
+export const Menu: FC = memo(() => {
   return (
     <header className={styles.uaheader}>
       <Link href='/'>
@@ -31,6 +31,6 @@ const Menu: FC = () => {
       </nav>
     </header>
   )
-}
+})
 
-export default memo(Menu)
+Menu.displayName = 'Menu'

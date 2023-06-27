@@ -1,13 +1,13 @@
 import { memo } from 'react'
 import type { Place } from '../../server/api/types'
-import Header from '../../views/header'
+import { Header } from '../../views/header'
 //import { server } from '../../server/config'
 import { getPlaceData } from '../api/places'
 import { Suspense } from 'react'
-import Loading from '../../views/loading/loading'
+import { Loading } from '../../views/loading'
 import * as FetchMeta from 'fetch-meta-tags'
 import styles from './place.module.css'
-import SafeImage from '../../views/safe-image/safe-image'
+import { SafeImage } from '../../views/safe-image'
 import type { FC } from 'react'
 
 type PlaceProps = {

@@ -9,7 +9,7 @@ type SafeImageProps = {
   fill: boolean
 }
 
-const SafeImage: FC<SafeImageProps> = (props) => {
+export const SafeImage: FC<SafeImageProps> = (props) => {
   const [hideImage, setHideImage] = useState(false)
 
   if (hideImage) return null
@@ -25,4 +25,4 @@ const SafeImage: FC<SafeImageProps> = (props) => {
   )
 }
 
-export default SafeImage
+SafeImage.displayName = 'SafeImage'

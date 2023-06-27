@@ -3,7 +3,7 @@ import styles from './hero-image.module.css'
 import Image from 'next/image'
 import type { FC } from 'react'
 
-const HeroImage: FC = () => {
+export const HeroImage: FC = () => {
   return (
     <div className={styles.uaheroimage}>
       <Image
@@ -17,4 +17,4 @@ const HeroImage: FC = () => {
   )
 }
 
-export default HeroImage
+HeroImage.displayName = 'HeroImage'
