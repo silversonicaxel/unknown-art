@@ -1,4 +1,4 @@
-export type Place = {
+export type DbPlace = {
   id: string
   name: string
   address: string
@@ -6,6 +6,6 @@ export type Place = {
   iso: string
 }
 
-export type PlaceCountries = {
+export type DbPlaceCountries = {
   [key: string]: number
 }
