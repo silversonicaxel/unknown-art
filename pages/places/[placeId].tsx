@@ -50,18 +50,20 @@ const PlaceId = ({ place, metas }: PlaceProps) => (
       )}
 
       <Suspense fallback={<Loading text='info' />}>
-        {metas.description && <p>{metas.description}</p>}
+        <div className={styles.uaplace_data}>
+          {metas.description && <p>{metas.description}</p>}
 
-        {metas.image && (
-          <Image
-            src={metas.image}
-            loader={() => metas.image}
-            alt={place.name}
-            role='img'
-            aria-label={place.name}
-            fill
-          />
-        )}
+          {metas.image && (
+            <Image
+              src={metas.image}
+              loader={() => metas.image}
+              alt={place.name}
+              role='img'
+              aria-label={place.name}
+              fill
+            />
+          )}
+        </div>
       </Suspense>
     </main>
   </Suspense>
