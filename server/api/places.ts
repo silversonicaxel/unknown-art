@@ -1,6 +1,6 @@
-import { Place } from './types'
+import { DbPlace } from './types'
 
-export const places: Place[] = [
+export const places: DbPlace[] = [
   {
     id: 'bw',
     name: 'Boekie Woekie',
