@@ -9,7 +9,10 @@ import * as FetchMeta from 'fetch-meta-tags'
 import styles from './place.module.css'
 import SafeImage from '../../views/safe-image/safe-image'
 
-type PlaceProps = { place: Place; metas: any }
+type PlaceProps = {
+  place: Place
+  metas: any
+}
 
 export const getServerSideProps = async (context: any) => {
   //const res = await fetch(`${server}api/place/${context.params.placeId}`)
