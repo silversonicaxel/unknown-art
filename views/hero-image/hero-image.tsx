@@ -1,8 +1,9 @@
 import React from 'react'
 import styles from './hero-image.module.css'
 import Image from 'next/image'
+import type { FC } from 'react'
 
-const HeroImage = () => {
+const HeroImage: FC = () => {
   return (
     <div className={styles.uaheroimage}>
       <Image

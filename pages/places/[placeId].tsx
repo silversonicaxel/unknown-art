@@ -8,29 +8,14 @@ import Loading from '../../views/loading/loading'
 import * as FetchMeta from 'fetch-meta-tags'
 import styles from './place.module.css'
 import SafeImage from '../../views/safe-image/safe-image'
+import type { FC } from 'react'
 
 type PlaceProps = {
   place: Place
   metas: any
 }
 
-export const getServerSideProps = async (context: any) => {
-  //const res = await fetch(`${server}api/place/${context.params.placeId}`)
-  //const place = await res.json()
-
-  const place = await getPlaceData(context.params.placeId)
-
-  const metas = place.site ? await FetchMeta.default(place.site) : {}
-
-  return {
-    props: {
-      place: place,
-      metas: metas
-    }
-  }
-}
-
-const PlaceId = ({ place, metas }: PlaceProps) => (
+const PlaceId: FC<PlaceProps> = ({ place, metas }) => (
   <Suspense fallback={<Loading text='place' />}>
     <Header title={place.name} />
 
@@ -70,5 +55,21 @@ const PlaceId = ({ place, metas }: PlaceProps) => (
     </main>
   </Suspense>
 )
+
+export const getServerSideProps = async (context: any) => {
+  //const res = await fetch(`${server}api/place/${context.params.placeId}`)
+  //const place = await res.json()
+
+  const place = await getPlaceData(context.params.placeId)
+
+  const metas = place.site ? await FetchMeta.default(place.site) : {}
+
+  return {
+    props: {
+      place: place,
+      metas: metas
+    }
+  }
+}
 
 export default memo(PlaceId)

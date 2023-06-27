@@ -2,8 +2,9 @@ import { memo } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './menu.module.css'
+import type { FC } from 'react'
 
-const Menu = () => {
+const Menu: FC = () => {
   return (
     <header className={styles.uaheader}>
       <Link href='/'>

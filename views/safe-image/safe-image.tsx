@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import type { FC } from 'react'
 import Image, { ImageLoader } from 'next/image'
 
 type SafeImageProps = {
@@ -8,7 +9,7 @@ type SafeImageProps = {
   fill: boolean
 }
 
-const SafeImage = (props: SafeImageProps) => {
+const SafeImage: FC<SafeImageProps> = (props) => {
   const [hideImage, setHideImage] = useState(false)
 
   if (hideImage) return null

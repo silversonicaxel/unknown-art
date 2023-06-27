@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import type { FC } from 'react'
 
 type HeaderProps = {
   title?: string
 }
 
-const Header = (props: HeaderProps) => {
+const Header: FC<HeaderProps> = (props) => {
   const { title } = props
 
   const headTitle = `unknow art${title ? ` - ${title}` : ''}`

@@ -5,10 +5,26 @@ import { getPlacesData } from '../api/places'
 import styles from './places.module.css'
 import { Suspense } from 'react'
 import Loading from '../../views/loading/loading'
+import type { FC } from 'react'
 
 type PlacesProps = {
   places: Place[]
   countryCodes: PlaceCountries
+}
+
+const Places: FC<PlacesProps> = ({ places, countryCodes }) => {
+  return (
+    <Suspense fallback={<Loading text='places' />}>
+      <h1>places</h1>
+      {places.map((place, idx) => (
+        <div key={`place-${idx}`} className={styles.uaplaces}>
+          <Link href={`places/${place.id}`}>
+            {place.name} - {countryCodes[place.iso]}
+          </Link>
+        </div>
+      ))}
+    </Suspense>
+  )
 }
 
 export const getServerSideProps = async (context: any) => {
@@ -32,21 +48,6 @@ export const getServerSideProps = async (context: any) => {
       countryCodes: countryCodes
     }
   }
-}
-
-const Places = ({ places, countryCodes }: PlacesProps) => {
-  return (
-    <Suspense fallback={<Loading text='places' />}>
-      <h1>places</h1>
-      {places.map((place, idx) => (
-        <div key={`place-${idx}`} className={styles.uaplaces}>
-          <Link href={`places/${place.id}`}>
-            {place.name} - {countryCodes[place.iso]}
-          </Link>
-        </div>
-      ))}
-    </Suspense>
-  )
 }
 
 export default Places

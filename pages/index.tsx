@@ -1,6 +1,7 @@
 import HeroImage from '../views/hero-image/hero-image'
+import type { FC } from 'react'
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <>
       <h1>unknown art</h1>
