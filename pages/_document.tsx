@@ -4,10 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link
-          href='https://fonts.googleapis.com/css?family=Space Mono&display=optional'
-          rel='stylesheet'
-        />
         <meta name='description' content='unknow art' />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link
