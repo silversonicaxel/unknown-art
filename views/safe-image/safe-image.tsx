@@ -1,6 +1,6 @@
+import Image, { ImageLoader } from 'next/image'
 import React, { useState } from 'react'
 import type { FC } from 'react'
-import Image, { ImageLoader } from 'next/image'
 
 type SafeImageProps = {
   src: string

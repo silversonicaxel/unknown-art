@@ -10,7 +10,8 @@
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "next lint",
     "lint:css": "stylelint **/*.css",
-    "fix": "npm run fix:css",
+    "fix": "npm run fix:js && npm run fix:css",
+    "fix:js": "next lint --fix",
     "fix:css": "stylelint **/*.css --fix"
   },
   "dependencies": {
@@ -27,8 +28,10 @@
     "@types/node": "^20.3.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
     "eslint": "8.43.0",
     "eslint-config-next": "^13.4.7",
+    "eslint-plugin-import": "^2.27.5",
     "stylelint": "^15.9.0",
     "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-order": "^6.0.3",

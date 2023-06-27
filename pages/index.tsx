@@ -1,5 +1,5 @@
-import { HeroImage } from '../views/hero-image'
 import type { FC } from 'react'
+import { HeroImage } from '../views/hero-image'
 
 const Home: FC = () => {
   return (

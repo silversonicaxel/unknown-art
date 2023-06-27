@@ -1,8 +1,8 @@
 //import type { NextApiRequest, NextApiResponse } from 'next'
 import clientPromise from '../../../lib/mongodb'
-import { Place } from '../../../server/api/types'
+import { DbPlace } from '../../../server/api/types'
 
-export const getPlacesData = async (): Promise<Place[]> => {
+export const getPlacesData = async (): Promise<DbPlace[]> => {
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')
@@ -15,7 +15,7 @@ export const getPlacesData = async (): Promise<Place[]> => {
   return JSON.parse(JSON.stringify(data))
 }
 
-export const getPlaceData = async (placeId: string): Promise<Place> => {
+export const getPlaceData = async (placeId: string): Promise<DbPlace> => {
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')

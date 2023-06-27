@@ -1,6 +1,6 @@
-import { getPlaceData } from '../api/places'
 import * as FetchMeta from 'fetch-meta-tags'
 import { Place } from '../../components/pages/places'
+import { getPlaceData } from '../api/places'
 
 export default Place
 

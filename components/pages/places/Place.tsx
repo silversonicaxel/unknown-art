@@ -1,12 +1,11 @@
-import { memo } from 'react'
+import { memo , Suspense } from 'react'
+import type { FC } from 'react'
 import type { DbPlace } from '../../../server/api/types'
 import { Header } from '../../../views/header'
 //import { server } from '../../server/config'
-import { Suspense } from 'react'
 import { Loading } from '../../../views/loading'
-import styles from './place.module.css'
 import { SafeImage } from '../../../views/safe-image'
-import type { FC } from 'react'
+import styles from './place.module.css'
 
 type PlaceProps = {
   place: DbPlace

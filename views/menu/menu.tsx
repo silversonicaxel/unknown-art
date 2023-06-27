@@ -1,8 +1,8 @@
-import { memo } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
-import styles from './menu.module.css'
+import Link from 'next/link'
+import { memo } from 'react'
 import type { FC } from 'react'
+import styles from './menu.module.css'
 
 export const Menu: FC = memo(() => {
   return (

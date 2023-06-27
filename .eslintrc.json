@@ -1,6 +1,16 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "extends": ["next", "next/core-web-vitals", "plugin:import/recommended"],
+  "plugins": ["import"],
   "rules": {
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "caseInsensitive": true,
+          "order": "asc"
+        }
+      }
+    ],
     "indent": ["error", 2],
     "max-len": [
       "error",

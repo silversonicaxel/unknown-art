@@ -1,10 +1,10 @@
 //import { server } from '../../server/config'
-import type { DbPlace, DbPlaceCountries } from '../../../server/api/types'
 import Link from 'next/link'
-import styles from './places.module.css'
 import { Suspense } from 'react'
-import { Loading } from '../../../views/loading'
 import type { FC } from 'react'
+import type { DbPlace, DbPlaceCountries } from '../../../server/api/types'
+import { Loading } from '../../../views/loading'
+import styles from './places.module.css'
 
 type PlacesProps = {
   places: DbPlace[]

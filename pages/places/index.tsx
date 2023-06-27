@@ -1,6 +1,6 @@
 //import { server } from '../../server/config'
-import { getPlacesData } from '../api/places'
 import { Places } from '../../components/pages/places'
+import { getPlacesData } from '../api/places'
 
 export default Places
 
