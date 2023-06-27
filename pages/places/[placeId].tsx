@@ -6,8 +6,8 @@ import { getPlaceData } from '../api/places'
 import { Suspense } from 'react'
 import Loading from '../../views/loading/loading'
 import * as FetchMeta from 'fetch-meta-tags'
-import Image from 'next/image'
 import styles from './place.module.css'
+import SafeImage from '../../views/safe-image/safe-image'
 
 type PlaceProps = { place: Place; metas: any }
 
@@ -54,11 +54,10 @@ const PlaceId = ({ place, metas }: PlaceProps) => (
           {metas.description && <p>{metas.description}</p>}
 
           {metas.image && (
-            <Image
+            <SafeImage
               src={metas.image}
               loader={() => metas.image}
               alt={place.name}
-              role='img'
               aria-label={place.name}
               fill
             />

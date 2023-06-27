@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import styles from './hero-image.module.css'
 import Image from 'next/image'
 
