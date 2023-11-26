@@ -1,0 +1,6 @@
+.uaheroimage img {
+  height: auto;
+  max-width: 1000px;
+  position: relative !important;
+  width: 100%;
+}
