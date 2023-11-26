@@ -4,16 +4,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 `npm` is the package manager used.
 
-Local server with express:
+Local server:
 
 ```bash
-npm run dev:express
-```
-
-Local server without express:
-
-```bash
-npm run dev:standalone
+npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -22,6 +16,12 @@ Lint:
 
 ```bash
 npm run lint
+```
+
+Fix:
+
+```bash
+npm run fix
 ```
 
 ## Development configuration
