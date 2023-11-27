@@ -1,7 +1,5 @@
 import '../src/styles/globals.css'
-import type { Metadata } from 'next'
-
-import type { Viewport } from 'next/dist/lib/metadata/types/extra-types'
+import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 import { font } from '../src/config/font'
 import { meta } from '../src/config/meta'
