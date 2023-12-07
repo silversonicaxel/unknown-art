@@ -11,7 +11,8 @@
     "lint:css": "stylelint **/*.css",
     "fix": "npm run fix:js && npm run fix:css",
     "fix:js": "next lint --fix",
-    "fix:css": "stylelint **/*.css --fix"
+    "fix:css": "stylelint **/*.css --fix",
+    "test": "vitest"
   },
   "dependencies": {
     "fetch-meta-tags": "^1.0.12",
@@ -21,19 +22,24 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.6",
     "@types/fetch-meta-tags": "^1.0.2",
     "@types/node": "^20.12.7",
     "@types/react": "^18.2.79",
     "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.7.0",
+    "@vitejs/plugin-react": "4.2.1",
     "eslint": "^8.56.0",
     "eslint-config-next": "^14.2.1",
     "eslint-plugin-import": "^2.29.1",
+    "jsdom": "^24.0.0",
     "stylelint": "^16.3.1",
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-order": "^6.0.4",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   }
 }
