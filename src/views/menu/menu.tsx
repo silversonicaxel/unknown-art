@@ -22,10 +22,14 @@ export const Menu: FC = memo(() => {
       <nav className={styles.uanav}>
         <ul aria-labelledby='menu'>
           <li>
-            <Link href='/'>home</Link>
+            <Link href='/' aria-label='home'>
+              home
+            </Link>
           </li>
           <li>
-            <Link href='/places'>places</Link>
+            <Link href='/places' aria-label='places'>
+              places
+            </Link>
           </li>
         </ul>
       </nav>
