@@ -3,6 +3,8 @@ import { getCountryCodes } from '../../src/api/country'
 import { getPlacesData } from '../../src/api/place'
 import styles from './places.module.css'
 
+export const dynamic = 'force-dynamic'
+
 export default async function PlacesPage() {
   const countryCodes = await getCountryCodes()
   const places = await getPlacesData()
