@@ -2,15 +2,15 @@
 
 import Image from 'next/image'
 import React, { useCallback, useState } from 'react'
-import type { FC } from 'react'
+import type { FC, HTMLAttributes } from 'react'
 
-type SafeImageProps = {
+type SafeImageProps = HTMLAttributes<HTMLImageElement> & {
   src: string
   alt: string
   fill: boolean
 }
 
-export const SafeImage: FC<SafeImageProps> = (src, props) => {
+export const SafeImage: FC<SafeImageProps> = ({ src, alt, fill, ...props }) => {
   const [hideImage, setHideImage] = useState(false)
 
   const onError = useCallback(() => {
@@ -21,9 +21,11 @@ export const SafeImage: FC<SafeImageProps> = (src, props) => {
 
   return (
     <Image
+      alt={alt}
       src={src}
       loader={() => src}
       role='img'
+      fill={fill}
       {...props}
       onError={onError}
     />
