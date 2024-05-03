@@ -48,7 +48,6 @@ export default async function PlacePage({ params }: PlacePageProps) {
                 src={placeMeta.image}
                 alt={place.name}
                 aria-label={place.name}
-                fill
               />
             )}
           </div>
