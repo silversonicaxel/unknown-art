@@ -1,7 +1,7 @@
 import { Place } from '../../../src/types/place'
 import clientPromise from '../../config/mongodb'
 
-export const getPlacesData = async (): Promise<Place[]> => {
+export const getPlaces = async (): Promise<Place[]> => {
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')
@@ -14,7 +14,7 @@ export const getPlacesData = async (): Promise<Place[]> => {
   return JSON.parse(JSON.stringify(data))
 }
 
-export const getPlaceData = async (placeId: string): Promise<Place> => {
+export const getPlace = async (placeId: string): Promise<Place> => {
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')
