@@ -6,8 +6,10 @@ import styles from './places.module.css'
 export const dynamic = 'force-dynamic'
 
 export default async function PlacesPage() {
-  const countryCodes = await getCountryCodes()
-  const places = await getPlacesData()
+  const [countryCodes, places] = await Promise.all([
+    getCountryCodes(),
+    getPlacesData()
+  ])
 
   return places.map((place, idx) => (
     <div key={`place-${idx}`} className={styles.uaplaces}>

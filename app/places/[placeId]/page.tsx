@@ -15,9 +15,7 @@ type PlaceMeta = FetchedMetadata | null
 export default async function PlacePage({ params }: PlacePageProps) {
   const place = await getPlaceData(params.placeId)
 
-  const placeMeta: PlaceMeta = place.site
-    ? await fetchedMeta(place.site || '')
-    : null
+  const placeMeta: PlaceMeta = place.site ? fetchedMeta(place.site || '') : null
 
   return (
     <>
