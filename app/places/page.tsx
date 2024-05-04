@@ -11,10 +11,17 @@ export default async function PlacesPage() {
     getPlacesData()
   ])
 
-  return places.map((place, idx) => (
-    <div key={`place-${idx}`} className={styles.uaplaces}>
+  return places.map((place) => (
+    <div key={`place-${place.id}`} className={styles.uaplaces}>
       <Link href={`places/${place.id}`}>
-        {place.name} - {countryCodes[place.iso]}
+        <span>{place.name}</span>
+        &nbsp;
+        <span>~</span>
+        &nbsp;
+        <span>
+          {place.city ? `${place.city} - ` : ``}
+          {countryCodes[place.iso]}
+        </span>
       </Link>
     </div>
   ))

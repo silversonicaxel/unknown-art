@@ -4,4 +4,5 @@ export type Place = {
   address: string
   site?: string
   iso: string
+  city?: string
 }
