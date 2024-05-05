@@ -32,7 +32,7 @@
     "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-react": "4.2.1",
     "eslint": "^8.56.0",
-    "eslint-config-next": "^14.2.1",
+    "eslint-config-next": "^14.2.3",
     "eslint-plugin-import": "^2.29.1",
     "jsdom": "^24.0.0",
     "stylelint": "^16.5.0",
