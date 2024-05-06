@@ -23,3 +23,13 @@ export const getPlace = async (placeId: string): Promise<Place> => {
 
   return JSON.parse(JSON.stringify(data))
 }
+
+export const totalPlaces = async (): Promise<number> => {
+  const mongoClient = await clientPromise
+  const data = await mongoClient
+    .db('ua-db')
+    .collection('ua-places')
+    .countDocuments()
+
+  return data
+}
