@@ -1,0 +1,12 @@
+.uaapp_quote {
+  margin: 20px 0;
+  text-align: right;
+}
+
+.uaapp_quote q {
+  font-style: italic;
+}
+
+.uaapp_quote footer {
+  font-size: smaller;
+}
