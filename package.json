@@ -18,7 +18,7 @@
     "fetch-meta-tags": "^1.0.12",
     "mongodb": "^6.6.0",
     "next": "^14.2.3",
-    "react": "18.2.0",
+    "react": "18.3.1",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
@@ -26,7 +26,7 @@
     "@testing-library/react": "^15.0.6",
     "@types/fetch-meta-tags": "^1.0.2",
     "@types/node": "^20.12.8",
-    "@types/react": "^18.2.79",
+    "@types/react": "^18.3.1",
     "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^7.7.0",
     "@typescript-eslint/parser": "^7.8.0",
