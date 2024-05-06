@@ -1,10 +1,13 @@
 :root {
   --spacing-element: 20px;
+  --spacing-element-input: 10px;
   --spacing-element-link: 5px;
-
   --color-text-primary: white;
+  --color-text-secondary: #c9c9c9;
   --color-background-primary: black;
-  --color-background-secondary: #2d2d2d;
+  --color-background-secondary: #c9c9c9;
+  --color-border-primary: white;
+  --color-border-secondary: #c9c9c9;
 }
 
 html,
