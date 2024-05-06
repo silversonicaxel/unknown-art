@@ -4,7 +4,6 @@ import type { ReactNode } from 'react'
 import { font } from '../src/config/font'
 import { meta } from '../src/config/meta'
 import { Header } from '../src/views/header'
-import { Menu } from '../src/views/menu'
 
 type RootLayoutProps = {
   children: ReactNode
@@ -29,7 +28,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body className={font.className}>
         <main>
           <Header />
-          <Menu />
 
           {children}
         </main>

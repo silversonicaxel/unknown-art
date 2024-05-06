@@ -1,6 +1,6 @@
 .uaplaces a {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: var(--spacing-element-link);
   transition: transform 0.5s ease-in-out;
 }
 
