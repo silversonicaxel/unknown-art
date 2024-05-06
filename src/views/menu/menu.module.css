@@ -1,18 +1,7 @@
-.uaheader {
-  border-bottom: 5px solid white;
-  box-sizing: content-box;
-  height: 80px;
-  padding: 20px 0;
-}
-
-.ualogo {
-  position: absolute;
-}
-
-.uanav ul {
+.uamenu ul {
   display: flex;
   flex-direction: row-reverse;
-  gap: 20px;
+  gap: var(--spacing-element);
   list-style: none;
   padding: 0;
 }

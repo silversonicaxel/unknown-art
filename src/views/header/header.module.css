@@ -1,0 +1,10 @@
+.uaheader {
+  border-bottom: 5px solid white;
+  box-sizing: content-box;
+  height: 80px;
+  padding: var(--spacing-element) 0;
+}
+
+.uaheader_logo {
+  position: absolute;
+}

@@ -3,12 +3,6 @@ import { describe, expect, test } from 'vitest'
 import { Menu } from './menu'
 
 describe('Views > Menu', () => {
-  test('display logo', () => {
-    render(<Menu />)
-
-    expect(screen.getByAltText('logo unknown art')).toBeDefined()
-  })
-
   test('display navigation menu', () => {
     render(<Menu />)
 

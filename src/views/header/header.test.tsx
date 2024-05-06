@@ -1,20 +1,11 @@
 import { render, screen } from '@testing-library/react'
-import { describe, expect, test, vi } from 'vitest'
+import { describe, expect, test } from 'vitest'
 import { Header } from './header'
 
-vi.mock('next/head', () => {
-  return {
-    __esModule: true,
-    default: ({ children }: { children: Array<React.ReactElement> }) => {
-      return <>{children}</>
-    }
-  }
-})
-
 describe('Views > Header', () => {
-  test('display title', async () => {
+  test('display logo', () => {
     render(<Header />)
 
-    expect(screen.getByText('unknow art')).toBeDefined()
+    expect(screen.getByAltText('logo unknown art')).toBeDefined()
   })
 })

@@ -1,9 +1,18 @@
+:root {
+  --spacing-element: 20px;
+  --spacing-element-link: 5px;
+
+  --color-text-primary: white;
+  --color-background-primary: black;
+  --color-background-secondary: #2d2d2d;
+}
+
 html,
 body {
-  background: black;
-  color: white;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
   font-family: 'Space Mono', 'Helvetica Neue', sans-serif;
-  margin: 0 20px;
+  margin: 0 var(--spacing-element);
   padding: 0;
 }
 
@@ -19,7 +28,7 @@ a {
 }
 
 a:hover {
-  background-color: #2d2d2d;
+  background-color: var(--color-background-secondary);
 }
 
 main {
