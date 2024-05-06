@@ -24,6 +24,14 @@ Fix:
 npm run fix
 ```
 
+## Testing
+
+Tests are built with Vitest.
+
+```bash
+npm run test
+```
+
 ## Development configuration
 
 ### .env
