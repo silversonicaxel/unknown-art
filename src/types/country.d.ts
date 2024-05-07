@@ -1,3 +1,1 @@
-export type CodeCountries = {
-  [key: string]: number
-}
+export type CodeCountry = Record<string, string>
