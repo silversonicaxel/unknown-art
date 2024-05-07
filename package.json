@@ -8,10 +8,10 @@
     "start": "next start",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "next lint",
-    "lint:css": "stylelint **/*.css",
+    "lint:css": "stylelint \"**/*.css\"",
     "fix": "npm run fix:js && npm run fix:css",
     "fix:js": "next lint --fix",
-    "fix:css": "stylelint **/*.css --fix",
+    "fix:css": "stylelint \"**/*.css\" --fix",
     "test": "vitest"
   },
   "dependencies": {
