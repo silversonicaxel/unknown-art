@@ -1,5 +1,5 @@
-import { Place } from '../../../src/types/place'
-import clientPromise from '../../config/mongodb'
+import clientPromise from 'src/config/mongodb'
+import { Place } from 'src/types/place'
 
 export const getPlacesData = async (): Promise<Place[]> => {
   const mongoClient = await clientPromise

@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import type { FC } from 'react'
-import { Menu } from '../menu'
-import { Meta } from '../meta'
 import styles from './header.module.css'
+import { Menu } from 'src/views/menu'
+import { Meta } from 'src/views/meta'
 
 export const Header: FC = () => {
   return (
