@@ -1,5 +1,5 @@
-import { Quote } from '../../../src/types/quote'
-import clientPromise from '../../config/mongodb'
+import clientPromise from 'src/config/mongodb'
+import { Quote } from 'src/types/quote'
 
 export const getRandomQuote = async (): Promise<Quote> => {
   const mongoClient = await clientPromise

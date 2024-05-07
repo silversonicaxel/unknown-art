@@ -1,4 +1,4 @@
-import { CodeCountries } from '../../../src/types/country'
+import { CodeCountries } from 'src/types/country'
 
 export const getCountryCodes = async (): Promise<CodeCountries> => {
   const countryCodesResponse = await fetch('http://country.io/names.json', {
