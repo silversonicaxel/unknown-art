@@ -3,5 +3,13 @@
   flex-direction: row-reverse;
   gap: var(--spacing-element);
   list-style: none;
+  margin: 0;
   padding: 0;
+}
+
+@media screen and (width <= 375px) {
+  .uamenu ul {
+    align-items: flex-end;
+    flex-direction: column;
+  }
 }
