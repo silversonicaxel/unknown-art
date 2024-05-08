@@ -1,7 +1,12 @@
 {
-  "extends": ["next", "next/core-web-vitals", "plugin:import/recommended"],
+  "extends": [
+    "next", 
+    "next/core-web-vitals", 
+    "plugin:@typescript-eslint/recommended", 
+    "plugin:import/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
-  "plugins": ["import"],
+  "plugins": ["import", "@typescript-eslint"],
   "rules": {
     "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
     "import/newline-after-import": ["error", { "count": 2 }],
@@ -32,7 +37,19 @@
         "ignoreUrls": true
       }
     ],
-    "no-unused-vars": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "args": "all",
+        "argsIgnorePattern": "^_",
+        "caughtErrors": "all",
+        "caughtErrorsIgnorePattern": "^_",
+        "destructuredArrayIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "ignoreRestSiblings": true
+      }
+    ],
     "semi": ["error", "never"]
   }
 }
