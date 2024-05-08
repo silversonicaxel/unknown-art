@@ -3,29 +3,52 @@ import Link from 'next/link'
 import styles from './places.module.css'
 
 import { getCountryCodes } from 'src/api/country'
-import { getPlacesList } from 'src/api/place'
+import { getPlacesList, getTotalPlaces } from 'src/api/place'
+import { PAGINATION_LIMIT } from 'src/config/pagination'
+import { ApiQuery } from 'src/types/api'
+import { Pagination } from 'src/views/pagination'
 
 
 export const dynamic = 'force-dynamic'
 
-export default async function PlacesPage() {
-  const [countryCodes, places] = await Promise.all([
+type PlacePageProps = {
+  searchParams?: {
+    query?: string
+    page?: string
+  }
+}
+
+export default async function PlacesPage(props: PlacePageProps) {
+  const currentPage = Number(props?.searchParams?.page) || 1
+  const placesListApiQuery: ApiQuery = {
+    limit: PAGINATION_LIMIT,
+    offset: currentPage - 1
+  }
+
+  const [countryCodes, places, totalPlaces] = await Promise.all([
     getCountryCodes(),
-    getPlacesList()
+    getPlacesList(placesListApiQuery),
+    getTotalPlaces()
   ])
 
-  return places.map((place) => (
-    <div key={`place-${place.id}`} className={styles.uaplaces}>
-      <Link href={`places/${place.id}`}>
-        <span>{place.name}</span>
-        &nbsp;
-        <span>~</span>
-        &nbsp;
-        <span>
-          {place.city ? `${place.city} - ` : ``}
-          {countryCodes[place.iso]}
-        </span>
-      </Link>
-    </div>
-  ))
+  return (
+    <>
+      {places.map((place) => (
+        <div key={`place-${place.id}`} className={styles.uaplaces}>
+          <Link href={`places/${place.id}`}>
+            <span>{place.name}</span>
+            &nbsp;
+            <span>~</span>
+            &nbsp;
+            <span>
+              {place.city ? `${place.city} - ` : ``}
+              {countryCodes[place.iso]}
+            </span>
+          </Link>
+        </div>
+      ))}
+
+      <Pagination totalItems={totalPlaces} />
+    </>
+  )
 }
