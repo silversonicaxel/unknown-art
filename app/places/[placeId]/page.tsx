@@ -1,8 +1,11 @@
 import fetchedMeta from 'fetch-meta-tags'
 import type { fetchedMeta as FetchedMetadata } from 'fetch-meta-tags'
+
 import { getPlace } from '../../../src/api/place'
 import { SafeImage } from '../../../src/views/safe-image'
+
 import styles from './place.module.css'
+
 
 type PlacePageProps = {
   params: {
@@ -25,15 +28,15 @@ export default async function PlacePage({ params }: PlacePageProps) {
       <article className={styles.uaplace}>
         <a
           href={`https://www.google.com/maps/place/${place.address}`}
-          target='_blank'
-          rel='noreferrer'
+          target="_blank"
+          rel="noreferrer"
         >
           {place.address}
         </a>
         {place.site && (
           <>
             <br />
-            <a href={place.site} target='_blank' rel='noreferrer'>
+            <a href={place.site} target="_blank" rel="noreferrer">
               {place.site}
             </a>
           </>

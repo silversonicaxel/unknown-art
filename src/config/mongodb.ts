@@ -1,6 +1,7 @@
 // @ts-nocheck
 import { MongoClient } from 'mongodb'
 
+
 const uri = process.env.MONGO_DB_URL || null
 const options = {
   useUnifiedTopology: true,

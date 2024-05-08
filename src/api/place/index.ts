@@ -2,6 +2,7 @@ import clientPromise from 'src/config/mongodb'
 import type { ApiQuery } from 'src/types/api'
 import type { Place } from 'src/types/place'
 
+
 export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
   const { search, ...options } = query
   const findFilter = search ? { name: { $regex: search, $options: 'si' } } : {}
