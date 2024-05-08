@@ -1,7 +1,10 @@
 import Link from 'next/link'
+
 import { getCountryCodes } from '../../src/api/country'
 import { getPlacesList } from '../../src/api/place'
+
 import styles from './places.module.css'
+
 
 export const dynamic = 'force-dynamic'
 

@@ -1,9 +1,11 @@
 import '../src/styles/globals.css'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
+
 import { font } from '../src/config/font'
 import { meta } from '../src/config/meta'
 import { Header } from '../src/views/header'
+
 
 type RootLayoutProps = {
   children: ReactNode
@@ -23,7 +25,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <head />
       <body className={font.className}>
         <main>

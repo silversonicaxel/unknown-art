@@ -1,6 +1,6 @@
 import clientPromise from 'src/config/mongodb'
-import type { ApiQuery } from 'src/types/api'
 import type { CodeCountry } from 'src/types/country'
+
 
 export const getCountryCodes = async (): Promise<CodeCountry> => {
   const mongoClient = await clientPromise

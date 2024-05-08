@@ -1,6 +1,7 @@
 import clientPromise from 'src/config/mongodb'
 import type { Quote } from 'src/types/quote'
 
+
 export const getRandomQuote = async (): Promise<Quote> => {
   const mongoClient = await clientPromise
   const data = await mongoClient

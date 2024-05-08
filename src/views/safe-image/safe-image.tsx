@@ -3,7 +3,9 @@
 import Image from 'next/image'
 import React, { useCallback, useState } from 'react'
 import type { FC, HTMLAttributes } from 'react'
+
 import styles from './safe-image.module.css'
+
 
 type SafeImageProps = HTMLAttributes<HTMLImageElement> & {
   src: string
@@ -26,10 +28,10 @@ export const SafeImage: FC<SafeImageProps> = ({ src, alt, ...props }) => {
         alt={alt}
         src={src}
         loader={() => src}
-        role='img'
-        width='0'
-        height='0'
-        objectFit='fill'
+        role="img"
+        width="0"
+        height="0"
+        objectFit="fill"
         {...props}
         onError={onError}
       />

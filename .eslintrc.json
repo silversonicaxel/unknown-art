@@ -3,16 +3,28 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["import"],
   "rules": {
+    "import/consistent-type-specifier-style": ["error", "prefer-top-level"],
+    "import/newline-after-import": ["error", { "count": 2 }],
     "import/order": [
       "error",
       {
         "alphabetize": {
           "caseInsensitive": true,
           "order": "asc"
-        }
+        },
+        "groups": [
+          "builtin",
+          "external",
+          "parent",
+          ["sibling", "index"],
+          "object",
+          "unknown"
+        ],
+        "newlines-between": "always"
       }
     ],
     "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"],
     "max-len": [
       "error",
       {
@@ -20,6 +32,7 @@
         "ignoreUrls": true
       }
     ],
+    "no-unused-vars": ["error"],
     "semi": ["error", "never"]
   }
 }

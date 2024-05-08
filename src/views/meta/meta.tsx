@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import type { FC } from 'react'
 
+
 type MetaProps = {
   title?: string
 }

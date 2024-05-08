@@ -1,6 +1,8 @@
 import { getRandomQuote } from '../src/api/quote'
 import { HeroImage } from '../src/views/hero-image'
+
 import styles from './app.module.css'
+
 
 export const dynamic = 'force-dynamic'
 
