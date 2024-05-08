@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { getCountryCodes } from '../../src/api/country'
-import { getPlacesData } from '../../src/api/place'
+import { getPlaces } from '../../src/api/place'
 import styles from './places.module.css'
 
 export const dynamic = 'force-dynamic'
@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic'
 export default async function PlacesPage() {
   const [countryCodes, places] = await Promise.all([
     getCountryCodes(),
-    getPlacesData()
+    getPlaces()
   ])
 
   return places.map((place) => (
