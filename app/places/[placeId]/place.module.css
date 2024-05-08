@@ -1,6 +1,5 @@
 .uaplace {
-  white-space: pre-wrap;
-  word-break: break-all;
+  white-space: break-spaces;
   word-wrap: break-word;
 }
 
