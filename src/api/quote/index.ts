@@ -1,4 +1,4 @@
-import clientPromise from 'src/config/mongodb'
+import { clientPromise } from 'src/config/mongodb'
 import type { Quote } from 'src/types/quote'
 
 

@@ -1,4 +1,4 @@
-import clientPromise from 'src/config/mongodb'
+import { clientPromise } from 'src/config/mongodb'
 import type { ApiQuery } from 'src/types/api'
 import type { Place } from 'src/types/place'
 
@@ -31,4 +31,14 @@ export const getPlace = async (id: string): Promise<Place> => {
     .findOne({ id })
 
   return JSON.parse(JSON.stringify(data))
+}
+
+export const getTotalPlaces = async (): Promise<number> => {
+  const mongoClient = await clientPromise
+  const data = await mongoClient
+    .db('ua-db')
+    .collection('ua-places')
+    .countDocuments()
+
+  return data
 }

@@ -1,0 +1,15 @@
+.uapagination {
+  display: flex;
+  gap: var(--spacing-element);
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.uapagination a {
+  display: inline-block;
+  transition: transform 0.5s ease-in-out;
+}
+
+.uapagination a:hover {
+  transform: rotate(180deg) scale(2);
+}
