@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import { meta } from '../../src/config/meta'
+import { meta } from 'src/config/meta'
 
 
 type PlacesLayoutProps = {

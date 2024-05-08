@@ -1,10 +1,10 @@
 import fetchedMeta from 'fetch-meta-tags'
 import type { fetchedMeta as FetchedMetadata } from 'fetch-meta-tags'
 
-import { getPlace } from '../../../src/api/place'
-import { SafeImage } from '../../../src/views/safe-image'
-
 import styles from './place.module.css'
+
+import { getPlace } from 'src/api/place'
+import { SafeImage } from 'src/views/safe-image'
 
 
 type PlacePageProps = {

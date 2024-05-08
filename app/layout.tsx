@@ -1,10 +1,10 @@
-import '../src/styles/globals.css'
+import 'src/styles/globals.css'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
-import { font } from '../src/config/font'
-import { meta } from '../src/config/meta'
-import { Header } from '../src/views/header'
+import { font } from 'src/config/font'
+import { meta } from 'src/config/meta'
+import { Header } from 'src/views/header'
 
 
 type RootLayoutProps = {
