@@ -4,7 +4,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 `npm` is the package manager used.
 
-Local server:
+First, install the dependencies:
+
+```bash
+npm i
+```
+
+Then, start the local server:
 
 ```bash
 npm run dev
