@@ -8,7 +8,13 @@ This is a [Next.js](https://nextjs.org/) application, based on [React.js](https:
 
 `npm` is the package manager used.
 
-Local server:
+First, install the dependencies:
+
+```bash
+npm i
+```
+
+Then, start the local server:
 
 ```bash
 npm run dev
