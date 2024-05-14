@@ -1,4 +1,4 @@
-# unknown art
+# unknown-art
 
 [https://unknown-art.club/](https://unknown-art.club/) is the club that will introduce you to arty and independent bookstores, all over the world.
 
@@ -54,8 +54,24 @@ npm run test:e2e
 
 .env configuration is set on .env.local
 
+You can use the .env.example file as a template.
+
 ### MongoDb
+
+#### Option 1: Remote
 
 Mongodb security settings for local development require an IP whitelist to work.
 
 Network Access -> IP Access List -> 0.0.0.0/0
+
+#### Option 2: Local with Docker Compose
+
+You can use Docker Compose to run a MongoDB instance for local development.
+
+First, make sure you have Docker and Docker Compose installed on your machine.
+
+Then, you can start the MongoDB instance with the following command:
+
+```bash
+docker-compose -f docker-compose.yml [up|down]
+```
