@@ -1,21 +1,19 @@
-db = db.getSiblingDB('ua-db');
+db = db.getSiblingDB('ua-db')
 db.createUser(
   {
     user: 'myUser',
     pwd: 'myPassword',
     roles: [{ role: 'readWrite', db: 'ua-db' }],
   },
-);
+)
 
-// Add 'ua-quotes' collection
-db.createCollection('ua-quotes');
+db.createCollection('ua-quotes')
 db['ua-quotes'].insert({
   message: "This is a sample quote",
   author: "Author Name"
-});
+})
 
-// Add 'ua-places' collection
-db.createCollection('ua-places');
+db.createCollection('ua-places')
 db['ua-places'].insertMany([
   {
     id: "1",
@@ -38,10 +36,9 @@ db['ua-places'].insertMany([
     iso: "IT",
     city: "Milan"
   }
-]);
+])
 
-// Add 'ua-isos' collection
-db.createCollection('ua-isos');
+db.createCollection('ua-isos')
 db['ua-isos'].insertMany([
   {
     DE: "Germany",
@@ -52,4 +49,4 @@ db['ua-isos'].insertMany([
   {
     IT: "Italy"
   }
-]);
+])
