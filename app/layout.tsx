@@ -1,9 +1,11 @@
 import 'src/styles/globals.css'
+import 'src/styles/reset.css'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
 import { font } from 'src/config/font'
 import { meta } from 'src/config/meta'
+import { DialogProvider } from 'src/providers/dialog'
 import { Header } from 'src/views/header'
 
 
@@ -28,6 +30,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <head />
       <body className={font.className}>
+        <DialogProvider />
+
         <main>
           <Header />
 

@@ -1,0 +1,82 @@
+.uasearchplacesbox {
+  border: 1px solid var(--color-border-primary);
+  display: flex;
+  font-size: smaller;
+  margin-bottom: var(--spacing-element);
+  margin-left: auto;
+  padding: var(--spacing-text);
+  width: max-content; 
+}
+
+@media screen and (width <= 800px) {
+  .uasearchplacesbox {
+    align-items: end;
+    flex-direction: column-reverse;
+  }
+}
+
+.uasearchplacesbox__item:not(:last-child) {
+  padding-right: var(--spacing-group);
+}
+
+@media screen and (width <= 800px) {
+  .uasearchplacesbox__item:not(:last-child) {
+    padding-right: 0;
+  }
+}
+
+.uasearchplacesbox__dialog {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.uasearchplacesbox__dialog-close {
+  height: var(--size-icon);
+  position: absolute;
+  right: var(--spacing-icon);
+  top: var(--spacing-icon);
+  width: var(--size-icon);
+}
+
+.uasearchplacesbox__dialog-close::before, .uasearchplacesbox__dialog-close::after {
+  background-color: var(--color-surface-primary);
+  content: ' ';
+  height: calc(var(--size-icon) + var(--size-icon) / 8);
+  left: calc(var(--size-icon) / 2);
+  position: absolute;
+  width: calc(var(--size-icon) / 4);
+}
+
+.uasearchplacesbox__dialog-close::before {
+  transform: rotate(45deg);
+}
+
+.uasearchplacesbox__dialog-close::after {
+  transform: rotate(-45deg);
+}
+
+.uasearchplacesbox__dialog-fieldset {
+  border: 0;
+  margin: 0;
+  margin-bottom: var(--spacing-group);
+  padding: 0;
+}
+
+.uasearchplacesbox__dialog-input {
+  background-color: inherit;
+  border: 0;
+  border-bottom: 2px solid var(--color-border-primary);
+  color: var(--color-text-primary);
+  font-size: larger;
+  margin-bottom: var(--spacing-element);
+  max-width: 800px;
+  width: 75vw;
+}
+
+.uasearchplacesbox__dialog-submit {
+  float: right;
+}

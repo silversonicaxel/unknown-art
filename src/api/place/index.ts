@@ -1,16 +1,35 @@
 import { clientPromise } from 'src/config/mongodb'
 import type { ApiQuery } from 'src/types/api'
 import type { Place } from 'src/types/place'
+import type { SearchPlacesApi } from 'src/types/search'
 
 
-export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
+const getFindParamsFilter = (search: string) => {
+  const searchData = JSON.parse(search)
+
+  const searchFilter: SearchPlacesApi = {}
+  if (searchData.name) {
+    searchFilter.name = { $regex: searchData.name, $options: 'si' }
+  }
+
+  return searchFilter
+}
+
+const getFindParams = (query: ApiQuery = {}) => {
   const { search, ...options } = query
-  const findFilter = search ? { name: { $regex: search, $options: 'si' } } : {}
+
+  const findFilter = search ? getFindParamsFilter(search) : {}
   const findOptions = {
     limit: options.limit,
     skip: (options.offset ?? 0) * (options.limit ?? 0)
   }
 
+  return { findFilter, findOptions }
+}
+
+export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
+  const { findFilter, findOptions } = getFindParams(query)
+  
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')
@@ -33,12 +52,16 @@ export const getPlace = async (id: string): Promise<Place> => {
   return JSON.parse(JSON.stringify(data))
 }
 
-export const getTotalPlaces = async (): Promise<number> => {
+export const getTotalPlaces = async (query: ApiQuery = {}): Promise<number> => {
+  const { findFilter } = getFindParams(query)
+
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')
     .collection('ua-places')
-    .countDocuments()
+    .find(findFilter)
+    .collation({ locale: 'en' })
+    .toArray()
 
-  return data
+  return data.length
 }

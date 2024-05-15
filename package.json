@@ -15,15 +15,18 @@
     "test": "vitest"
   },
   "dependencies": {
+    "exenv": "^1.2.2",
     "fetch-meta-tags": "^1.0.12",
     "mongodb": "^6.6.1",
     "next": "^14.2.3",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "react-hook-form": "^7.51.4"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
+    "@types/exenv": "^1.2.2",
     "@types/fetch-meta-tags": "^1.0.3",
     "@types/node": "^20.12.11",
     "@types/react": "^18.3.2",
@@ -40,6 +43,7 @@
     "stylelint-order": "^6.0.4",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5",
+    "type-fest": "^4.18.2",
     "vitest": "^1.6.0",
     "vite-tsconfig-paths": "^4.3.2"
   }
