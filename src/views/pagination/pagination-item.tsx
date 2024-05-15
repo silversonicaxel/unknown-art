@@ -24,7 +24,7 @@ export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
   if (indexPage === currentPage) {
     return (
       <span
-        className={`${styles.uapaginationitem} ${styles['uapaginationitem__text']}`}
+        className={`${styles.uapaginationitem} ${styles.uapaginationitem__text}`}
       >
         {indexPage}
       </span>
@@ -33,7 +33,7 @@ export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
 
   return (
     <a
-      className={`${styles.uapaginationitem} ${styles['uapaginationitem__link']}`}
+      className={`${styles.uapaginationitem} ${styles.uapaginationitem__link}`}
       href={createPageURL(indexPage)}
     >
       {indexPage}
