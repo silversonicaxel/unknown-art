@@ -7,6 +7,7 @@ import { getPlacesList, getTotalPlaces } from 'src/api/place'
 import { PAGINATION_LIMIT } from 'src/config/pagination'
 import { ApiQuery } from 'src/types/api'
 import { Pagination } from 'src/views/pagination'
+import { SearchPlacesBox } from 'src/views/search-places-box'
 
 
 export const dynamic = 'force-dynamic'
@@ -19,20 +20,25 @@ type PlacePageProps = {
 }
 
 export default async function PlacesPage(props: PlacePageProps) {
+  const search = props?.searchParams?.query || undefined
+  
   const currentPage = Number(props?.searchParams?.page) || 1
   const placesListApiQuery: ApiQuery = {
     limit: PAGINATION_LIMIT,
-    offset: currentPage - 1
+    offset: currentPage - 1,
+    search
   }
 
   const [countryCodes, places, totalPlaces] = await Promise.all([
     getCountryCodes(),
     getPlacesList(placesListApiQuery),
-    getTotalPlaces()
+    getTotalPlaces(placesListApiQuery)
   ])
 
   return (
     <>
+      <SearchPlacesBox />
+
       {places.map((place) => (
         <div key={`place-${place.id}`} className={styles.uaplaces}>
           <Link href={`places/${place.id}`}>

@@ -25,6 +25,10 @@ export const Pagination: FC<PaginationProps> = ({ totalItems }) => {
     currentPage, 
   })
 
+  if(totalItems <= PAGINATION_LIMIT) {
+    return null
+  }
+
   const { rangePages } = pagination
     
   return (

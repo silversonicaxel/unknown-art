@@ -1,19 +1,32 @@
 :root {
   --spacing-element: 20px;
   --spacing-text: 5px;
+  --spacing-icon: 40px;
+  --spacing-group: 50px;
   --color-text-primary: white;
   --color-background-primary: black;
   --color-background-secondary: #2d2d2d;
-  --color-border-primary: white;
+  --color-border-primary: #d3d3d3;
+  --color-surface-primary: white;
+  --zindex-dialog: 9;
+  --size-icon: 40px;
 }
 
 html,
-body {
+body,
+dialog {
   background-color: var(--color-background-primary);
+  border: 0;
   color: var(--color-text-primary);
-  font-family: 'Space Mono', 'Helvetica Neue', sans-serif;
-  margin: 0 var(--spacing-element);
+  margin: 0;
   padding: 0;
+}
+
+body.with-dialog {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  width: 100vw;
 }
 
 * {
@@ -27,11 +40,15 @@ a {
   transition: background-color 0.5s ease-in-out;
 }
 
-a:hover {
+a:hover:not([role="button"]) {
   background-color: var(--color-background-secondary);
 }
 
 main {
   margin: 0 auto;
   max-width: 1200px;
+}
+
+button {
+  cursor: cell;
 }
