@@ -7,7 +7,7 @@ import { createPortal } from 'react-dom'
 import styles from './dialog.module.css'
 
 
-export type DialogProps = 
+export type DialogProps =
   & HTMLAttributes<HTMLDialogElement>
   & PropsWithChildren<{
     id: string
@@ -15,9 +15,9 @@ export type DialogProps =
     open?: boolean
   }>
 
-export const Dialog: FC<DialogProps> = ({ 
+export const Dialog: FC<DialogProps> = ({
   id,
-  toRender, 
+  toRender,
   open,
   children,
   ...props
@@ -33,8 +33,8 @@ export const Dialog: FC<DialogProps> = ({
 
   return createPortal(
     (
-      <dialog 
-        className={styles.uadialog} 
+      <dialog
+        className={styles.uadialog}
         open={open}
         {...props}
       >

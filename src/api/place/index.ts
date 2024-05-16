@@ -29,7 +29,7 @@ const getFindParams = (query: ApiQuery = {}) => {
 
 export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
   const { findFilter, findOptions } = getFindParams(query)
-  
+
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')
