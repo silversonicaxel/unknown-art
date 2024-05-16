@@ -22,7 +22,7 @@ export type UseDialogHookResult = {
 export type UseDialogHook = (options: UseDialogParams) => UseDialogHookResult
 
 export const useDialog: UseDialogHook = (props) => {
-  const [toRender, setTodRender] = useState(false) 
+  const [toRender, setTodRender] = useState(false)
   const [isOpen, setIsOpen] = useState(props?.open ?? false)
 
   const openDialog = useCallback(() => {

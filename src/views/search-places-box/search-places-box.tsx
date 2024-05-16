@@ -20,7 +20,7 @@ export const SearchPlacesBox: FC = () => {
   const pathname = usePathname()
   const { replace } = useRouter()
   const searchParams = useSearchParams()
-  
+
   const queryParams = searchParams.get('query')
   const queryValuesParams = queryParams ? JSON.parse(queryParams) : {}
 
@@ -39,10 +39,10 @@ export const SearchPlacesBox: FC = () => {
     else {
       const params = new URLSearchParams(searchParams)
       params.set('query', JSON.stringify(data))
-      
+
       replace(`${pathname}?${params.toString()}`)
     }
-    
+
 
     closeDialog()
   }
@@ -59,7 +59,7 @@ export const SearchPlacesBox: FC = () => {
 
       <Dialog {...dialogProps} toRender={toRender}>
         <div className={styles.uasearchplacesbox__dialog}>
-          <a 
+          <a
             role="button"
             className={styles['uasearchplacesbox__dialog-close']}
             onClick={closeDialog}
@@ -72,8 +72,8 @@ export const SearchPlacesBox: FC = () => {
             <fieldset className={styles['uasearchplacesbox__dialog-fieldset']}>
               <input
                 className={styles['uasearchplacesbox__dialog-input']}
-                {...register('name')} 
-                placeholder="name" 
+                {...register('name')}
+                placeholder="name"
                 data-1p-ignore
               />
             </fieldset>

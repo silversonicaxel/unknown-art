@@ -17,12 +17,12 @@ type PaginationProps = {
 export const Pagination: FC<PaginationProps> = ({ totalItems }) => {
   const searchParams = useSearchParams()
   const currentPage = Number(searchParams.get('page')) || 1
-  
-  const pagination = usePagination({ 
+
+  const pagination = usePagination({
     itemsPerPage: PAGINATION_LIMIT,
     maxPaginators: PAGINATION_MAX_ITEMS,
-    totalItems, 
-    currentPage, 
+    totalItems,
+    currentPage,
   })
 
   if(totalItems <= PAGINATION_LIMIT) {
@@ -30,7 +30,7 @@ export const Pagination: FC<PaginationProps> = ({ totalItems }) => {
   }
 
   const { rangePages } = pagination
-    
+
   return (
     <div className={styles.uapagination}>
       {rangePages.map((pageItem) => (

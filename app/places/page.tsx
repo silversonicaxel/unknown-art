@@ -21,7 +21,7 @@ type PlacePageProps = {
 
 export default async function PlacesPage(props: PlacePageProps) {
   const search = props?.searchParams?.query || undefined
-  
+
   const currentPage = Number(props?.searchParams?.page) || 1
   const placesListApiQuery: ApiQuery = {
     limit: PAGINATION_LIMIT,
