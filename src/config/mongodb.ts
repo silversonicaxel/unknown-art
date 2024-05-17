@@ -1,39 +1,37 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
 import { MongoClient } from 'mongodb'
 
 
-const uri = process.env.MONGO_DB_URL || null
+const uri = process.env.MONGO_DB_URL
 const environment = process.env.NODE_ENV || 'development'
-
-export const clientPromise = getMongoDbClient(environment, uri)
 
 function getMongoDbClient(
   environment: string,
-  uri: string
+  uri: string | undefined
 ): Promise<MongoClient> {
-  let client
+  if (!uri) {
+    throw new Error("Please add your MongoDb url to .env file.")
+  }
+
+  let client: MongoClient
   let clientPromise: Promise<MongoClient>
 
-  if (!uri) {
-    throw new Error('Add Mongo URI to .env.local')
-  }
-
-  const options = {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  }
-
-  if (environment === 'development') {
-    if (!global._mongoClientPromise) {
-      client = new MongoClient(uri, options)
-      global._mongoClientPromise = client.connect()
+  if (environment === "development") {
+    const globalWithMongoClientPromise = global as typeof globalThis & {
+      _mongoClientPromise: Promise<MongoClient>
     }
-    clientPromise = global._mongoClientPromise
+
+    if (!globalWithMongoClientPromise._mongoClientPromise) {
+      client = new MongoClient(uri)
+      globalWithMongoClientPromise._mongoClientPromise = client.connect()
+    }
+
+    clientPromise = globalWithMongoClientPromise._mongoClientPromise
   } else {
-    client = new MongoClient(uri, options)
+    client = new MongoClient(uri)
     clientPromise = client.connect()
   }
 
   return clientPromise
 }
+
+export const clientPromise = getMongoDbClient(environment, uri)
