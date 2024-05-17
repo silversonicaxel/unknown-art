@@ -8,7 +8,7 @@ import styles from './menu.module.css'
 export const Menu: FC = memo(() => {
   return (
     <nav className={styles.uamenu} aria-label="unknown art menu">
-      <ul aria-labelledby="menu" role="menubar" aria-label="unknown art menu">
+      <ul role="menubar" aria-label="unknown art menu">
         <li role="none">
           <Link href="/" role="menuitem" aria-label="home page">
             home
