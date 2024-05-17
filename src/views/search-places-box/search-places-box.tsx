@@ -63,12 +63,19 @@ export const SearchPlacesBox: FC = () => {
         </a>
       </div>
 
-      <Dialog {...dialogProps} toRender={toRender}>
+      <Dialog
+        {...dialogProps}
+        toRender={toRender}
+        aria-labelledby={dialogProps['aria-labelledby']}
+        aria-describedby={dialogProps['aria-describedby']}
+        aria-modal="true"
+      >
         <div className={styles.uasearchplacesbox__dialog}>
           <a
             role="button"
             className={styles['uasearchplacesbox__dialog-close']}
             onClick={closeDialog}
+            aria-label="Close search places dialog"
           />
 
           <h3 id={dialogProps['aria-labelledby']}>{title}</h3>
@@ -88,6 +95,7 @@ export const SearchPlacesBox: FC = () => {
               type="submit"
               className={styles['uasearchplacesbox__dialog-submit']}
               aria-describedby={dialogProps['aria-describedby']}
+              aria-label="Submit the search of places"
             >
               search
             </button>
