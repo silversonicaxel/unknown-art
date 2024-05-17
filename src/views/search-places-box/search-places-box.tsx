@@ -54,7 +54,13 @@ export const SearchPlacesBox: FC = () => {
           <span className={styles.uasearchplacesbox__item}>name: {defaultValues.name}</span>
         )}
 
-        <a role="button" className={styles.uasearchplacesbox__item} onClick={openDialog}>search</a>
+        <a
+          role="button"
+          className={styles.uasearchplacesbox__item}
+          onClick={openDialog}
+        >
+          search
+        </a>
       </div>
 
       <Dialog {...dialogProps} toRender={toRender}>
@@ -81,6 +87,7 @@ export const SearchPlacesBox: FC = () => {
             <button
               type="submit"
               className={styles['uasearchplacesbox__dialog-submit']}
+              aria-describedby={dialogProps['aria-describedby']}
             >
               search
             </button>
