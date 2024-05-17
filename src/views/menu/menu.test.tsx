@@ -8,7 +8,7 @@ describe('Views > Menu', () => {
   test('display navigation menu', () => {
     render(<Menu />)
 
-    expect(screen.getAllByLabelText('home')).toBeDefined()
-    expect(screen.getAllByLabelText('places')).toBeDefined()
+    expect(screen.getAllByLabelText('home page')).toBeDefined()
+    expect(screen.getAllByLabelText('places page')).toBeDefined()
   })
 })
