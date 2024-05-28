@@ -39,10 +39,10 @@ export const SearchPlacesBox: FC = () => {
     else {
       const params = new URLSearchParams(searchParams)
       params.set('query', JSON.stringify(data))
+      params.delete('page')
 
       replace(`${pathname}?${params.toString()}`)
     }
-
 
     closeDialog()
   }
