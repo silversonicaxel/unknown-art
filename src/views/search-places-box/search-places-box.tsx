@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import type { FC } from 'react'
+import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 
 import styles from './search-places-box.module.css'
@@ -30,9 +31,9 @@ export const SearchPlacesBox: FC = () => {
 
   const { dialogProps, openDialog, closeDialog, toRender } = useDialog({ id })
 
-  const { handleSubmit, register } = useForm<SearchPlacesFormInput>({ defaultValues })
+  const { handleSubmit, register, reset } = useForm<SearchPlacesFormInput>({ defaultValues })
 
-  const onSubmit = (data: SearchPlacesFormInput) => {
+  const onSubmit = useCallback((data: SearchPlacesFormInput) => {
     if (isObjectNull(data)) {
       replace(pathname)
     }
@@ -45,7 +46,12 @@ export const SearchPlacesBox: FC = () => {
     }
 
     closeDialog()
-  }
+  }, [closeDialog, pathname, replace, searchParams])
+
+  const onReset = useCallback(() => {
+    reset()
+    onSubmit({})
+  }, [onSubmit, reset])
 
   return (
     <>
@@ -98,6 +104,15 @@ export const SearchPlacesBox: FC = () => {
               aria-label="Submit the search of places"
             >
               search
+            </button>
+
+            <button
+              type="reset"
+              className={styles['uasearchplacesbox__dialog-reset']}
+              aria-label="Reset the search of places"
+              onClick={onReset}
+            >
+              reset
             </button>
           </form>
         </div>
