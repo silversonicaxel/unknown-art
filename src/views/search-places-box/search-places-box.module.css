@@ -4,8 +4,7 @@
   font-size: smaller;
   margin-bottom: var(--spacing-element);
   margin-left: auto;
-  padding: var(--spacing-text);
-  width: max-content; 
+  width: max-content;
 }
 
 @media screen and (width <= 800px) {
@@ -15,13 +14,17 @@
   }
 }
 
+.uasearchplacesbox__item {
+  padding: var(--spacing-text);
+}
+
 .uasearchplacesbox__item:not(:last-child) {
   padding-right: var(--spacing-group);
 }
 
 @media screen and (width <= 800px) {
   .uasearchplacesbox__item:not(:last-child) {
-    padding-right: 0;
+    padding-right: var(--spacing-text);
   }
 }
 
