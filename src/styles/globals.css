@@ -47,6 +47,8 @@ a:hover:not([role="button"]) {
 main {
   margin: 0 auto;
   max-width: 1200px;
+  padding-left: var(--spacing-element);
+  padding-right: var(--spacing-element);
 }
 
 button {
