@@ -80,6 +80,11 @@
   width: 75vw;
 }
 
+.uasearchplacesbox__dialog-reset {
+  float: right;
+  padding-right: var(--spacing-group);
+}
+
 .uasearchplacesbox__dialog-submit {
   float: right;
 }
