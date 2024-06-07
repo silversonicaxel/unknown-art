@@ -11,6 +11,9 @@ const getFindParamsFilter = (search: string) => {
   if (searchData.name) {
     searchFilter.name = { $regex: searchData.name, $options: 'si' }
   }
+  if (searchData.iso) {
+    searchFilter.iso = searchData.iso
+  }
 
   return searchFilter
 }

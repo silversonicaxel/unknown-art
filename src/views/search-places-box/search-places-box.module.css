@@ -64,6 +64,8 @@
 
 .uasearchplacesbox__dialog-fieldset {
   border: 0;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   margin-bottom: var(--spacing-group);
   padding: 0;
@@ -78,6 +80,26 @@
   margin-bottom: var(--spacing-element);
   max-width: 800px;
   width: 75vw;
+}
+
+.uasearchplacesbox__dialog-input::placeholder {
+  color: var(--color-text-secondary);
+}
+
+.uasearchplacesbox__dialog-select {
+  background-color: inherit;
+  border: 0;
+  border-bottom: 2px solid var(--color-border-primary);
+  color: var(--color-text-primary);
+  font-size: larger;
+  margin-bottom: var(--spacing-element);
+  max-width: 800px;
+  text-indent: 0;
+  width: 75vw;
+}
+
+.uasearchplacesbox__dialog-select--unselected {
+  color: var(--color-text-secondary);
 }
 
 .uasearchplacesbox__dialog-reset {

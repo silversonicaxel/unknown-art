@@ -37,7 +37,7 @@ export default async function PlacesPage(props: PlacePageProps) {
 
   return (
     <>
-      <SearchPlacesBox />
+      <SearchPlacesBox countries={countryCodes}/>
 
       {places.map((place) => (
         <div key={`place-${place.id}`} className={styles.uaplaces}>
