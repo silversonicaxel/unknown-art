@@ -17,6 +17,11 @@ const getFindParamsFilter = (search: string) => {
   if (searchData.city) {
     searchFilter.city = { $regex: searchData.city, $options: 'si' }
   }
+  if (searchData.website === 'with') {
+    searchFilter.site = { $exists: true }
+  } else if (searchData.website === 'without') {
+    searchFilter.site = { $exists: false }
+  }
 
   return searchFilter
 }
