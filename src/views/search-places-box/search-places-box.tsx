@@ -34,6 +34,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
   const defaultValues = {
     name: queryValuesParams.name ?? undefined,
     iso: queryValuesParams.iso ?? undefined,
+    city: queryValuesParams.city ?? undefined,
   }
 
   const { dialogProps, openDialog, closeDialog, toRender } = useDialog({ id })
@@ -75,6 +76,11 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
           label="country"
           value={defaultValues.iso}
           options={countries}
+        />
+        <SearchPlacesSummary
+          className={styles.uasearchplacesbox__item}
+          label="city"
+          value={defaultValues.city}
         />
 
         <a
@@ -126,6 +132,13 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                   })
                 }
               </select>
+
+              <input
+                className={styles['uasearchplacesbox__dialog-input']}
+                {...register('city')}
+                placeholder="city"
+                data-1p-ignore
+              />
             </fieldset>
 
             <button
