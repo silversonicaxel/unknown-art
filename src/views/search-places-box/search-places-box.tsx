@@ -6,14 +6,20 @@ import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 
 import styles from './search-places-box.module.css'
+import { SearchPlacesSummary } from './search-places-summary'
 
+import { CodeCountry } from 'src/types/country'
 import { SearchPlacesFormInput } from 'src/types/search'
 import { isObjectNull } from 'src/utils/isObjectNull'
 import { Dialog } from 'src/views/dialog'
 import { useDialog } from 'src/views/dialog/hooks/useDialog'
 
 
-export const SearchPlacesBox: FC = () => {
+type SearchPlacesBoxProps = {
+  countries: CodeCountry
+}
+
+export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
   const id = 'search-places'
   const title = 'Search places'
   const description = 'Filter the list of places'
@@ -27,11 +33,12 @@ export const SearchPlacesBox: FC = () => {
 
   const defaultValues = {
     name: queryValuesParams.name ?? undefined,
+    iso: queryValuesParams.iso ?? undefined,
   }
 
   const { dialogProps, openDialog, closeDialog, toRender } = useDialog({ id })
 
-  const { handleSubmit, register, reset } = useForm<SearchPlacesFormInput>({ defaultValues })
+  const { handleSubmit, register, reset, watch } = useForm<SearchPlacesFormInput>({ defaultValues })
 
   const onSubmit = useCallback((data: SearchPlacesFormInput) => {
     if (isObjectNull(data)) {
@@ -53,12 +60,22 @@ export const SearchPlacesBox: FC = () => {
     onSubmit({})
   }, [onSubmit, reset])
 
+  const watchedIso = watch('iso')
+
   return (
     <>
       <div className={styles.uasearchplacesbox}>
-        {defaultValues.name && (
-          <span className={styles.uasearchplacesbox__item}>name: {defaultValues.name}</span>
-        )}
+        <SearchPlacesSummary
+          className={styles.uasearchplacesbox__item}
+          label="name"
+          value={defaultValues.name}
+        />
+        <SearchPlacesSummary
+          className={styles.uasearchplacesbox__item}
+          label="country"
+          value={defaultValues.iso}
+          options={countries}
+        />
 
         <a
           role="button"
@@ -95,6 +112,20 @@ export const SearchPlacesBox: FC = () => {
                 placeholder="name"
                 data-1p-ignore
               />
+
+              <select
+                className={`${styles['uasearchplacesbox__dialog-select']} ${watchedIso
+                  ? '' : styles['uasearchplacesbox__dialog-select--unselected']}`}
+                {...register('iso')}
+              >
+                <option value="">country</option>
+                {Object.entries(countries)
+                  .sort(([, countryA], [, countryB]) => countryA.localeCompare(countryB))
+                  .map(([code, country]) => {
+                    return (<option key={`${code}-${country}`} value={code}>{country}</option>)
+                  })
+                }
+              </select>
             </fieldset>
 
             <button

@@ -7,7 +7,7 @@ export const getCountryCodes = async (): Promise<CodeCountry> => {
   const data = await mongoClient
     .db('ua-db')
     .collection('ua-isos')
-    .find()
+    .find({}, { projection: { _id: 0 } })
     .collation({ locale: 'en' })
     .toArray()
 
