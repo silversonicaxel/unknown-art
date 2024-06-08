@@ -89,6 +89,15 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
           value={defaultValues.website}
         />
 
+        {!isObjectNull(defaultValues) &&
+          (<a
+            role="button"
+            className={styles.uasearchplacesbox__item}
+            onClick={onReset}
+          >
+            reset
+          </a>)
+        }
         <a
           role="button"
           className={styles.uasearchplacesbox__item}
