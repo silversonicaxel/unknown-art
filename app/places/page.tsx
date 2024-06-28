@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Metadata } from 'next/types'
 
 import styles from './places.module.css'
 
@@ -11,6 +12,10 @@ import { SearchPlacesBox } from 'src/views/search-places-box'
 
 
 export const dynamic = 'force-dynamic'
+
+export const metadata: Metadata = {
+  title: 'unknown art _ places',
+}
 
 type PlacePageProps = {
   searchParams?: {
