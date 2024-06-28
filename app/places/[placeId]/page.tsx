@@ -1,5 +1,6 @@
 import fetchedMeta from 'fetch-meta-tags'
 import type { fetchedMeta as FetchedMetadata } from 'fetch-meta-tags'
+import type { Metadata } from 'next'
 
 import styles from './place.module.css'
 
@@ -14,6 +15,14 @@ type PlacePageProps = {
 }
 
 type PlaceMeta = FetchedMetadata | null
+
+export async function generateMetadata({ params }: PlacePageProps): Promise<Metadata> {
+  const place = await getPlace(params.placeId)
+
+  return {
+    title: `unknown art _ place _ ${place.name}`,
+  }
+}
 
 export default async function PlacePage({ params }: PlacePageProps) {
   const place = await getPlace(params.placeId)

@@ -6,14 +6,11 @@ import type { FC } from 'react'
 import styles from './header.module.css'
 
 import { Menu } from 'src/views/menu'
-import { Meta } from 'src/views/meta'
 
 
 export const Header: FC = () => {
   return (
     <>
-      <Meta />
-
       <header className={styles.uaheader}>
         <Link href="/">
           <Image
