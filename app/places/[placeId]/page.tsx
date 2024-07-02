@@ -27,9 +27,12 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
 export default async function PlacePage({ params }: PlacePageProps) {
   const place = await getPlace(params.placeId)
 
-  const placeMeta: PlaceMeta = place.site
-    ? await fetchedMeta(place.site || '')
-    : null
+  let placeMeta: PlaceMeta
+  try {
+    placeMeta = place.site ? await fetchedMeta(place.site) : null
+  } catch {
+    placeMeta = null
+  }
 
   return (
     <>
