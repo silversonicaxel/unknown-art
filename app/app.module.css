@@ -9,4 +9,5 @@
 
 .uaapp_quote footer {
   font-size: smaller;
+  margin-top: var(--spacing-text);
 }
