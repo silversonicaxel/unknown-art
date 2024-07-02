@@ -27,11 +27,11 @@ export const SafeImage: FC<SafeImageProps> = ({ src, alt, ...props }) => {
         className={styles.uasafeimage}
         alt={alt}
         src={src}
-        loader={() => src}
+        loader={({ src }) => src}
         role="img"
         width="0"
         height="0"
-        objectFit="fill"
+        style={{ objectFit: 'fill' }}
         {...props}
         onError={onError}
       />
