@@ -45,11 +45,11 @@ export default async function PlacesPage(props: PlacePageProps) {
       <SearchPlacesBox countries={countryCodes}/>
 
       {places.map((place) => (
-        <div key={`place-${place.id}`} className={styles.uaplaces}>
+        <div key={`place-${place.id}`} className={styles.uaplaces__item}>
           <Link href={`places/${place.id}`}>
             <span>{place.name}</span>
             &nbsp;
-            <span>~</span>
+            <span className={styles['uaplaces__item-separator']}>~~</span>
             &nbsp;
             <span>
               {place.city ? `${place.city} - ` : ``}
