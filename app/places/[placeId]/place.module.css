@@ -3,6 +3,11 @@
   word-wrap: break-word;
 }
 
-.uaplace_data {
+.uaplace_info {
+  display: block;
+  margin-bottom: var(--spacing-element);
+}
+
+.uaplace_meta {
   position: relative;
 }
