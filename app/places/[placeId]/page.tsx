@@ -39,6 +39,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
       <h1>{place.name}</h1>
       <article className={styles.uaplace}>
         <a
+          className={styles.uaplace_info}
           href={`https://www.google.com/maps/place/${place.address}`}
           target="_blank"
           rel="noreferrer"
@@ -46,16 +47,18 @@ export default async function PlacePage({ params }: PlacePageProps) {
           {place.address}
         </a>
         {place.site && (
-          <>
-            <br />
-            <a href={place.site} target="_blank" rel="noreferrer">
-              {place.site}
-            </a>
-          </>
+          <a
+            className={styles.uaplace_info}
+            href={place.site}
+            target="_blank"
+            rel="noreferrer"
+          >
+            {place.site}
+          </a>
         )}
 
         {placeMeta && (
-          <div className={styles.uaplace_data}>
+          <div className={styles.uaplace_meta}>
             <p>{placeMeta.description}</p>
 
             {placeMeta.image && (
