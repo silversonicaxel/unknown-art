@@ -3,7 +3,8 @@ import type { Metadata } from 'next/types'
 import styles from './app.module.css'
 
 import { getRandomQuote } from 'src/api/quote'
-import { HeroImage } from 'src/views/hero-image'
+import { HeroImage } from 'src/views/app/hero-image'
+import { Intro } from 'src/views/app/intro/intro'
 
 
 export const dynamic = 'force-dynamic'
@@ -17,12 +18,7 @@ export default async function AppPage() {
 
   return (
     <>
-      <h1>unknown art</h1>
-
-      <p>
-        unknown art is where you can, hopefully, get in contact with persons,
-        lovers, thinkers, minds or artists, all over the beautiful world.
-      </p>
+      <Intro />
 
       <HeroImage />
 
