@@ -1,6 +1,6 @@
 'use client'
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { usePathname, useRouter, useParams, useSearchParams } from 'next/navigation'
 import type { FC } from 'react'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 import styles from './search-places-box.module.css'
 import { SearchPlacesSummary } from './search-places-summary'
 
+import { useTranslationClient } from 'src/hooks/useTranslationClient'
 import { CodeCountry } from 'src/types/country'
 import { SearchPlacesFormInput } from 'src/types/search'
 import { isObjectNull } from 'src/utils/isObjectNull'
@@ -20,9 +21,15 @@ type SearchPlacesBoxProps = {
 }
 
 export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
+  const params = useParams()
+  const { t } = useTranslationClient({
+    locale: params.locale as string,
+    namespace: 'translation'
+  })
+
   const id = 'search-places'
-  const title = 'Search places'
-  const description = 'Filter the list of places'
+  const title = t('common_search.title')
+  const description = t('common_search.description')
 
   const pathname = usePathname()
   const { replace } = useRouter()
@@ -69,41 +76,43 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
       <div className={styles.uasearchplacesbox}>
         <SearchPlacesSummary
           className={styles.uasearchplacesbox__item}
-          label="name"
+          label={t('common_search.field.name.label')}
           value={defaultValues.name}
         />
         <SearchPlacesSummary
           className={styles.uasearchplacesbox__item}
-          label="country"
+          label={t('common_search.field.country.label')}
           value={defaultValues.iso}
           options={countries}
         />
         <SearchPlacesSummary
           className={styles.uasearchplacesbox__item}
-          label="city"
+          label={t('common_search.field.city.label')}
           value={defaultValues.city}
         />
         <SearchPlacesSummary
           className={styles.uasearchplacesbox__item}
-          label="website"
+          label={t('common_search.field.website.label')}
           value={defaultValues.website}
         />
 
         {!isObjectNull(defaultValues) &&
           (<a
-            role="button"
             className={styles.uasearchplacesbox__item}
+            role="button"
+            aria-label={t('common_search.action.reset.label')}
             onClick={onReset}
           >
-            reset
+            {t('common_search.action.reset.title')}
           </a>)
         }
         <a
-          role="button"
           className={styles.uasearchplacesbox__item}
+          role="button"
+          aria-label={t('common_search.action.dialog.label')}
           onClick={openDialog}
         >
-          search
+          {t('common_search.action.dialog.title')}
         </a>
       </div>
 
@@ -119,7 +128,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
             role="button"
             className={styles['uasearchplacesbox__dialog-close']}
             onClick={closeDialog}
-            aria-label="Close search places dialog"
+            aria-label={t('common_search.action.close.label')}
           />
 
           <h3 id={dialogProps['aria-labelledby']}>{title}</h3>
@@ -131,7 +140,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                 className={styles['uasearchplacesbox__dialog-input']}
                 id="search-name"
                 {...register('name')}
-                placeholder="name"
+                placeholder={t('common_search.field.name.label')}
                 data-1p-ignore
               />
 
@@ -141,7 +150,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                 id="search-iso"
                 {...register('iso')}
               >
-                <option value="">country</option>
+                <option value="">{t('common_search.field.country.label')}</option>
                 {Object.entries(countries)
                   .sort(([, countryA], [, countryB]) => countryA.localeCompare(countryB))
                   .map(([code, country]) => {
@@ -154,7 +163,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                 className={styles['uasearchplacesbox__dialog-input']}
                 id="search-city"
                 {...register('city')}
-                placeholder="city"
+                placeholder={t('common_search.field.city.label')}
                 data-1p-ignore
               />
 
@@ -171,7 +180,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                     className={styles['uasearchplacesbox__dialog-label']}
                     htmlFor="search-all-website"
                   >
-                    all
+                    {t('common_search.field.website.option.all')}
                   </label>
                 </div>
 
@@ -187,7 +196,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                     className={styles['uasearchplacesbox__dialog-label']}
                     htmlFor="search-with-website"
                   >
-                    with website
+                    {t('common_search.field.website.option.with')}
                   </label>
                 </div>
 
@@ -203,7 +212,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                     className={styles['uasearchplacesbox__dialog-label']}
                     htmlFor="search-without-website"
                   >
-                    without website
+                    {t('common_search.field.website.option.without')}
                   </label>
                 </div>
               </div>
@@ -213,18 +222,18 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
               type="submit"
               className={styles['uasearchplacesbox__dialog-submit']}
               aria-describedby={dialogProps['aria-describedby']}
-              aria-label="Submit the search of places"
+              aria-label={t('common_search.action.submit.label')}
             >
-              search
+              {t('common_search.action.submit.title')}
             </button>
 
             <button
               type="button"
               className={styles['uasearchplacesbox__dialog-reset']}
-              aria-label="Reset the search of places"
+              aria-label={t('common_search.action.reset.label')}
               onClick={onReset}
             >
-              reset
+              {t('common_search.action.reset.title')}
             </button>
           </form>
         </div>

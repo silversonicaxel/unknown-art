@@ -1,0 +1,71 @@
+{
+  "common_title": "unknown art",
+  "common_menu": {
+    "home": "home",
+    "places": "posti"
+  },
+  "common_language": {
+    "it": "italiano",
+    "en": "inglese"
+  },
+  "common_logo": {
+    "title": "logo di unknown art",
+    "label": "logo principale"
+  },
+  "common_loading": "caricamento",
+  "common_pagination": {
+    "current_page": "pagina corrente",
+    "page": "pagina"
+  },
+  "common_search": {
+    "title": "ricerca posti",
+    "description": "filtra la lista di posti",
+    "field": {
+      "name": {
+        "label": "nome"
+      },
+      "country": {
+        "label": "stato"
+      },
+      "city": {
+        "label": "città"
+      },
+      "website": {
+        "label": "sito internet",
+        "option": {
+          "all": "tutti",
+          "with": "con sito",
+          "without": "senza sito"
+        }
+      }
+    },
+    "action": {
+      "dialog": {
+        "title": "cerca",
+        "label": "apri la finestra di ricerca di posti"
+      },
+      "close": {
+        "label": "chiusi la finestra di ricerca di posti"
+      },
+      "submit": {
+        "title": "cerca",
+        "label": "effettua la ricerca di posti"
+      },
+      "reset": {
+        "title": "resetta",
+        "label": "resetta la ricerca di posti"
+      }
+    }
+  },
+  "home_description": "unknown art è il mondo dove puoi, forse, entrare in contatto con persone, amanti, pensatori, menti o artisti, di tutto il nostro bellissimo mondo.",
+  "home_logo": {
+    "title": "immagine principale di unknown art",
+    "label": "immagine principale"
+  },
+  "places_file": {
+    "address": "indirizzo",
+    "website": "sito internet",
+    "description": "descrizione",
+    "image": "immagine"
+  }
+}

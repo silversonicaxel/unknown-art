@@ -1,4 +1,10 @@
-.uamenu ul {
+.uamenu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-element);
+}
+
+.uamenu__sections {
   display: flex;
   flex-direction: row-reverse;
   gap: var(--spacing-element);
@@ -8,8 +14,24 @@
 }
 
 @media screen and (width <= 375px) {
-  .uamenu ul {
+  .uamenu__sections {
     align-items: flex-end;
     flex-direction: column;
+    gap: var(--spacing-text);
+  }
+}
+
+.uamenu__locales {
+  display: flex;
+  gap: var(--spacing-element);
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (width <= 375px) {
+  .uamenu__locales {
+    gap: var(--spacing-element-mobile);
   }
 }
