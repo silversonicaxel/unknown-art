@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import React from 'react'
 import type { FC } from 'react'
 
 import styles from './hero-image.module.css'
@@ -18,5 +17,3 @@ export const HeroImage: FC = () => {
     </div>
   )
 }
-
-HeroImage.displayName = 'HeroImage'
