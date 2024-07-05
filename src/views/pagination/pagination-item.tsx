@@ -1,9 +1,11 @@
 'use client'
 
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname, useParams, useSearchParams } from 'next/navigation'
 import type { FC } from 'react'
 
 import styles from './pagination-item.module.css'
+
+import { useTranslationClient } from 'src/hooks/useTranslationClient'
 
 
 type PaginationItemProps = {
@@ -11,6 +13,12 @@ type PaginationItemProps = {
 }
 
 export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
+  const params = useParams()
+  const { t } = useTranslationClient({
+    locale: params.locale as string,
+    namespace: 'translation'
+  })
+
   const pathname = usePathname()
   const searchParams = useSearchParams()
   const currentPage = Number(searchParams.get('page')) || 1
@@ -25,6 +33,7 @@ export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
     return (
       <span
         className={`${styles.uapaginationitem} ${styles.uapaginationitem__text}`}
+        aria-label={`${t('common_pagination.current_page')} ${indexPage}`}
       >
         {indexPage}
       </span>
@@ -35,6 +44,7 @@ export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
     <a
       className={`${styles.uapaginationitem} ${styles.uapaginationitem__link}`}
       href={createPageURL(indexPage)}
+      aria-label={`${t('common_pagination.page')} ${indexPage}`}
     >
       {indexPage}
     </a>

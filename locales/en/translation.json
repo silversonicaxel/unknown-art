@@ -1,0 +1,71 @@
+{
+  "common_title": "unknown art",
+  "common_menu" : {
+    "home": "home",
+    "places": "places"
+  },
+  "common_language" : {
+    "it": "italian",
+    "en": "english"
+  },
+  "common_logo": {
+    "title": "logo unknown art",
+    "label": "main logo"
+  },
+  "common_loading": "loading",
+  "common_pagination": {
+    "current_page": "current page",
+    "page": "page"
+  },
+  "common_search": {
+    "title": "search places",
+    "description": "filter the list of places",
+    "field": {
+      "name": {
+        "label": "name"
+      },
+      "country": {
+        "label": "country"
+      },
+      "city": {
+        "label": "city"
+      },
+      "website": {
+        "label": "website",
+        "option": {
+          "all": "all",
+          "with": "with website",
+          "without": "without website"
+        }
+      }
+    },
+    "action": {
+      "dialog": {
+        "title": "search",
+        "label": "open the dialog search of places"
+      },
+      "close": {
+        "label": "close search places dialog"
+      },
+      "submit": {
+        "title": "search",
+        "label": "submit the search of places"
+      },
+      "reset": {
+        "title": "reset",
+        "label": "reset the search of places"
+      }
+    }
+  },
+  "home_description": "unknown art is where you can, hopefully, get in contact with persons, lovers, thinkers, minds or artists, all over the beautiful world.",
+  "home_logo": {
+    "title": "hero image unknown art",
+    "label": "hero image"
+  },
+  "places_file": {
+    "address": "address",
+    "website": "website",
+    "description": "description",
+    "image": "image"
+  }
+}

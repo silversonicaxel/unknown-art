@@ -1,5 +1,6 @@
 :root {
   --spacing-element: 20px;
+  --spacing-element-mobile: 10px;
   --spacing-text: 5px;
   --spacing-icon: 40px;
   --spacing-group: 50px;
