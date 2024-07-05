@@ -232,5 +232,3 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
     </>
   )
 }
-
-SearchPlacesBox.displayName = 'SearchPlacesBox'

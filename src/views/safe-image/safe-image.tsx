@@ -38,5 +38,3 @@ export const SafeImage: FC<SafeImageProps> = ({ src, alt, ...props }) => {
     </div>
   )
 }
-
-SafeImage.displayName = 'SafeImage'
