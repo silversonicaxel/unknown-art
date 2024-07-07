@@ -9,6 +9,7 @@ import { Pagination } from 'src/components/pagination'
 import { SearchPlacesBox } from 'src/components/search-places-box'
 import { PAGINATION_LIMIT } from 'src/helpers/config/pagination'
 import { ApiQuery } from 'src/types/api'
+import { ComponentParams } from 'src/types/component'
 
 
 export const dynamic = 'force-dynamic'
@@ -22,7 +23,7 @@ type PlacePageProps = {
     query?: string
     page?: string
   }
-}
+} & ComponentParams
 
 export default async function PlacesPage(props: PlacePageProps) {
   const search = props?.searchParams?.query || undefined
@@ -46,7 +47,7 @@ export default async function PlacesPage(props: PlacePageProps) {
 
       {places.map((place) => (
         <div key={`place-${place.id}`} className={styles.uaplaces__item}>
-          <Link href={`places/${place.id}`}>
+          <Link href={`/${props.params.locale}/places/${place.id}`}>
             <span>{place.name}</span>
             &nbsp;
             <span className={styles['uaplaces__item-separator']}>~~</span>

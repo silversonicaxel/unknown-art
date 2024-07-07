@@ -13,14 +13,15 @@ import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 export const Header: FC = () => {
   const params = useParams()
+  const locale = params.locale as string
   const { t } = useTranslationClient({
-    locale: params.locale as string,
+    locale,
     namespace: 'translation'
   })
 
   return (
     <header className={styles.uaheader}>
-      <Link href="/">
+      <Link href={`/${locale}/`}>
         <Image
           src="/images/logo.png"
           alt={t('common_logo.title')}
