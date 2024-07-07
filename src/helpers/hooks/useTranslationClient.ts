@@ -36,7 +36,7 @@ const initI18next = () => {
     .use(
       resourcesToBackend(
         (resourceLocale: string, resourceNamespace: string) =>
-          import(`../../locales/${resourceLocale}/${resourceNamespace}.json`)
+          import(`../../../locales/${resourceLocale}/${resourceNamespace}.json`)
       )
     )
     .init({
