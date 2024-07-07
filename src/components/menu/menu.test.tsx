@@ -34,7 +34,7 @@ describe('Views > Menu', () => {
   test('display navigation menu', () => {
     render(<Menu />)
 
-    expect(screen.getByLabelText('home page')).toBeDefined()
-    expect(screen.getByLabelText('places page')).toBeDefined()
+    expect(screen.getByLabelText('page common_menu.home')).toBeDefined()
+    expect(screen.getByLabelText('page common_menu.places')).toBeDefined()
   })
 })

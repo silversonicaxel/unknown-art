@@ -13,10 +13,27 @@ vi.mock('next/navigation', () => {
   }
 })
 
+vi.mock('react-i18next', () => {
+  return {
+    __esModule: true,
+    useTranslation: () => ({
+      t: (translation: string) => translation,
+      i18n: {
+        resolvedLanguage: 'en',
+        changeLanguage: () => new Promise(() => {}),
+      }
+    }),
+    initReactI18next: {
+      type: '3rdParty',
+      init: () => {},
+    },
+  }
+})
+
 describe('Views > Header', () => {
   test('display logo', () => {
     render(<Header />)
 
-    expect(screen.getByAltText('logo unknown art')).toBeDefined()
+    expect(screen.getByAltText('common_logo.title')).toBeDefined()
   })
 })
