@@ -13,8 +13,9 @@ import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 export const Menu: FC = memo(() => {
   const params = useParams()
+  const locale = params.locale as string
   const { t } = useTranslationClient({
-    locale: params.locale as string,
+    locale,
     namespace: 'translation'
   })
 
@@ -22,12 +23,16 @@ export const Menu: FC = memo(() => {
     <nav className={styles.uamenu} aria-label="unknown art menu">
       <ul className={styles.uamenu__sections} role="menubar" aria-label="menu">
         <li role="none">
-          <Link href="/" role="menuitem" aria-label={`page ${t('common_menu.home')}`}>
+          <Link href={`/${locale}/`} role="menuitem" aria-label={`page ${t('common_menu.home')}`}>
             {t('common_menu.home')}
           </Link>
         </li>
         <li role="none">
-          <Link href="/places" role="menuitem" aria-label={`page ${t('common_menu.places')}`}>
+          <Link
+            href={`/${locale}/places`}
+            role="menuitem"
+            aria-label={`page ${t('common_menu.places')}`}
+          >
             {t('common_menu.places')}
           </Link>
         </li>
