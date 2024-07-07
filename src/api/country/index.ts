@@ -1,4 +1,4 @@
-import { clientPromise } from 'src/config/mongodb'
+import { clientPromise } from 'src/helpers/config/mongodb'
 import type { CodeCountry } from 'src/types/country'
 
 

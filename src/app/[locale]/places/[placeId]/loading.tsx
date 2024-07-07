@@ -1,4 +1,4 @@
-import { Loading } from 'src/views/loading'
+import { Loading } from 'src/components/loading'
 
 
 export default function PlacesLoading() {

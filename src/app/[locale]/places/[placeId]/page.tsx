@@ -5,9 +5,9 @@ import type { Metadata } from 'next'
 import styles from './place.module.css'
 
 import { getPlace } from 'src/api/place'
-import { useTranslationServer } from 'src/hooks/useTranslationServer'
+import { SafeImage } from 'src/components/safe-image'
+import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
 import type { ComponentParams } from 'src/types/component'
-import { SafeImage } from 'src/views/safe-image'
 
 
 type PlacePageProps = {

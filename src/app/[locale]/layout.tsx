@@ -4,13 +4,12 @@ import { dir } from 'i18next'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
-import { locales } from '../../config/i18n'
-
-import { font } from 'src/config/font'
-import { meta } from 'src/config/meta'
-import { DialogProvider } from 'src/providers/dialog'
+import { Header } from 'src/components/header'
+import { font } from 'src/helpers/config/font'
+import { locales } from 'src/helpers/config/i18n'
+import { meta } from 'src/helpers/config/meta'
+import { DialogProvider } from 'src/helpers/providers/dialog'
 import type { ComponentParams } from 'src/types/component'
-import { Header } from 'src/views/header'
 
 
 type AppLayoutProps = {

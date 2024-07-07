@@ -6,7 +6,7 @@ import type { FC } from 'react'
 
 import styles from './hero-image.module.css'
 
-import { useTranslationClient } from 'src/hooks/useTranslationClient'
+import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 
 export const HeroImage: FC = () => {

@@ -7,8 +7,8 @@ import type { FC } from 'react'
 
 import styles from './header.module.css'
 
-import { useTranslationClient } from 'src/hooks/useTranslationClient'
-import { Menu } from 'src/views/menu'
+import { Menu } from 'src/components/menu'
+import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 
 export const Header: FC = () => {

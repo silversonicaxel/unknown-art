@@ -8,12 +8,12 @@ import { useForm } from 'react-hook-form'
 import styles from './search-places-box.module.css'
 import { SearchPlacesSummary } from './search-places-summary'
 
-import { useTranslationClient } from 'src/hooks/useTranslationClient'
+import { Dialog } from 'src/components/dialog'
+import { useDialog } from 'src/components/dialog/hooks/useDialog'
+import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { isObjectNull } from 'src/helpers/utils/isObjectNull'
 import { CodeCountry } from 'src/types/country'
 import { SearchPlacesFormInput } from 'src/types/search'
-import { isObjectNull } from 'src/utils/isObjectNull'
-import { Dialog } from 'src/views/dialog'
-import { useDialog } from 'src/views/dialog/hooks/useDialog'
 
 
 type SearchPlacesBoxProps = {

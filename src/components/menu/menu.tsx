@@ -5,11 +5,10 @@ import { useParams } from 'next/navigation'
 import { memo } from 'react'
 import type { FC } from 'react'
 
-import { locales } from '../../config/i18n'
-
 import styles from './menu.module.css'
 
-import { useTranslationClient } from 'src/hooks/useTranslationClient'
+import { locales } from 'src/helpers/config/i18n'
+import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 
 export const Menu: FC = memo(() => {

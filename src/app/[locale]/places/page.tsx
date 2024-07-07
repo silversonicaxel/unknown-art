@@ -5,10 +5,10 @@ import styles from './places.module.css'
 
 import { getCountryCodes } from 'src/api/country'
 import { getPlacesList, getTotalPlaces } from 'src/api/place'
-import { PAGINATION_LIMIT } from 'src/config/pagination'
+import { Pagination } from 'src/components/pagination'
+import { SearchPlacesBox } from 'src/components/search-places-box'
+import { PAGINATION_LIMIT } from 'src/helpers/config/pagination'
 import { ApiQuery } from 'src/types/api'
-import { Pagination } from 'src/views/pagination'
-import { SearchPlacesBox } from 'src/views/search-places-box'
 
 
 export const dynamic = 'force-dynamic'

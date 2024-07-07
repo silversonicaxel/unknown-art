@@ -2,7 +2,7 @@ import acceptLanguage from 'accept-language'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-import { defaultLocale, locales, I18N_COOKIE_NAME } from './config/i18n'
+import { defaultLocale, locales, I18N_COOKIE_NAME } from './helpers/config/i18n'
 
 
 acceptLanguage.languages(locales)

@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import { memo } from 'react'
 import type { FC } from 'react'
 
-import { useTranslationClient } from 'src/hooks/useTranslationClient'
+import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 
 type LoadingProps = {

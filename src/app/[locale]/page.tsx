@@ -1,11 +1,10 @@
 import type { Metadata } from 'next/types'
 
-import { getRandomQuote } from '../../api/quote'
-import { HeroImage } from '../../views/hero-image'
-
 import styles from './app.module.css'
 
-import { useTranslationServer } from 'src/hooks/useTranslationServer'
+import { getRandomQuote } from 'src/api/quote'
+import { HeroImage } from 'src/components/hero-image'
+import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
 import type { ComponentParams } from 'src/types/component'
 
 

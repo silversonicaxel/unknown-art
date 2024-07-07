@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import { meta } from 'src/config/meta'
-import { useTranslationServer } from 'src/hooks/useTranslationServer'
+import { meta } from 'src/helpers/config/meta'
+import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
 import type { ComponentParams } from 'src/types/component'
 
 

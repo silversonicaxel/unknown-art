@@ -5,7 +5,7 @@ import type { FC } from 'react'
 
 import styles from './pagination-item.module.css'
 
-import { useTranslationClient } from 'src/hooks/useTranslationClient'
+import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 
 type PaginationItemProps = {
