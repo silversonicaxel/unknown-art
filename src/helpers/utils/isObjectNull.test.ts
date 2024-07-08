@@ -3,7 +3,7 @@ import { describe, expect, test } from 'vitest'
 import { isObjectNull } from './isObjectNull'
 
 
-describe('Utils > isObjectNull', () => {
+describe('Helpers > Utils > isObjectNull', () => {
   test('check empty object', () => {
     expect(isObjectNull({})).toBeTruthy()
   })

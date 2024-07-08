@@ -4,7 +4,7 @@ import { expect, it, describe } from "vitest"
 import { usePagination } from "./usePagination"
 
 
-describe('Hooks > usePagination', () => {
+describe('Helpers > Hooks > usePagination', () => {
   it('should return a restricted range of pages from early current page', () => {
     const data = {
       itemsPerPage: 10,

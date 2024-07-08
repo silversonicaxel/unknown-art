@@ -1,40 +1,45 @@
 import { render, screen } from '@testing-library/react'
-import { describe, expect, test, vi } from 'vitest'
+import { beforeAll, afterAll, describe, expect, test } from 'vitest'
+
+import {
+  viMockNextNavigation,
+  viMockReactI18next,
+  viMockStateReset
+} from '../../../vitest.setup.mjs'
 
 import { Menu } from './menu'
 
 
-vi.mock('next/navigation', () => {
-  return {
-    __esModule: true,
-    useParams: () => ({
-      locale: 'en'
-    })
-  }
-})
+describe('Components > Menu', () => {
+  beforeAll(() => {
+    viMockNextNavigation()
+    viMockReactI18next()
+  })
 
-vi.mock('react-i18next', () => {
-  return {
-    __esModule: true,
-    useTranslation: () => ({
-      t: (translation: string) => translation,
-      i18n: {
-        resolvedLanguage: 'en',
-        changeLanguage: () => new Promise(() => {}),
-      }
-    }),
-    initReactI18next: {
-      type: '3rdParty',
-      init: () => {},
-    },
-  }
-})
+  afterAll(() => {
+    viMockStateReset()
+  })
 
-describe('Views > Menu', () => {
+  test('display full navigation element', () => {
+    render(<Menu />)
+
+    expect(screen.getByRole('navigation')).toHaveProperty('ariaLabel', 'unknown art menu')
+  })
+
   test('display navigation menu', () => {
     render(<Menu />)
 
     expect(screen.getByLabelText('page common_menu.home')).toBeDefined()
     expect(screen.getByLabelText('page common_menu.places')).toBeDefined()
+
+    expect(screen.getByText('common_menu.home')).toBeDefined()
+    expect(screen.getByText('common_menu.places')).toBeDefined()
+  })
+
+  test('display language menu', () => {
+    render(<Menu />)
+
+    expect(screen.getByText('en')).toBeDefined()
+    expect(screen.getByText('it')).toBeDefined()
   })
 })
