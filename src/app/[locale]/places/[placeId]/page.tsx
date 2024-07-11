@@ -7,6 +7,7 @@ import styles from './place.module.css'
 import { getPlace } from 'src/api/place'
 import { SafeImage } from 'src/components/safe-image'
 import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
+import { isImageInsecure } from 'src/helpers/utils/isImageInsecure'
 import type { ComponentParams } from 'src/types/component'
 
 
@@ -73,7 +74,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
           </section>
         )}
 
-        {placeMeta?.image && (
+        {placeMeta?.image && !isImageInsecure(placeMeta?.image) && (
           <section className={styles.uaplace_section}>
             <h4>{t('places_file.image')}</h4>
             <SafeImage
