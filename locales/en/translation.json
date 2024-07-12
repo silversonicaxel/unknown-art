@@ -2,7 +2,8 @@
   "common_title": "unknown art",
   "common_menu" : {
     "home": "home",
-    "places": "places"
+    "places": "places",
+    "place": "place"
   },
   "common_language" : {
     "it": "italian",
@@ -54,6 +55,15 @@
       "reset": {
         "title": "reset",
         "label": "reset the search of places"
+      }
+    }
+  },
+  "common_error": {
+    "description": "the {{page}} page has some problem, you can visit us later, or try to reload the page.",
+    "action": {
+      "reload": {
+        "title": "reload",
+        "label": "reload the {{page}} page"
       }
     }
   },

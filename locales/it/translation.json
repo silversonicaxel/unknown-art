@@ -2,7 +2,8 @@
   "common_title": "unknown art",
   "common_menu": {
     "home": "home",
-    "places": "posti"
+    "places": "posti",
+    "place": "posto"
   },
   "common_language": {
     "it": "italiano",
@@ -54,6 +55,15 @@
       "reset": {
         "title": "resetta",
         "label": "resetta la ricerca di posti"
+      }
+    }
+  },
+  "common_error": {
+    "description": "la pagina {page} ha qualche problema, puoi visitarci tra un po', oppure prova a ricaricare la pagina.",
+    "action": {
+      "reload": {
+        "title": "ricarica",
+        "label": "ricarica la pagina {page}"
       }
     }
   },
