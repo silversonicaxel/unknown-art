@@ -8,7 +8,7 @@ import { useForm } from 'react-hook-form'
 import styles from './search-places-box.module.css'
 import { SearchPlacesSummary } from './search-places-summary'
 
-import { Dialog } from 'src/components/dialog'
+import { DialogLazy } from 'src/components/dialog'
 import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
@@ -116,7 +116,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
         </a>
       </div>
 
-      <Dialog
+      <DialogLazy
         {...dialogProps}
         toRender={toRender}
         aria-labelledby={dialogProps['aria-labelledby']}
@@ -237,7 +237,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
             </button>
           </form>
         </div>
-      </Dialog>
+      </DialogLazy>
     </>
   )
 }
