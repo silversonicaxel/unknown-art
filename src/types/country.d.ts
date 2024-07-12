@@ -1,1 +1,1 @@
-export type CodeCountry = Record<string, string>
+export type CountryCode = Record<string, string>
