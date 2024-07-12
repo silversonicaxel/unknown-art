@@ -3,3 +3,8 @@ export type ComponentParams = {
     locale: string
   }
 }
+
+export type ComponentErrorParams = {
+  error: Error & { digest?: string }
+  reset: () => void
+}

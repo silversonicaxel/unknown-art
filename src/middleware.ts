@@ -14,28 +14,30 @@ export const config = {
 /* eslint-enable */
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
+  const { cookies, headers, nextUrl, url } = request
+
   const response = NextResponse.next()
 
   let locale
-  if (request.cookies.has(I18N_COOKIE_NAME)) {
-    locale = acceptLanguage.get(request.cookies.get(I18N_COOKIE_NAME)?.value)
+  if (cookies.has(I18N_COOKIE_NAME)) {
+    locale = acceptLanguage.get(cookies.get(I18N_COOKIE_NAME)?.value)
   }
   if (!locale) {
-    locale = acceptLanguage.get(request.headers.get('Accept-Language'))
+    locale = acceptLanguage.get(headers.get('Accept-Language'))
   }
   if (!locale) {
     locale = defaultLocale
   }
 
   if (
-    !locales.some(loc => request.nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !request.nextUrl.pathname.startsWith('/_next')
+    !locales.some(loc => nextUrl.pathname.startsWith(`/${loc}`)) &&
+    !nextUrl.pathname.startsWith('/_next')
   ) {
-    return NextResponse.redirect(new URL(`/${locale}${request.nextUrl.pathname}`, request.url))
+    return NextResponse.redirect(new URL(`/${locale}${nextUrl.pathname}`, url))
   }
 
-  if (request.headers.has('referer')) {
-    const referer = request.headers.get('referer')
+  if (headers.has('referer')) {
+    const referer = headers.get('referer')
 
     if (referer !== null) {
       const refererUrl = new URL(referer)
