@@ -1,8 +1,8 @@
 import { clientPromise } from 'src/helpers/config/mongodb'
-import type { CodeCountry } from 'src/types/country'
+import type { CountryCode } from 'src/types/country'
 
 
-export const getCountryCodes = async (): Promise<CodeCountry> => {
+export const getCountryCodes = async (): Promise<CountryCode> => {
   const mongoClient = await clientPromise
   const data = await mongoClient
     .db('ua-db')

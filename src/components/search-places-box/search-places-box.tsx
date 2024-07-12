@@ -12,12 +12,12 @@ import { Dialog } from 'src/components/dialog'
 import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
-import { CodeCountry } from 'src/types/country'
+import { CountryCode } from 'src/types/country'
 import { SearchPlacesFormInput } from 'src/types/search'
 
 
 type SearchPlacesBoxProps = {
-  countries: CodeCountry
+  countries: CountryCode
 }
 
 export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
