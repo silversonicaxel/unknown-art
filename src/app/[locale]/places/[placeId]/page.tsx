@@ -4,7 +4,9 @@ import type { Metadata } from 'next'
 
 import styles from './place.module.css'
 
+import { getMapCoordinates } from 'src/api/map'
 import { getPlace } from 'src/api/place'
+import { GeoMap } from 'src/components/geo-map'
 import { SafeImage } from 'src/components/safe-image'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isImageSecure } from 'src/helpers/utils/isImageSecure'
@@ -31,6 +33,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
   const { t } = await getTranslationServer({ locale: params.locale, namespace: 'places' })
 
   const place = await getPlace(params.placeId)
+  const placeCoordinates = await getMapCoordinates(place.address)
 
   let placeMeta: PlaceMeta
   try {
@@ -52,6 +55,10 @@ export default async function PlacePage({ params }: PlacePageProps) {
           >
             {place.address}
           </a>
+        </section>
+
+        <section className={styles.uaplace_section}>
+          <GeoMap address={place.address} coordinates={placeCoordinates}/>
         </section>
 
         {place.site && (
