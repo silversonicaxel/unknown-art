@@ -13,12 +13,10 @@ type LoadingProps = {
 
 export const Loading: FC<LoadingProps> = memo(({ text }) => {
   const params = useParams()
-  const { t } = useTranslationClient({
-    locale: params.locale as string,
-    namespace: 'translation'
-  })
+  const locale = params.locale as string
+  const { t } = useTranslationClient({ locale, namespace: 'common' })
 
-  return <>{`${t('common_loading')} "${text}" ...`}</>
+  return <>{`${t('loading')} "${text}" ...`}</>
 })
 
 Loading.displayName = 'Loading'

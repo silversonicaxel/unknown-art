@@ -11,18 +11,16 @@ import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 
 export const HeroImage: FC = () => {
   const params = useParams()
-  const { t } = useTranslationClient({
-    locale: params.locale as string,
-    namespace: 'translation'
-  })
+  const locale = params.locale as string
+  const { t } = useTranslationClient({ locale, namespace: 'home' })
 
   return (
     <div className={styles.uaheroimage}>
       <Image
         src="/images/hero-image.png"
-        alt={t('home_logo.title')}
+        alt={t('logo.title')}
         role="presentation"
-        aria-label={t('home_logo.label')}
+        aria-label={t('logo.label')}
         fill
       />
     </div>

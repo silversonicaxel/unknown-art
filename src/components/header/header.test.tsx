@@ -24,12 +24,12 @@ describe('Components > Header', () => {
   test('display navigation element as logo', () => {
     render(<Header />)
 
-    expect(screen.getByLabelText('common_logo.label')).toHaveProperty('role', 'navigation')
+    expect(screen.getByLabelText('logo.label')).toHaveProperty('role', 'navigation')
   })
 
   test('display logo', () => {
     render(<Header />)
 
-    expect(screen.getByAltText('common_logo.title')).toBeDefined()
+    expect(screen.getByAltText('logo.title')).toBeDefined()
   })
 })

@@ -14,10 +14,8 @@ type PaginationItemProps = {
 
 export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
   const params = useParams()
-  const { t } = useTranslationClient({
-    locale: params.locale as string,
-    namespace: 'translation'
-  })
+  const locale = params.locale as string
+  const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -33,7 +31,7 @@ export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
     return (
       <span
         className={`${styles.uapaginationitem} ${styles.uapaginationitem__text}`}
-        aria-label={`${t('common_pagination.current_page')} ${indexPage}`}
+        aria-label={`${t('pagination.current_page')} ${indexPage}`}
       >
         {indexPage}
       </span>
@@ -44,7 +42,7 @@ export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
     <a
       className={`${styles.uapaginationitem} ${styles.uapaginationitem__link}`}
       href={createPageURL(indexPage)}
-      aria-label={`${t('common_pagination.page')} ${indexPage}`}
+      aria-label={`${t('pagination.page')} ${indexPage}`}
     >
       {indexPage}
     </a>

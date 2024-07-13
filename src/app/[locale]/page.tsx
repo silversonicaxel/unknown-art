@@ -17,15 +17,16 @@ export const metadata: Metadata = {
 type AppPageProps = ComponentParams
 
 export default async function AppPage({ params: { locale } }: AppPageProps) {
-  const { t } = await useTranslationServer({ locale, namespace: 'translation' })
+  const { t: tCommon } = await useTranslationServer({ locale, namespace: 'common' })
+  const { t: tHome } = await useTranslationServer({ locale, namespace: 'home' })
 
   const quote = await getRandomQuote()
 
   return (
     <>
-      <h1>{t('common_title')}</h1>
+      <h1>{tCommon('title')}</h1>
 
-      <p>{t('home_description')}</p>
+      <p>{tHome('description')}</p>
 
       <HeroImage />
 

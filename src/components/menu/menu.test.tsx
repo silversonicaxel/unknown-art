@@ -29,11 +29,11 @@ describe('Components > Menu', () => {
   test('display navigation menu', () => {
     render(<Menu />)
 
-    expect(screen.getByLabelText('page common_menu.home')).toBeDefined()
-    expect(screen.getByLabelText('page common_menu.places')).toBeDefined()
+    expect(screen.getByLabelText('page menu.home')).toBeDefined()
+    expect(screen.getByLabelText('page menu.places')).toBeDefined()
 
-    expect(screen.getByText('common_menu.home')).toBeDefined()
-    expect(screen.getByText('common_menu.places')).toBeDefined()
+    expect(screen.getByText('menu.home')).toBeDefined()
+    expect(screen.getByText('menu.places')).toBeDefined()
   })
 
   test('display language menu', () => {

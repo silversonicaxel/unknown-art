@@ -14,22 +14,19 @@ import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 export const Header: FC = () => {
   const params = useParams()
   const locale = params.locale as string
-  const { t } = useTranslationClient({
-    locale,
-    namespace: 'translation'
-  })
+  const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   return (
     <header className={styles.uaheader}>
       <Link href={`/${locale}/`}>
         <Image
           src="/images/logo.png"
-          alt={t('common_logo.title')}
+          alt={t('logo.title')}
           width={80}
           height={80}
           className={styles.uaheader_logo}
           role="navigation"
-          aria-label={t('common_logo.label')}
+          aria-label={t('logo.label')}
         />
       </Link>
 

@@ -1,0 +1,8 @@
+{
+  "form": {
+    "address": "address",
+    "website": "website",
+    "description": "description",
+    "image": "image"
+  }
+}

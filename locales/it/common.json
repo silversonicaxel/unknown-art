@@ -1,24 +1,24 @@
 {
-  "common_title": "unknown art",
-  "common_menu": {
+  "title": "unknown art",
+  "menu": {
     "home": "home",
     "places": "posti",
     "place": "posto"
   },
-  "common_language": {
+  "language": {
     "it": "italiano",
     "en": "inglese"
   },
-  "common_logo": {
+  "logo": {
     "title": "logo di unknown art",
     "label": "logo principale"
   },
-  "common_loading": "caricamento",
-  "common_pagination": {
+  "loading": "caricamento",
+  "pagination": {
     "current_page": "pagina corrente",
     "page": "pagina"
   },
-  "common_search": {
+  "search": {
     "title": "ricerca posti",
     "description": "filtra la lista di posti",
     "field": {
@@ -58,7 +58,7 @@
       }
     }
   },
-  "common_error": {
+  "error": {
     "description": "la pagina {page} ha qualche problema, puoi visitarci tra un po', oppure prova a ricaricare la pagina.",
     "action": {
       "reload": {
@@ -66,16 +66,5 @@
         "label": "ricarica la pagina {page}"
       }
     }
-  },
-  "home_description": "unknown art è il mondo dove puoi, forse, entrare in contatto con persone, amanti, pensatori, menti o artisti, di tutto il nostro bellissimo mondo.",
-  "home_logo": {
-    "title": "immagine principale di unknown art",
-    "label": "immagine principale"
-  },
-  "places_file": {
-    "address": "indirizzo",
-    "website": "sito internet",
-    "description": "descrizione",
-    "image": "immagine"
   }
 }
