@@ -19,8 +19,8 @@ export default function PlaceError({ reset }: PlaceErrorProps) {
   const params = useParams()
   const locale = params.locale as string
 
-  const { t } = useTranslationClient({ locale, namespace: 'translation' })
-  const tPage = t('common_menu.place')
+  const { t } = useTranslationClient({ locale, namespace: 'common' })
+  const tPage = t('menu.place')
 
   const onReset = useCallback(() => {
     reset()

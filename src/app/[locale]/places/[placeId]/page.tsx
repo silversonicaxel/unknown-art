@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
 }
 
 export default async function PlacePage({ params }: PlacePageProps) {
-  const { t } = await useTranslationServer({ locale: params.locale, namespace: 'translation' })
+  const { t } = await useTranslationServer({ locale: params.locale, namespace: 'places' })
 
   const place = await getPlace(params.placeId)
 
@@ -44,7 +44,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
       <h1>{place.name}</h1>
       <article className={styles.uaplace}>
         <section className={styles.uaplace_section}>
-          <h4>{t('places_file.address')}</h4>
+          <h4>{t('form.address')}</h4>
           <a
             href={`https://www.google.com/maps/place/${place.address}`}
             target="_blank"
@@ -56,7 +56,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
 
         {place.site && (
           <section className={styles.uaplace_section}>
-            <h4>{t('places_file.website')}</h4>
+            <h4>{t('form.website')}</h4>
             <a
               href={place.site}
               target="_blank"
@@ -69,14 +69,14 @@ export default async function PlacePage({ params }: PlacePageProps) {
 
         {placeMeta?.image && (
           <section className={styles.uaplace_section}>
-            <h4>{t('places_file.description')}</h4>
+            <h4>{t('form.description')}</h4>
             <p>{placeMeta.description}</p>
           </section>
         )}
 
         {placeMeta?.image && isImageSecure(placeMeta?.image) && (
           <section className={styles.uaplace_section}>
-            <h4>{t('places_file.image')}</h4>
+            <h4>{t('form.image')}</h4>
             <SafeImage
               src={placeMeta.image}
               alt={place.name}

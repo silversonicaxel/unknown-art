@@ -19,8 +19,8 @@ export default function AppError({ reset }: AppErrorProps) {
   const params = useParams()
   const locale = params.locale as string
 
-  const { t } = useTranslationClient({ locale, namespace: 'translation' })
-  const tPage = t('common_menu.home')
+  const { t } = useTranslationClient({ locale, namespace: 'common' })
+  const tPage = t('menu.home')
 
   const onReset = useCallback(() => {
     reset()

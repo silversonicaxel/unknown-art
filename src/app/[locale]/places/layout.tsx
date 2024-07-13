@@ -16,11 +16,11 @@ export const metadata: Metadata = {
 }
 
 export default async function PlacesLayout({ children, params: { locale } }: PlacesLayoutProps) {
-  const { t } = await useTranslationServer({ locale, namespace: 'translation' })
+  const { t } = await useTranslationServer({ locale, namespace: 'common' })
 
   return (
     <>
-      <h5>{t('common_menu.places')}</h5>
+      <h5>{t('menu.places')}</h5>
 
       {children}
     </>

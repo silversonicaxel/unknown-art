@@ -17,20 +17,20 @@ export const ErrorContent: FC<ErrorContentProps> = memo(({ page, onReset }) => {
   const params = useParams()
   const locale = params.locale as string
 
-  const { t } = useTranslationClient({ locale, namespace: 'translation' })
+  const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   return (
     <>
-      <h1>{t('common_title')}</h1>
+      <h1>{t('title')}</h1>
 
-      <p>{t('common_error.description', { page })}</p>
+      <p>{t('error.description', { page })}</p>
 
       <a
         role="button"
-        aria-label={t('common_error.action.reload.label', { page })}
+        aria-label={t('error.action.reload.label', { page })}
         onClick={onReset}
       >
-        {t('common_error.action.reload.title')}
+        {t('error.action.reload.title')}
       </a>
     </>
   )
