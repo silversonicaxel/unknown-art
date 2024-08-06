@@ -6,7 +6,7 @@ import styles from './place.module.css'
 
 import { getPlace } from 'src/api/place'
 import { SafeImage } from 'src/components/safe-image'
-import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
+import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isImageSecure } from 'src/helpers/utils/isImageSecure'
 import type { ComponentParams } from 'src/types/component'
 
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
 }
 
 export default async function PlacePage({ params }: PlacePageProps) {
-  const { t } = await useTranslationServer({ locale: params.locale, namespace: 'places' })
+  const { t } = await getTranslationServer({ locale: params.locale, namespace: 'places' })
 
   const place = await getPlace(params.placeId)
 

@@ -4,7 +4,7 @@ import styles from './app.module.css'
 
 import { getRandomQuote } from 'src/api/quote'
 import { HeroImage } from 'src/components/hero-image'
-import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
+import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
 
 
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 type AppPageProps = ComponentParams
 
 export default async function AppPage({ params: { locale } }: AppPageProps) {
-  const { t: tCommon } = await useTranslationServer({ locale, namespace: 'common' })
-  const { t: tHome } = await useTranslationServer({ locale, namespace: 'home' })
+  const { t: tCommon } = await getTranslationServer({ locale, namespace: 'common' })
+  const { t: tHome } = await getTranslationServer({ locale, namespace: 'home' })
 
   const quote = await getRandomQuote()
 

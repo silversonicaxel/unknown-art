@@ -6,21 +6,21 @@ import { initReactI18next } from 'react-i18next/initReactI18next'
 import { getOptions } from 'src/helpers/config/i18n'
 
 
-type UseTranslationServerParams = {
+type GetTranslationServerParams = {
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  locale: string,
-  namespace: string,
+  locale: string
+  namespace: string
   options?: { keyPrefix?: any }
   /* eslint-enable */
 }
 
-type UseTranslationServerResult = {
+type GetTranslationServerResult = {
   t: TFunction
   i18n: i18n
 }
 
-type UseTranslationServerHook =
-  (params: UseTranslationServerParams) => Promise<UseTranslationServerResult>
+type GetTranslationServer =
+  (params: GetTranslationServerParams) => Promise<GetTranslationServerResult>
 
 const initI18next = async (locale: string, namespace: string) => {
   const i18nInstance = createInstance()
@@ -38,7 +38,7 @@ const initI18next = async (locale: string, namespace: string) => {
   return i18nInstance
 }
 
-export const useTranslationServer: UseTranslationServerHook = async (params) => {
+export const getTranslationServer: GetTranslationServer = async (params) => {
   const { locale, namespace, options = {}} = params
   const i18nextInstance = await initI18next(locale, namespace)
 
