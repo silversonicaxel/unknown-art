@@ -13,8 +13,8 @@ import { getOptions, locales, I18N_COOKIE_NAME } from 'src/helpers/config/i18n'
 
 type UseTranslationClientParams = {
   /* eslint-disable @typescript-eslint/no-explicit-any */
-  locale: string,
-  namespace: string,
+  locale: string
+  namespace: string
   options?: { keyPrefix?: any }
   /* eslint-enable */
 }
