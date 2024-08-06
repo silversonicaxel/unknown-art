@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
 import { meta } from 'src/helpers/config/meta'
-import { useTranslationServer } from 'src/helpers/hooks/useTranslationServer'
+import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
 
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 }
 
 export default async function PlacesLayout({ children, params: { locale } }: PlacesLayoutProps) {
-  const { t } = await useTranslationServer({ locale, namespace: 'common' })
+  const { t } = await getTranslationServer({ locale, namespace: 'common' })
 
   return (
     <>
