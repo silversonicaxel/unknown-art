@@ -1,7 +1,7 @@
 'use client'
 
 import type { i18n, TFunction } from 'i18next'
-import i18next from 'i18next'
+import { use } from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import resourcesToBackend from 'i18next-resources-to-backend'
 import { useEffect, useState } from 'react'
@@ -30,8 +30,7 @@ type UseTranslationClientHook =
 const runsOnServerSide = typeof window === 'undefined'
 
 const initI18next = () => {
-  i18next
-    .use(initReactI18next)
+  use(initReactI18next)
     .use(LanguageDetector)
     .use(
       resourcesToBackend(
