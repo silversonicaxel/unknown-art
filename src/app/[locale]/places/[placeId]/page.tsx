@@ -74,7 +74,7 @@ export default async function PlacePage({ params }: PlacePageProps) {
           </section>
         )}
 
-        {placeMeta?.image && isImageSecure(placeMeta?.image) && (
+        {placeMeta?.image && isImageSecure(placeMeta.image) && (
           <section className={styles.uaplace_section}>
             <h4>{t('form.image')}</h4>
             <SafeImage
