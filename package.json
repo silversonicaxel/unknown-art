@@ -15,7 +15,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "accept-language": "^3.0.18",
+    "accept-language": "^3.0.20",
     "exenv": "^1.2.2",
     "fetch-meta-tags": "^1.0.12",
     "i18next": "^23.12.2",
