@@ -18,6 +18,10 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   const response = NextResponse.next()
 
+  if (nextUrl.pathname.startsWith('/robots.txt') || nextUrl.pathname.startsWith('/sitemap.xml')) {
+    return response
+  }
+
   let locale
   if (cookies.has(I18N_COOKIE_NAME)) {
     locale = acceptLanguage.get(cookies.get(I18N_COOKIE_NAME)?.value)
