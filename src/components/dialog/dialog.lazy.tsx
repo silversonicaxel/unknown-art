@@ -6,7 +6,7 @@ import type { DialogProps } from './dialog'
 
 const DialogLazyComponent = lazy(
   async () => {
-    const { Dialog } = await import('./dialog',)
+    const { Dialog } = await import('./dialog')
 
     return { default: Dialog }
   },

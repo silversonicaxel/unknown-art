@@ -5,7 +5,7 @@ import { usePagination } from './usePagination'
 
 
 describe('Helpers > Hooks > usePagination', () => {
-  test('should return a restricted range of pages from early current page', () => {
+  test('return a restricted range of pages from early current page', () => {
     const data = {
       itemsPerPage: 10,
       maxPaginators: 7,
@@ -20,7 +20,7 @@ describe('Helpers > Hooks > usePagination', () => {
     expect(result.current.rangePages).toEqual([1,2])
   })
 
-  test('should return a restricted range of pages from later current page', () => {
+  test('return a restricted range of pages from later current page', () => {
     const data = {
       itemsPerPage: 10,
       maxPaginators: 7,
@@ -35,7 +35,7 @@ describe('Helpers > Hooks > usePagination', () => {
     expect(result.current.rangePages).toEqual([1,2])
   })
 
-  test('should return a full range of pages from early current page', () => {
+  test('return a full range of pages from early current page', () => {
     const data = {
       itemsPerPage: 10,
       maxPaginators: 5,
@@ -50,7 +50,7 @@ describe('Helpers > Hooks > usePagination', () => {
     expect(result.current.rangePages).toEqual([1,2,3,4,5])
   })
 
-  test('should return a full range of pages from later current page', () => {
+  test('return a full range of pages from later current page', () => {
     const data = {
       itemsPerPage: 10,
       maxPaginators: 5,
@@ -65,7 +65,7 @@ describe('Helpers > Hooks > usePagination', () => {
     expect(result.current.rangePages).toEqual([3,4,5,6,7])
   })
 
-  test('should return a full range of pages from central current page', () => {
+  test('return a full range of pages from central current page', () => {
     const data = {
       itemsPerPage: 10,
       maxPaginators: 5,

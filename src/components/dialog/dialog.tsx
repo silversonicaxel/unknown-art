@@ -1,8 +1,8 @@
 'use client'
 
-import { canUseDOM } from 'exenv'
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react'
 import { createPortal } from 'react-dom'
+import FocusLock from 'react-focus-lock'
 
 import styles from './dialog.module.css'
 
@@ -16,13 +16,12 @@ export type DialogProps =
   }>
 
 export const Dialog: FC<DialogProps> = ({
-  id,
   toRender,
   open,
   children,
   ...props
 }) => {
-  if (!toRender || !canUseDOM) {
+  if (!toRender) {
     return null
   }
 
@@ -33,13 +32,16 @@ export const Dialog: FC<DialogProps> = ({
 
   return createPortal(
     (
-      <dialog
-        className={styles.uadialog}
-        open={open}
-        {...props}
-      >
-        {children}
-      </dialog>
+      <FocusLock returnFocus autoFocus>
+        <dialog
+          className={styles.uadialog}
+          open={open}
+          {...props}
+          aria-modal="true"
+        >
+          {children}
+        </dialog>
+      </FocusLock>
     ),
     dialogPortal
   )
