@@ -95,23 +95,21 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
         />
 
         {!isObjectNull(defaultValues) &&
-          (<a
+          (<button
             className={styles.uasearchplacesbox__item}
-            role="button"
             aria-label={t('search.action.reset.label')}
             onClick={onReset}
           >
             {t('search.action.reset.title')}
-          </a>)
+          </button>)
         }
-        <a
+        <button
           className={styles.uasearchplacesbox__item}
-          role="button"
           aria-label={t('search.action.dialog.label')}
           onClick={openDialog}
         >
           {t('search.action.dialog.title')}
-        </a>
+        </button>
       </div>
 
       <DialogLazy

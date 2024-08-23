@@ -19,7 +19,7 @@
 }
 
 .uasearchplacesbox__item:not(:last-child) {
-  padding-right: var(--spacing-group);
+  margin-right: var(--spacing-group);
 }
 
 @media screen and (width <= 800px) {
