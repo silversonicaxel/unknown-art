@@ -42,7 +42,7 @@ export default async function PlacesPage(props: PlacePageProps) {
   ])
 
   return (
-    <>
+    <section className={styles.uaplaces}>
       <SearchPlacesBox countries={countryCodes}/>
 
       {places.map((place) => (
@@ -61,6 +61,6 @@ export default async function PlacesPage(props: PlacePageProps) {
       ))}
 
       <Pagination totalItems={totalPlaces} />
-    </>
+    </section>
   )
 }
