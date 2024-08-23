@@ -2,6 +2,7 @@
   "extends": "stylelint-config-standard",
   "plugins": ["stylelint-order"],
   "rules": {
+    "color-hex-length": "long",
     "order/properties-alphabetical-order": true,
     "selector-class-pattern": null
   }

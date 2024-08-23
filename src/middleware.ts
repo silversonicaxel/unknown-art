@@ -18,7 +18,8 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
 
   const response = NextResponse.next()
 
-  if (nextUrl.pathname.startsWith('/robots.txt') || nextUrl.pathname.startsWith('/sitemap.xml')) {
+  const exceptionPaths = ['/robots.txt', '/sitemap.xml', '/manifest.webmanifest']
+  if (exceptionPaths.some(path => nextUrl.pathname.startsWith(path))) {
     return response
   }
 

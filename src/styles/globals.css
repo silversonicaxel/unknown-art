@@ -4,12 +4,12 @@
   --spacing-text: 5px;
   --spacing-icon: 40px;
   --spacing-group: 50px;
-  --color-text-primary: white;
+  --color-text-primary: #ffffff;
   --color-text-secondary: #939393;
-  --color-background-primary: black;
+  --color-background-primary: #000000;
   --color-background-secondary: #2d2d2d;
   --color-border-primary: #d3d3d3;
-  --color-surface-primary: white;
+  --color-surface-primary: #ffffff;
   --zindex-dialog: 9;
   --size-icon: 40px;
 }
