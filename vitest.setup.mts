@@ -32,6 +32,15 @@ export const viMockReactI18next = () => {
   })
 }
 
+export const viMockExenv = (canUseDom: boolean) => {
+  vi.mock('exenv', () => {
+    return {
+      __esModule: true,
+      canUseDOM: () => canUseDom
+    }
+  })
+}
+
 export const viMockStateReset = () => {
   vi.clearAllMocks()
   vi.resetAllMocks()

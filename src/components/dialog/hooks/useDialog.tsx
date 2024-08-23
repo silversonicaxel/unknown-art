@@ -7,9 +7,9 @@ import type { DialogProps } from '../dialog'
 
 
 export type UseDialogParams = {
-  id: string;
-  open?: boolean;
-  onClose?: () => void;
+  id: string
+  open?: boolean
+  onClose?: () => void
 }
 
 export type UseDialogHookResult = {
@@ -22,7 +22,7 @@ export type UseDialogHookResult = {
 export type UseDialogHook = (options: UseDialogParams) => UseDialogHookResult
 
 export const useDialog: UseDialogHook = (props) => {
-  const [toRender, setTodRender] = useState(false)
+  const [toRender, setToRender] = useState(false)
   const [isOpen, setIsOpen] = useState(props?.open ?? false)
 
   const openDialog = useCallback(() => {
@@ -49,13 +49,16 @@ export const useDialog: UseDialogHook = (props) => {
 
   useEffect(() => {
     if (!canUseDOM) {
-      setTodRender(isOpen)
+      setToRender(isOpen)
       return
     }
 
     if (isOpen) {
-      setTodRender(true)
+      setToRender(true)
+      return
     }
+
+    setToRender(false)
   }, [isOpen])
 
   return {

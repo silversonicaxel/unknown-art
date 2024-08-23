@@ -117,16 +117,13 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
       <DialogLazy
         {...dialogProps}
         toRender={toRender}
-        aria-labelledby={dialogProps['aria-labelledby']}
-        aria-describedby={dialogProps['aria-describedby']}
-        aria-modal="true"
       >
         <div className={styles.uasearchplacesbox__dialog}>
-          <a
-            role="button"
+          <button
             className={styles['uasearchplacesbox__dialog-close']}
             onClick={closeDialog}
             aria-label={t('search.action.close.label')}
+            tabIndex={7}
           />
 
           <h3 id={dialogProps['aria-labelledby']}>{title}</h3>
@@ -139,6 +136,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                 id="search-name"
                 {...register('name')}
                 placeholder={t('search.field.name.label')}
+                tabIndex={1}
                 data-1p-ignore
               />
 
@@ -147,6 +145,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                   ? '' : styles['uasearchplacesbox__dialog-select--unselected']}`}
                 id="search-iso"
                 {...register('iso')}
+                tabIndex={2}
               >
                 <option value="">{t('search.field.country.label')}</option>
                 {Object.entries(countries)
@@ -162,6 +161,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                 id="search-city"
                 {...register('city')}
                 placeholder={t('search.field.city.label')}
+                tabIndex={3}
                 data-1p-ignore
               />
 
@@ -172,6 +172,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                     className={styles['uasearchplacesbox__dialog-multichoice']}
                     id="search-all-website"
                     {...register('website')}
+                    tabIndex={4}
                     value={''}
                   />
                   <label
@@ -188,6 +189,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                     className={styles['uasearchplacesbox__dialog-multichoice']}
                     id="search-with-website"
                     {...register('website')}
+                    tabIndex={4}
                     value={'with'}
                   />
                   <label
@@ -204,6 +206,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                     className={styles['uasearchplacesbox__dialog-multichoice']}
                     id="search-without-website"
                     {...register('website')}
+                    tabIndex={4}
                     value={'without'}
                   />
                   <label
@@ -221,6 +224,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
               className={styles['uasearchplacesbox__dialog-submit']}
               aria-describedby={dialogProps['aria-describedby']}
               aria-label={t('search.action.submit.label')}
+              tabIndex={6}
             >
               {t('search.action.submit.title')}
             </button>
@@ -230,6 +234,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
               className={styles['uasearchplacesbox__dialog-reset']}
               aria-label={t('search.action.reset.label')}
               onClick={onReset}
+              tabIndex={5}
             >
               {t('search.action.reset.title')}
             </button>
