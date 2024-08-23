@@ -4,6 +4,7 @@ import { dir } from 'i18next'
 import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
 
+import { Analytics } from 'src/components/analytics'
 import { Header } from 'src/components/header'
 import { font } from 'src/helpers/config/font'
 import { locales } from 'src/helpers/config/i18n'
@@ -36,6 +37,9 @@ export default function AppLayout({ children, params: { locale } }: AppLayoutPro
   return (
     <html lang={locale} dir={dir(locale)}>
       <head />
+
+      <Analytics />
+
       <body className={font.className}>
         <DialogProvider />
 
