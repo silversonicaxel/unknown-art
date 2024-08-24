@@ -1,18 +1,16 @@
 import fetchedMeta from 'fetch-meta-tags'
 import type { fetchedMeta as FetchedMetadata } from 'fetch-meta-tags'
-import type { Metadata } from 'next'
-import { notFound } from 'next/navigation'
-
-import styles from './bookshop.module.css'
-
 import { locales_codes } from 'helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import { isImageSecure } from 'helpers/utils/isImageSecure'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { getBookshop } from 'src/api/bookshop'
 import { SafeImage } from 'src/components/safe-image'
 import type { ComponentParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
+import styles from './bookshop.module.css'
 
 
 type BookshopPageProps = {

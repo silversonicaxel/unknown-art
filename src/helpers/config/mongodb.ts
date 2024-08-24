@@ -1,11 +1,10 @@
 import type { MongoOptions } from 'mongodb'
 import { MongoClient } from 'mongodb'
-
 import { isEnvironmentDevelopment } from '../utils/isEnvironment'
 
 
 const uri = process.env.NEXT_MONGO_DB_URL
-const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
+const environment = process.env.NEXT_PUBLIC_NODE_ENV ?? 'development'
 
 function getMongoDbClient(
   environment: string,

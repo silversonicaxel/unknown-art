@@ -1,9 +1,8 @@
-import type { Metadata } from 'next/types'
-
-import { Analytics } from 'src/components/analytics'
-import { NotFoundContentServer } from 'src/components/not-found-content'
 import { font } from 'helpers/config/font'
 import { isEnvironmentProduction } from 'helpers/utils/isEnvironment'
+import type { Metadata } from 'next/types'
+import { Analytics } from 'src/components/analytics'
+import { NotFoundContentServer } from 'src/components/not-found-content'
 
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 export default function AppNotFound() {
-  const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
+  const environment = process.env.NEXT_PUBLIC_NODE_ENV ?? 'development'
 
   return (
     <html>

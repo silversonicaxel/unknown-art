@@ -1,5 +1,4 @@
 import type { Metadata } from 'next/types'
-
 import { NotFoundContentClient } from 'src/components/not-found-content'
 
 

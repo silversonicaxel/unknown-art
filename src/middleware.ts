@@ -1,7 +1,6 @@
 import acceptLanguage from 'accept-language'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-
 import { defaultLocale, locales, I18N_COOKIE_NAME } from './helpers/config/i18n'
 
 
@@ -9,11 +8,13 @@ acceptLanguage.languages([...locales])
 
 /* eslint-disable max-len */
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|images|assets|favicon.ico|favicon.*\.png|android.*\.png|apple.*\.png|sw.js|site.webmanifest).*)']
+  matcher: [
+    '/((?!api|_next/static|_next/image|images|assets|favicon.ico|favicon.*.png|android.*.png|apple.*.png|sw.js|site.webmanifest).*)'
+  ]
 }
 /* eslint-enable */
 
-export async function middleware(request: NextRequest): Promise<NextResponse> {
+export function middleware(request: NextRequest): NextResponse {
   const { cookies, headers, nextUrl, url } = request
 
   const response = NextResponse.next()
@@ -34,10 +35,8 @@ export async function middleware(request: NextRequest): Promise<NextResponse> {
     locale = defaultLocale
   }
 
-  if (
-    !locales.some(loc => nextUrl.pathname.startsWith(`/${loc}`)) &&
-    !nextUrl.pathname.startsWith('/_next')
-  ) {
+  if (!locales.some(loc => nextUrl.pathname.startsWith(`/${loc}`)) &&
+      !nextUrl.pathname.startsWith('/_next')) {
     return NextResponse.redirect(new URL(`/${locale}${nextUrl.pathname}`, url))
   }
 

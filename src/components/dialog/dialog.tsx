@@ -3,7 +3,6 @@
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react'
 import { createPortal } from 'react-dom'
 import FocusLock from 'react-focus-lock'
-
 import styles from './dialog.module.css'
 
 

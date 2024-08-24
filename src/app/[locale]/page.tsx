@@ -1,9 +1,9 @@
-import styles from './home.module.css'
 
 import { getRandomQuote } from 'api/quote'
-import { HeroImage } from 'src/components/hero-image'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
+import { HeroImage } from 'src/components/hero-image'
 import type { ComponentParams } from 'types/component'
+import styles from './home.module.css'
 
 
 export const dynamic = 'force-dynamic'

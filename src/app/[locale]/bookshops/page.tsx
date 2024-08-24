@@ -1,5 +1,4 @@
 
-import styles from './bookshops.module.css'
 
 import { getBookshopsCountryCodesList } from 'api/country'
 import { PAGINATION_LIMIT } from 'helpers/config/pagination'
@@ -8,6 +7,7 @@ import { SearchArea } from 'src/components/search-area'
 import { SearchResults } from 'src/components/search-results'
 import { ApiQuery } from 'types/api'
 import { ComponentParams } from 'types/component'
+import styles from './bookshops.module.css'
 
 
 export const dynamic = 'force-dynamic'
@@ -20,7 +20,7 @@ type BookshopsPageProps = {
 } & ComponentParams
 
 export default async function BookshopsPage(props: BookshopsPageProps) {
-  const search = props?.searchParams?.query || undefined
+  const search = props?.searchParams?.query ?? undefined
 
   const currentPage = Number(props?.searchParams?.page) || 1
   const bookshopsListApiQuery: ApiQuery = {

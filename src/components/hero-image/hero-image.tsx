@@ -1,13 +1,11 @@
 'use client'
 
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import type { FC } from 'react'
-
+import type { I18nLocale } from 'types/i18n'
 import styles from './hero-image.module.css'
-
-import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
-import { I18nLocale } from 'types/i18n'
 
 
 export const HeroImage: FC = () => {

@@ -1,10 +1,9 @@
 'use client'
 
-import { useParams } from 'next/navigation'
-
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
+import { useParams } from 'next/navigation'
 import { Loading } from 'src/components/loading'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 export default function BookshopsLoading() {

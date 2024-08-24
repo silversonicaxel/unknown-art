@@ -1,17 +1,14 @@
 'use client'
 
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import type { FC } from 'react'
-
-import { Pagination } from '../pagination'
-
-import styles from './search-results.module.css'
-
-import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import type { Bookshop } from 'src/types/bookshop'
 import type { CountryCode } from 'types/country'
 import type { I18nLocale } from 'types/i18n'
+import { Pagination } from '../pagination'
+import styles from './search-results.module.css'
 
 
 type SearchResultsProps = {
@@ -39,7 +36,7 @@ export const SearchResults: FC<SearchResultsProps> = (
               <span className={styles['uasearchresults__item-separator']}>~~</span>
               &nbsp;
               <span>
-                {bookshop.city ? `${bookshop.city} - ` : ``}
+                {bookshop.city ? `${bookshop.city} - ` : ''}
                 {countryCodes[bookshop.iso]}
               </span>
             </Link>
