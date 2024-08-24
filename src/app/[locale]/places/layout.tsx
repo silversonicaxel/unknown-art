@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import { meta } from 'src/helpers/config/meta'
+import { locales_codes } from 'src/helpers/config/i18n'
+import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
 
@@ -17,7 +18,15 @@ export async function generateMetadata(
   const { t } = await getTranslationServer({ locale, namespace: 'common' })
 
   return {
-    title: `${meta.siteName} - ${t('menu.places')}`
+    title: `${meta.siteName} - ${t('menu.places')}`,
+    openGraph: {
+      title: `${meta.siteName} - ${t('menu.places')}`,
+      description: t('description'),
+      url: `${META_SITE_BASE_URL}${locale}/places`,
+      siteName: meta.siteName,
+      locale: locales_codes[locale],
+      type: 'website',
+    }
   }
 }
 

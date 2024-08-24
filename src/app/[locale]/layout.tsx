@@ -7,8 +7,8 @@ import type { ReactNode } from 'react'
 import { Analytics } from 'src/components/analytics'
 import { Header } from 'src/components/header'
 import { font } from 'src/helpers/config/font'
-import { locales } from 'src/helpers/config/i18n'
-import { meta } from 'src/helpers/config/meta'
+import { locales, locales_codes } from 'src/helpers/config/i18n'
+import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { DialogProvider } from 'src/helpers/providers/dialog'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
@@ -25,7 +25,15 @@ export async function generateMetadata({ params: { locale } }: AppLayoutProps): 
     title: meta.siteName,
     description: t('description'),
     manifest: meta.siteManifest,
-    icons: meta.siteIcons
+    icons: meta.siteIcons,
+    openGraph: {
+      title: meta.siteName,
+      description: t('description'),
+      url: META_SITE_BASE_URL,
+      siteName: meta.siteName,
+      locale: locales_codes[locale],
+      type: 'website',
+    }
   }
 }
 
