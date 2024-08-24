@@ -11,6 +11,7 @@ import { locales, locales_codes } from 'src/helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { DialogProvider } from 'src/helpers/providers/dialog'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
+import { isEnvironmentProduction } from 'src/helpers/utils/isEnvironment'
 import type { ComponentParams } from 'src/types/component'
 
 
@@ -47,11 +48,13 @@ export const viewport: Viewport = {
 }
 
 export default function AppLayout({ children, params: { locale } }: AppLayoutProps) {
+  const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
+
   return (
     <html lang={locale} dir={dir(locale)}>
       <head />
 
-      <Analytics />
+      {isEnvironmentProduction(environment) && (<Analytics />)}
 
       <body className={font.className}>
         <DialogProvider />
