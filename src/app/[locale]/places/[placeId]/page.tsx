@@ -6,6 +6,8 @@ import styles from './place.module.css'
 
 import { getPlace } from 'src/api/place'
 import { SafeImage } from 'src/components/safe-image'
+import { locales_codes } from 'src/helpers/config/i18n'
+import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isImageSecure } from 'src/helpers/utils/isImageSecure'
 import type { ComponentParams } from 'src/types/component'
@@ -24,7 +26,15 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
   const place = await getPlace(params.placeId)
 
   return {
-    title: `unknown art _ ${t('menu.place')} _ ${place.name}`,
+    title: `${meta.siteName} _ ${t('menu.place')} _ ${place.name}`,
+    openGraph: {
+      title: `${meta.siteName} - ${t('menu.places')}`,
+      description: t('description'),
+      url: `${META_SITE_BASE_URL}${params.locale}/places/${place.id}`,
+      siteName: meta.siteName,
+      locale: locales_codes[params.locale],
+      type: 'website',
+    }
   }
 }
 
