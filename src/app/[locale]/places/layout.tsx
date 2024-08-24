@@ -10,9 +10,15 @@ type PlacesLayoutProps = {
   children: ReactNode
 } & ComponentParams
 
-export const metadata: Metadata = {
-  title: `${meta.siteName} - places`,
-  description: meta.siteDescription
+
+export async function generateMetadata(
+  { params: { locale } }: PlacesLayoutProps
+): Promise<Metadata> {
+  const { t } = await getTranslationServer({ locale, namespace: 'common' })
+
+  return {
+    title: `${meta.siteName} - ${t('menu.places')}`
+  }
 }
 
 export default async function PlacesLayout({ children, params: { locale } }: PlacesLayoutProps) {

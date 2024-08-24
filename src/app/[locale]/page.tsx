@@ -1,5 +1,3 @@
-import type { Metadata } from 'next/types'
-
 import styles from './app.module.css'
 
 import { getRandomQuote } from 'src/api/quote'
@@ -9,10 +7,6 @@ import type { ComponentParams } from 'src/types/component'
 
 
 export const dynamic = 'force-dynamic'
-
-export const metadata: Metadata = {
-  title: 'unknown art',
-}
 
 type AppPageProps = ComponentParams
 
@@ -26,7 +20,11 @@ export default async function AppPage({ params: { locale } }: AppPageProps) {
     <>
       <h1>{tCommon('title')}</h1>
 
-      <p>{tHome('description')}</p>
+      <p>{tHome('intro')}</p>
+
+      <p>{tCommon('description')}</p>
+
+      <p>{tHome('content')}</p>
 
       <HeroImage />
 
