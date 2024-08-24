@@ -1,9 +1,8 @@
 'use client'
 
-import { useParams } from 'next/navigation'
-
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
-import { I18nLocale } from 'types/i18n'
+import { useParams } from 'next/navigation'
+import type { I18nLocale } from 'types/i18n'
 
 
 export const NotFoundContentClient = () => {

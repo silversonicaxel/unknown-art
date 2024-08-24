@@ -1,10 +1,9 @@
 'use client'
 
 import { usePathname, useSearchParams } from 'next/navigation'
-
+import type { I18nLocale } from 'types/i18n'
 import { locales } from '../config/i18n'
 
-import { I18nLocale } from 'types/i18n'
 
 
 export type UseLocalesCurrentUrlParams = {

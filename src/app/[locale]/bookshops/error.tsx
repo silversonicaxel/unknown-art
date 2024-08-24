@@ -1,10 +1,9 @@
 'use client'
 
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { useParams } from 'next/navigation'
 import type { Metadata } from 'next/types'
 import { useCallback } from 'react'
-
-import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { ErrorContent } from 'src/components/error-content'
 import type { ComponentErrorParams } from 'types/component'
 import type { I18nLocale } from 'types/i18n'

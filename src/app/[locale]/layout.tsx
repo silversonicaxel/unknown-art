@@ -1,19 +1,18 @@
 import 'src/styles/globals.css'
 import 'src/styles/reset.css'
-import { dir } from 'i18next'
-import type { Metadata, Viewport } from 'next'
-import type { ReactNode } from 'react'
-
-import { Analytics } from 'src/components/analytics'
-import { Header } from 'src/components/header'
 import { font } from 'helpers/config/font'
 import { locales, locales_codes } from 'helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { DialogProvider } from 'helpers/providers/dialog'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import { isEnvironmentProduction } from 'helpers/utils/isEnvironment'
+import { dir } from 'i18next'
+import type { Metadata, Viewport } from 'next'
+import type { ReactNode } from 'react'
+import { Analytics } from 'src/components/analytics'
+import { Header } from 'src/components/header'
 import type { ComponentParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 type HomeLayoutProps = {
@@ -39,7 +38,7 @@ export async function generateMetadata({ params: { locale } }: HomeLayoutProps):
   }
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
 
@@ -49,7 +48,7 @@ export const viewport: Viewport = {
 }
 
 export default function HomeLayout({ children, params: { locale } }: HomeLayoutProps) {
-  const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
+  const environment = process.env.NEXT_PUBLIC_NODE_ENV ?? 'development'
 
   return (
     <html lang={locale} dir={dir(locale)}>

@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React, { useCallback, useState } from 'react'
 import type { FC, HTMLAttributes } from 'react'
-
 import styles from './safe-image.module.css'
 
 
