@@ -27,10 +27,11 @@
   },
   "exclude": ["node_modules"],
   "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
     ".next/types/**/*.ts",
-    "vitest.setup.mts"
+    "next-env.d.ts",
+    "next.config.mjs",
+    "vitest.setup.mts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }
