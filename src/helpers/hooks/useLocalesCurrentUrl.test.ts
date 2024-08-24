@@ -1,8 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { expect, test, describe } from 'vitest'
-
 import { defaultLocale, locales } from '../config/i18n'
-
 import type { UseLocalesCurrentUrlParams } from './useLocalesCurrentUrl'
 import { useLocalesCurrentUrl  } from './useLocalesCurrentUrl'
 

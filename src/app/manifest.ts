@@ -1,8 +1,7 @@
-import type { MetadataRoute } from 'next'
-
 import { defaultLocale } from 'helpers/config/i18n'
 import { meta } from 'helpers/config/meta'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
+import type { MetadataRoute } from 'next'
 import type { MetaIcon, MetaManifestIcon } from 'types/meta'
 
 

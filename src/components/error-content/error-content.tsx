@@ -1,12 +1,11 @@
 'use client'
 
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { useParams } from 'next/navigation'
 import { memo } from 'react'
 import type { FC } from 'react'
-
-import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
-import { ComponentErrorParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { ComponentErrorParams } from 'types/component'
+import type { I18nLocale } from 'types/i18n'
 
 
 type ErrorContentProps = {

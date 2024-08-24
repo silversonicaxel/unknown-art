@@ -11,7 +11,7 @@ export const getCountryCodesList = async (): Promise<CountryCode> => {
     .collection('ua-isos')
     .findOne({}, { projection: { _id: 0 } })
 
-  return isos === null ? {} : isos
+  return isos ?? {}
 }
 
 export const getBookshopsCountryCodesList = async (): Promise<CountryCode> => {
