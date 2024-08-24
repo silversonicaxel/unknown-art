@@ -1,21 +1,23 @@
 import { MongoClient } from 'mongodb'
 
+import { isEnvironmentDevelopment } from '../utils/isEnvironment'
+
 
 const uri = process.env.MONGO_DB_URL
-const environment = process.env.NODE_ENV || 'development'
+const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
 
 function getMongoDbClient(
   environment: string,
   uri: string | undefined
 ): Promise<MongoClient> {
   if (!uri) {
-    throw new Error("Please add your MongoDb url to .env file.")
+    throw new Error('Please add your MongoDb url to .env file.')
   }
 
   let client: MongoClient
   let clientPromise: Promise<MongoClient>
 
-  if (environment === "development") {
+  if (isEnvironmentDevelopment(environment)) {
     const globalWithMongoClientPromise = global as typeof globalThis & {
       _mongoClientPromise: Promise<MongoClient>
     }
