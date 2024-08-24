@@ -2,7 +2,6 @@ export const META_SITE_BASE_URL = 'https://www.unknown-art.club/'
 
 export const meta = {
   siteName: 'unknown art',
-  siteDescription: 'where the unknown becomes special',
   siteManifest: '/manifest.webmanifest',
   siteIcons: {
     icon: [

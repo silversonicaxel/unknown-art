@@ -10,6 +10,7 @@ import { font } from 'src/helpers/config/font'
 import { locales } from 'src/helpers/config/i18n'
 import { meta } from 'src/helpers/config/meta'
 import { DialogProvider } from 'src/helpers/providers/dialog'
+import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
 
 
@@ -17,15 +18,19 @@ type AppLayoutProps = {
   children: ReactNode
 } & ComponentParams
 
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+export async function generateMetadata({ params: { locale } }: AppLayoutProps): Promise<Metadata> {
+  const { t } = await getTranslationServer({ locale, namespace: 'common' })
+
+  return {
+    title: meta.siteName,
+    description: t('description'),
+    manifest: meta.siteManifest,
+    icons: meta.siteIcons
+  }
 }
 
-export const metadata: Metadata = {
-  title: meta.siteName,
-  description: meta.siteDescription,
-  manifest: meta.siteManifest,
-  icons: meta.siteIcons
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }))
 }
 
 export const viewport: Viewport = {

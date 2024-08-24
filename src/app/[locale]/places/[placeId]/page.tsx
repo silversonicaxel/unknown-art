@@ -20,10 +20,11 @@ type PlacePageProps = {
 type PlaceMeta = FetchedMetadata | null
 
 export async function generateMetadata({ params }: PlacePageProps): Promise<Metadata> {
+  const { t } = await getTranslationServer({ locale: params.locale, namespace: 'common' })
   const place = await getPlace(params.placeId)
 
   return {
-    title: `unknown art _ place _ ${place.name}`,
+    title: `unknown art _ ${t('menu.place')} _ ${place.name}`,
   }
 }
 
