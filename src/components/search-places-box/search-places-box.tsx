@@ -12,6 +12,7 @@ import { DialogLazy } from 'src/components/dialog'
 import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
+import { purgeObjectEmptyValues } from 'src/helpers/utils/purgeObjectEmptyValues'
 import { CountryCode } from 'src/types/country'
 import { SearchPlacesFormInput } from 'src/types/search'
 
@@ -53,7 +54,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
     }
     else {
       const params = new URLSearchParams(searchParams)
-      params.set('query', JSON.stringify(data))
+      params.set('query', JSON.stringify(purgeObjectEmptyValues(data)))
       params.delete('page')
 
       replace(`${pathname}?${params.toString()}`)
