@@ -1,17 +1,3 @@
 .uaplaces {
   margin-bottom: var(--spacing-element);
 }
-
-.uaplaces__item a {
-  display: inline-block;
-  margin-bottom: var(--spacing-element);
-  transition: transform 0.5s ease-in-out;
-}
-
-.uaplaces__item a:hover {
-  transform: translateX(10px);
-}
-
-.uaplaces__item-separator {
-  color: var(--color-text-secondary);
-}
