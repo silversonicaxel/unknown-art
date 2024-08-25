@@ -1,8 +1,15 @@
+import { CountryCode } from './country'
+
+
 export type SearchPlacesFormInput = {
   name?: string
   iso?: string
   city?: string
   website?: string
+}
+
+export type SearchPlacesFormInputOptions = {
+  iso?: CountryCode
 }
 
 export type SearchPlacesApi = {

@@ -5,7 +5,7 @@ import styles from './places.module.css'
 import { getCountryCodes } from 'src/api/country'
 import { getPlacesList, getTotalPlaces } from 'src/api/place'
 import { Pagination } from 'src/components/pagination'
-import { SearchPlacesBox } from 'src/components/search-places-box'
+import { SearchArea } from 'src/components/search-area'
 import { PAGINATION_LIMIT } from 'src/helpers/config/pagination'
 import { ApiQuery } from 'src/types/api'
 import { ComponentParams } from 'src/types/component'
@@ -38,7 +38,7 @@ export default async function PlacesPage(props: PlacePageProps) {
 
   return (
     <section className={styles.uaplaces}>
-      <SearchPlacesBox countries={countryCodes}/>
+      <SearchArea countries={countryCodes}/>
 
       {places.map((place) => (
         <div key={`place-${place.id}`} className={styles.uaplaces__item}>

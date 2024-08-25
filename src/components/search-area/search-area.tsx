@@ -5,8 +5,8 @@ import type { FC } from 'react'
 import { useCallback } from 'react'
 import { useForm } from 'react-hook-form'
 
-import styles from './search-places-box.module.css'
-import { SearchPlacesSummary } from './search-places-summary'
+import { SearchAreaSummary } from './search-area-summary'
+import styles from './search-area.module.css'
 
 import { DialogLazy } from 'src/components/dialog'
 import { useDialog } from 'src/components/dialog/hooks/useDialog'
@@ -17,11 +17,11 @@ import { CountryCode } from 'src/types/country'
 import { SearchPlacesFormInput } from 'src/types/search'
 
 
-type SearchPlacesBoxProps = {
+type SearchAreaProps = {
   countries: CountryCode
 }
 
-export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
+export const SearchArea: FC<SearchAreaProps> = ({ countries }) => {
   const params = useParams()
   const locale = params.locale as string
   const { t } = useTranslationClient({ locale, namespace: 'common' })
@@ -72,54 +72,20 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
 
   return (
     <>
-      <div className={styles.uasearchplacesbox}>
-        <SearchPlacesSummary
-          className={styles.uasearchplacesbox__item}
-          label={t('search.field.name.label')}
-          value={defaultValues.name}
-        />
-        <SearchPlacesSummary
-          className={styles.uasearchplacesbox__item}
-          label={t('search.field.country.label')}
-          value={defaultValues.iso}
-          options={countries}
-        />
-        <SearchPlacesSummary
-          className={styles.uasearchplacesbox__item}
-          label={t('search.field.city.label')}
-          value={defaultValues.city}
-        />
-        <SearchPlacesSummary
-          className={styles.uasearchplacesbox__item}
-          label={t('search.field.website.label')}
-          value={defaultValues.website}
-        />
-
-        {!isObjectNull(defaultValues) &&
-          (<button
-            className={styles.uasearchplacesbox__item}
-            aria-label={t('search.action.reset.label')}
-            onClick={onReset}
-          >
-            {t('search.action.reset.title')}
-          </button>)
-        }
-        <button
-          className={styles.uasearchplacesbox__item}
-          aria-label={t('search.action.dialog.label')}
-          onClick={openDialog}
-        >
-          {t('search.action.dialog.title')}
-        </button>
-      </div>
+      <SearchAreaSummary
+        values={defaultValues}
+        valuesOptions={{ iso: countries }}
+        resetSearch={onReset}
+        openDialogSearch={openDialog}
+      />
 
       <DialogLazy
         {...dialogProps}
         toRender={toRender}
       >
-        <div className={styles.uasearchplacesbox__dialog}>
+        <div className={styles.uasearcharea__dialog}>
           <button
-            className={styles['uasearchplacesbox__dialog-close']}
+            className={styles['uasearcharea__dialog-close']}
             onClick={closeDialog}
             aria-label={t('search.action.close.label')}
             tabIndex={7}
@@ -129,9 +95,9 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
           <p id={dialogProps['aria-describedby']}>{description}</p>
 
           <form onSubmit={handleSubmit(onSubmit)}>
-            <fieldset className={styles['uasearchplacesbox__dialog-fieldset']}>
+            <fieldset className={styles['uasearcharea__dialog-fieldset']}>
               <input
-                className={styles['uasearchplacesbox__dialog-input']}
+                className={styles['uasearcharea__dialog-input']}
                 id="search-name"
                 {...register('name')}
                 placeholder={t('search.field.name.label')}
@@ -140,8 +106,8 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
               />
 
               <select
-                className={`${styles['uasearchplacesbox__dialog-select']} ${watchedIso
-                  ? '' : styles['uasearchplacesbox__dialog-select--unselected']}`}
+                className={`${styles['uasearcharea__dialog-select']} ${watchedIso
+                  ? '' : styles['uasearcharea__dialog-select--unselected']}`}
                 id="search-iso"
                 {...register('iso')}
                 tabIndex={2}
@@ -156,7 +122,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
               </select>
 
               <input
-                className={styles['uasearchplacesbox__dialog-input']}
+                className={styles['uasearcharea__dialog-input']}
                 id="search-city"
                 {...register('city')}
                 placeholder={t('search.field.city.label')}
@@ -164,52 +130,52 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
                 data-1p-ignore
               />
 
-              <div className={styles['uasearchplacesbox__dialog-group']}>
-                <div className={styles['uasearchplacesbox__dialog-wrapper']}>
+              <div className={styles['uasearcharea__dialog-group']}>
+                <div className={styles['uasearcharea__dialog-wrapper']}>
                   <input
                     type="radio"
-                    className={styles['uasearchplacesbox__dialog-multichoice']}
+                    className={styles['uasearcharea__dialog-multichoice']}
                     id="search-all-website"
                     {...register('website')}
                     tabIndex={4}
                     value={''}
                   />
                   <label
-                    className={styles['uasearchplacesbox__dialog-label']}
+                    className={styles['uasearcharea__dialog-label']}
                     htmlFor="search-all-website"
                   >
                     {t('search.field.website.option.all')}
                   </label>
                 </div>
 
-                <div className={styles['uasearchplacesbox__dialog-wrapper']}>
+                <div className={styles['uasearcharea__dialog-wrapper']}>
                   <input
                     type="radio"
-                    className={styles['uasearchplacesbox__dialog-multichoice']}
+                    className={styles['uasearcharea__dialog-multichoice']}
                     id="search-with-website"
                     {...register('website')}
                     tabIndex={4}
                     value={'with'}
                   />
                   <label
-                    className={styles['uasearchplacesbox__dialog-label']}
+                    className={styles['uasearcharea__dialog-label']}
                     htmlFor="search-with-website"
                   >
                     {t('search.field.website.option.with')}
                   </label>
                 </div>
 
-                <div className={styles['uasearchplacesbox__dialog-wrapper']}>
+                <div className={styles['uasearcharea__dialog-wrapper']}>
                   <input
                     type="radio"
-                    className={styles['uasearchplacesbox__dialog-multichoice']}
+                    className={styles['uasearcharea__dialog-multichoice']}
                     id="search-without-website"
                     {...register('website')}
                     tabIndex={4}
                     value={'without'}
                   />
                   <label
-                    className={styles['uasearchplacesbox__dialog-label']}
+                    className={styles['uasearcharea__dialog-label']}
                     htmlFor="search-without-website"
                   >
                     {t('search.field.website.option.without')}
@@ -220,7 +186,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
 
             <button
               type="submit"
-              className={styles['uasearchplacesbox__dialog-submit']}
+              className={styles['uasearcharea__dialog-submit']}
               aria-describedby={dialogProps['aria-describedby']}
               aria-label={t('search.action.submit.label')}
               tabIndex={6}
@@ -230,7 +196,7 @@ export const SearchPlacesBox: FC<SearchPlacesBoxProps> = ({ countries }) => {
 
             <button
               type="button"
-              className={styles['uasearchplacesbox__dialog-reset']}
+              className={styles['uasearcharea__dialog-reset']}
               aria-label={t('search.action.reset.label')}
               onClick={onReset}
               tabIndex={5}
