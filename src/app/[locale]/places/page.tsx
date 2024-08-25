@@ -1,11 +1,9 @@
-import Link from 'next/link'
-
 import styles from './places.module.css'
 
 import { getCountryCodes } from 'src/api/country'
 import { getPlacesList, getTotalPlaces } from 'src/api/place'
-import { Pagination } from 'src/components/pagination'
 import { SearchArea } from 'src/components/search-area'
+import { SearchResults } from 'src/components/search-results'
 import { PAGINATION_LIMIT } from 'src/helpers/config/pagination'
 import { ApiQuery } from 'src/types/api'
 import { ComponentParams } from 'src/types/component'
@@ -40,22 +38,7 @@ export default async function PlacesPage(props: PlacePageProps) {
     <section className={styles.uaplaces}>
       <SearchArea countries={countryCodes}/>
 
-      {places.map((place) => (
-        <div key={`place-${place.id}`} className={styles.uaplaces__item}>
-          <Link href={`/${props.params.locale}/places/${place.id}`}>
-            <span>{place.name}</span>
-            &nbsp;
-            <span className={styles['uaplaces__item-separator']}>~~</span>
-            &nbsp;
-            <span>
-              {place.city ? `${place.city} - ` : ``}
-              {countryCodes[place.iso]}
-            </span>
-          </Link>
-        </div>
-      ))}
-
-      <Pagination totalItems={totalPlaces} />
+      <SearchResults countryCodes={countryCodes} places={places} totalPlaces={totalPlaces}/>
     </section>
   )
 }

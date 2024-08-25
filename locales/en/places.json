@@ -1,4 +1,8 @@
 {
+  "results": {
+    "notfound": "no results found. please try using different search filters.",
+    "wrongpagination": "no available results. it looks like the pagination might have been modified in the url. please try searching again."
+  },
   "form": {
     "address": "address",
     "website": "website",
