@@ -1,34 +1,4 @@
-.uasearchplacesbox {
-  border: 1px solid var(--color-border-primary);
-  display: flex;
-  font-size: smaller;
-  margin-bottom: var(--spacing-element);
-  margin-left: auto;
-  width: max-content;
-}
-
-@media screen and (width <= 800px) {
-  .uasearchplacesbox {
-    align-items: end;
-    flex-direction: column-reverse;
-  }
-}
-
-.uasearchplacesbox__item {
-  padding: var(--spacing-text);
-}
-
-.uasearchplacesbox__item:not(:last-child) {
-  margin-right: var(--spacing-group);
-}
-
-@media screen and (width <= 800px) {
-  .uasearchplacesbox__item:not(:last-child) {
-    padding-right: var(--spacing-text);
-  }
-}
-
-.uasearchplacesbox__dialog {
+.uasearcharea__dialog {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -37,7 +7,7 @@
   position: relative;
 }
 
-.uasearchplacesbox__dialog-close {
+.uasearcharea__dialog-close {
   height: var(--size-icon);
   position: absolute;
   right: var(--spacing-icon);
@@ -45,7 +15,7 @@
   width: var(--size-icon);
 }
 
-.uasearchplacesbox__dialog-close::before, .uasearchplacesbox__dialog-close::after {
+.uasearcharea__dialog-close::before, .uasearcharea__dialog-close::after {
   background-color: var(--color-surface-primary);
   content: ' ';
   height: 45px;
@@ -55,15 +25,15 @@
   width: 10px;
 }
 
-.uasearchplacesbox__dialog-close::before {
+.uasearcharea__dialog-close::before {
   transform: rotate(45deg);
 }
 
-.uasearchplacesbox__dialog-close::after {
+.uasearcharea__dialog-close::after {
   transform: rotate(-45deg);
 }
 
-.uasearchplacesbox__dialog-fieldset {
+.uasearcharea__dialog-fieldset {
   border: 0;
   display: flex;
   flex-direction: column;
@@ -72,20 +42,20 @@
   padding: 0;
 }
 
-.uasearchplacesbox__dialog-group {
+.uasearcharea__dialog-group {
   border: 0;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-text);
 }
 
-.uasearchplacesbox__dialog-wrapper {
+.uasearcharea__dialog-wrapper {
   border: 0;
   display: flex;
   gap: var(--spacing-element);
 }
 
-.uasearchplacesbox__dialog-input {
+.uasearcharea__dialog-input {
   background-color: inherit;
   border: 0;
   border-bottom: 2px solid var(--color-border-primary);
@@ -96,11 +66,11 @@
   width: 75vw;
 }
 
-.uasearchplacesbox__dialog-input::placeholder {
+.uasearcharea__dialog-input::placeholder {
   color: var(--color-text-secondary);
 }
 
-.uasearchplacesbox__dialog-select {
+.uasearcharea__dialog-select {
   background-color: inherit;
   border: 0;
   border-bottom: 2px solid var(--color-border-primary);
@@ -112,28 +82,28 @@
   width: 75vw;
 }
 
-.uasearchplacesbox__dialog-select--unselected {
+.uasearcharea__dialog-select--unselected {
   color: var(--color-text-secondary);
 }
 
-.uasearchplacesbox__dialog-multichoice {
+.uasearcharea__dialog-multichoice {
   margin: 0;
   padding: 0;
 }
 
-.uasearchplacesbox__dialog-label {
+.uasearcharea__dialog-label {
   color: var(--color-text-secondary);
 }
 
-.uasearchplacesbox__dialog-label:not(:last-child) {
+.uasearcharea__dialog-label:not(:last-child) {
   padding-right: var(--spacing-group);
 }
 
-.uasearchplacesbox__dialog-reset {
+.uasearcharea__dialog-reset {
   float: right;
   margin-right: var(--spacing-group);
 }
 
-.uasearchplacesbox__dialog-submit {
+.uasearcharea__dialog-submit {
   float: right;
 }

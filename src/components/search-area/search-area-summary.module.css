@@ -1,0 +1,29 @@
+.uasearchareasummary {
+  border: 1px solid var(--color-border-primary);
+  display: flex;
+  font-size: smaller;
+  margin-bottom: var(--spacing-element);
+  margin-left: auto;
+  width: max-content;
+}
+
+@media screen and (width <= 800px) {
+  .uasearchareasummary {
+    align-items: end;
+    flex-direction: column-reverse;
+  }
+}
+
+.uasearchareasummary__item {
+  padding: var(--spacing-text);
+}
+
+.uasearchareasummary__item:not(:last-child) {
+  margin-right: var(--spacing-group);
+}
+
+@media screen and (width <= 800px) {
+  .uasearchareasummary__item:not(:last-child) {
+    padding-right: var(--spacing-text);
+  }
+}

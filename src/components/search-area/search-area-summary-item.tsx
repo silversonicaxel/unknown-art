@@ -3,14 +3,14 @@
 import type { FC } from 'react'
 
 
-type SearchPlacesSummaryProps = {
+type SearchAreaSummaryItemProps = {
   label: string
-  value: string
+  value?: string
   options?: Record<string, string>
   className?: string
 }
 
-export const SearchPlacesSummary: FC<SearchPlacesSummaryProps> = ({
+export const SearchAreaSummaryItem: FC<SearchAreaSummaryItemProps> = ({
   label,
   value,
   options,
