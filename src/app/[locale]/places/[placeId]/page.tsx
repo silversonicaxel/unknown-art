@@ -56,8 +56,9 @@ export default async function PlacePage({ params }: PlacePageProps) {
       <article className={styles.uaplace}>
         <section className={styles.uaplace_section}>
           <h4>{t('form.address')}</h4>
+
           <a
-            href={`https://www.google.com/maps/place/${place.address}`}
+            href={place.address_url ? place.address_url : `https://www.google.com/maps/place/${place.address}`}
             target="_blank"
             rel="noreferrer"
           >
