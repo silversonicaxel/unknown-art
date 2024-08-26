@@ -1,0 +1,12 @@
+{
+  "results": {
+    "notfound": "未找到结果。请尝试使用不同的搜索筛选条件。",
+    "wrongpagination": "没有可用结果。看起来分页可能在URL中被修改了。请重新尝试搜索。"
+  },
+  "form": {
+    "address": "地址",
+    "website": "网站",
+    "description": "描述",
+    "image": "图片"
+  }
+}
