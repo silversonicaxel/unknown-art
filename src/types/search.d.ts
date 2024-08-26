@@ -2,10 +2,10 @@ import { CountryCode } from './country'
 
 
 export type SearchPlacesFormInput = {
-  name?: string
-  iso?: string
-  city?: string
-  website?: string
+  name?: string | null
+  iso?: string | null
+  city?: string | null
+  website?: string | null
 }
 
 export type SearchPlacesFormInputOptions = {

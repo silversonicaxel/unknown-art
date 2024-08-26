@@ -3,7 +3,7 @@
 import { usePathname, useRouter, useParams, useSearchParams } from 'next/navigation'
 import type { FC } from 'react'
 import { useCallback } from 'react'
-import { useForm } from 'react-hook-form'
+import { DefaultValues, useForm } from 'react-hook-form'
 
 import { SearchAreaSummary } from './search-area-summary'
 import styles from './search-area.module.css'
@@ -37,10 +37,10 @@ export const SearchArea: FC<SearchAreaProps> = ({ countries }) => {
   const queryParams = searchParams.get('query')
   const queryValuesParams = queryParams ? JSON.parse(queryParams) : {}
 
-  const defaultValues = {
-    name: queryValuesParams.name ?? undefined,
-    iso: queryValuesParams.iso ?? undefined,
-    city: queryValuesParams.city ?? undefined,
+  const defaultValues: DefaultValues<SearchPlacesFormInput> = {
+    name: queryValuesParams.name ?? null,
+    iso: queryValuesParams.iso ?? null,
+    city: queryValuesParams.city ?? null,
     website: queryValuesParams.website ?? '',
   }
 
@@ -64,8 +64,15 @@ export const SearchArea: FC<SearchAreaProps> = ({ countries }) => {
   }, [closeDialog, pathname, replace, searchParams])
 
   const onReset = useCallback(() => {
-    reset()
-    onSubmit({})
+    const emptyValues = {
+      name: null,
+      iso: null,
+      city: null,
+      website: '',
+    }
+
+    reset(emptyValues)
+    onSubmit(emptyValues)
   }, [onSubmit, reset])
 
   const watchedIso = watch('iso')

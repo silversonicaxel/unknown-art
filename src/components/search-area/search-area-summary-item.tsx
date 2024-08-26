@@ -5,7 +5,7 @@ import type { FC } from 'react'
 
 type SearchAreaSummaryItemProps = {
   label: string
-  value?: string
+  value?: string | null
   options?: Record<string, string>
   className?: string
 }
