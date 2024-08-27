@@ -24,6 +24,6 @@
 
 @media screen and (width <= 800px) {
   .uasearchareasummary__item:not(:last-child) {
-    padding-right: var(--spacing-text);
+    margin-right: var(--spacing-text);
   }
 }
