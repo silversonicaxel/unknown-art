@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# unknown art
 
-## Getting Started
+[https://unknown-art.club/](https://unknown-art.club/) is the club that will introduce you to arty and independent bookstores, all over the world.
+
+## Technicalities
+
+This is a [Next.js](https://nextjs.org/) application, based on [React.js](https://react.dev/), [Typescript](https://www.typescriptlang.org/) and [CSS Modules](https://github.com/css-modules/css-modules).
 
 `npm` is the package manager used.
 
@@ -26,7 +30,7 @@ npm run fix
 
 ## Testing
 
-Tests are built with Vitest.
+Tests are built with [Vitest](https://vitest.dev/).
 
 ```bash
 npm run test
@@ -43,13 +47,3 @@ npm run test
 Mongodb security settings for local development require an IP whitelist to work.
 
 Network Access -> IP Access List -> 0.0.0.0/0
-
-## Production configuration
-
-### .env
-
-/
-
-### MongoDb
-
-/
