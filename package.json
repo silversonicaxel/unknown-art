@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.8",
-    "@testing-library/react": "^16.0.0",
+    "@testing-library/react": "^16.0.1",
     "@types/exenv": "^1.2.2",
     "@types/fetch-meta-tags": "^1.0.3",
     "@types/node": "^22.5.1",
