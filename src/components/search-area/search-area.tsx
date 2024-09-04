@@ -3,7 +3,8 @@
 import { usePathname, useRouter, useParams, useSearchParams } from 'next/navigation'
 import type { FC } from 'react'
 import { useCallback } from 'react'
-import { DefaultValues, useForm } from 'react-hook-form'
+import type { DefaultValues } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 import { SearchAreaSummary } from './search-area-summary'
 import styles from './search-area.module.css'
