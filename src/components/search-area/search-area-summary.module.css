@@ -22,12 +22,12 @@
 .uasearchareasummary__buttons {
   display: flex;
   gap: var(--spacing-summary-element);
+  justify-content: flex-end;
 }
 
 @media screen and (width <= 800px) {
   .uasearchareasummary__buttons {
     display: flex;
-    justify-content: space-between;
     width: 100%;
   }
 }
