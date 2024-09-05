@@ -12,6 +12,7 @@ import { SearchPlacesFormInput, SearchPlacesFormInputOptions } from 'src/types/s
 
 
 type SearchAreaSummaryProps = {
+  totalPlaces: number
   values: SearchPlacesFormInput
   valuesOptions: SearchPlacesFormInputOptions
   resetSearch: () => void
@@ -19,6 +20,7 @@ type SearchAreaSummaryProps = {
 }
 
 export const SearchAreaSummary: FC<SearchAreaSummaryProps> = ({
+  totalPlaces,
   values,
   valuesOptions,
   resetSearch,
@@ -31,43 +33,43 @@ export const SearchAreaSummary: FC<SearchAreaSummaryProps> = ({
   return (
     <div className={styles.uasearchareasummary}>
       <SearchAreaSummaryItem
-        className={styles.uasearchareasummary__item}
+        label={t('search.field.total.label')}
+        value={totalPlaces.toString()}
+      />
+      <SearchAreaSummaryItem
         label={t('search.field.name.label')}
         value={values.name}
       />
       <SearchAreaSummaryItem
-        className={styles.uasearchareasummary__item}
         label={t('search.field.country.label')}
         value={values.iso}
         options={valuesOptions.iso}
       />
       <SearchAreaSummaryItem
-        className={styles.uasearchareasummary__item}
         label={t('search.field.city.label')}
         value={values.city}
       />
       <SearchAreaSummaryItem
-        className={styles.uasearchareasummary__item}
         label={t('search.field.website.label')}
         value={values.website}
       />
 
-      {!isObjectNull(values) &&
-        (<button
-          className={styles.uasearchareasummary__item}
-          aria-label={t('search.action.reset.label')}
-          onClick={resetSearch}
+      <div className={styles.uasearchareasummary__buttons}>
+        {!isObjectNull(values) &&
+          (<button
+            aria-label={t('search.action.reset.label')}
+            onClick={resetSearch}
+          >
+            {t('search.action.reset.title')}
+          </button>)
+        }
+        <button
+          aria-label={t('search.action.dialog.label')}
+          onClick={openDialogSearch}
         >
-          {t('search.action.reset.title')}
-        </button>)
-      }
-      <button
-        className={styles.uasearchareasummary__item}
-        aria-label={t('search.action.dialog.label')}
-        onClick={openDialogSearch}
-      >
-        {t('search.action.dialog.title')}
-      </button>
+          {t('search.action.dialog.title')}
+        </button>
+      </div>
     </div>
   )
 }

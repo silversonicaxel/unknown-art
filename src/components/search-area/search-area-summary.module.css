@@ -1,9 +1,13 @@
 .uasearchareasummary {
+  --spacing-summary-element: 30px;
+
   border: 1px solid var(--color-border-primary);
   display: flex;
   font-size: smaller;
-  margin-bottom: var(--spacing-element);
+  gap: var(--spacing-summary-element);
+  margin-bottom: var(--spacing-summary-element);
   margin-left: auto;
+  padding: var(--spacing-text);
   width: max-content;
 }
 
@@ -11,19 +15,19 @@
   .uasearchareasummary {
     align-items: end;
     flex-direction: column-reverse;
+    gap: var(--spacing-element-mobile);
   }
 }
 
-.uasearchareasummary__item {
-  padding: var(--spacing-text);
-}
-
-.uasearchareasummary__item:not(:last-child) {
-  margin-right: var(--spacing-group);
+.uasearchareasummary__buttons {
+  display: flex;
+  gap: var(--spacing-summary-element);
 }
 
 @media screen and (width <= 800px) {
-  .uasearchareasummary__item:not(:last-child) {
-    margin-right: var(--spacing-text);
+  .uasearchareasummary__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
