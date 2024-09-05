@@ -36,7 +36,7 @@ export default async function PlacesPage(props: PlacePageProps) {
 
   return (
     <section className={styles.uaplaces}>
-      <SearchArea countries={countryCodes}/>
+      <SearchArea countries={countryCodes} totalPlaces={totalPlaces} />
 
       <SearchResults countryCodes={countryCodes} places={places} totalPlaces={totalPlaces}/>
     </section>

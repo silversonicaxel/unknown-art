@@ -23,6 +23,9 @@
     "title": "search places",
     "description": "filter the list of places",
     "field": {
+      "total": {
+        "label": "total"
+      },
       "name": {
         "label": "name"
       },

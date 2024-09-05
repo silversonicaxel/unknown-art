@@ -20,9 +20,10 @@ import { SearchPlacesFormInput } from 'src/types/search'
 
 type SearchAreaProps = {
   countries: CountryCode
+  totalPlaces: number
 }
 
-export const SearchArea: FC<SearchAreaProps> = ({ countries }) => {
+export const SearchArea: FC<SearchAreaProps> = ({ countries, totalPlaces }) => {
   const params = useParams()
   const locale = params.locale as string
   const { t } = useTranslationClient({ locale, namespace: 'common' })
@@ -81,6 +82,7 @@ export const SearchArea: FC<SearchAreaProps> = ({ countries }) => {
   return (
     <>
       <SearchAreaSummary
+        totalPlaces={totalPlaces}
         values={defaultValues}
         valuesOptions={{ iso: countries }}
         resetSearch={onReset}
