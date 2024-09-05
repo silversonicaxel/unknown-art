@@ -42,7 +42,7 @@ export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
   const { findFilter, findOptions } = getFindParams(query)
 
   const mongoClient = await clientPromise
-  const data = await mongoClient
+  const places = await mongoClient
     .db('ua-db')
     .collection('ua-places')
     .find(findFilter, findOptions)
@@ -50,29 +50,29 @@ export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
     .sort({ name: 1 })
     .toArray()
 
-  return JSON.parse(JSON.stringify(data))
+  return JSON.parse(JSON.stringify(places))
 }
 
 export const getPlace = async (id: string): Promise<Place> => {
   const mongoClient = await clientPromise
-  const data = await mongoClient
+  const place = await mongoClient
     .db('ua-db')
     .collection('ua-places')
     .findOne({ id })
 
-  return JSON.parse(JSON.stringify(data))
+  return JSON.parse(JSON.stringify(place))
 }
 
 export const getTotalPlaces = async (query: ApiQuery = {}): Promise<number> => {
   const { findFilter } = getFindParams(query)
 
   const mongoClient = await clientPromise
-  const data = await mongoClient
+  const places = await mongoClient
     .db('ua-db')
     .collection('ua-places')
     .find(findFilter)
     .collation({ locale: 'en' })
     .toArray()
 
-  return data.length
+  return places.length
 }

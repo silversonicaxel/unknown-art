@@ -4,12 +4,11 @@ import type { CountryCode } from 'src/types/country'
 
 export const getCountryCodes = async (): Promise<CountryCode> => {
   const mongoClient = await clientPromise
-  const data = await mongoClient
+
+  const countryCodes = await mongoClient
     .db('ua-db')
     .collection('ua-isos')
-    .find({}, { projection: { _id: 0 } })
-    .collation({ locale: 'en' })
-    .toArray()
+    .findOne({}, { projection: { _id: 0 } })
 
-  return data[0]
+  return countryCodes === null ? {} : countryCodes
 }
