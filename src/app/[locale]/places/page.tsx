@@ -1,6 +1,6 @@
 import styles from './places.module.css'
 
-import { getCountryCodes } from 'src/api/country'
+import { getPlacesCountryCodesList } from 'src/api/country'
 import { getPlacesList, getTotalPlaces } from 'src/api/place'
 import { SearchArea } from 'src/components/search-area'
 import { SearchResults } from 'src/components/search-results'
@@ -29,7 +29,7 @@ export default async function PlacesPage(props: PlacePageProps) {
   }
 
   const [countryCodes, places, totalPlaces] = await Promise.all([
-    getCountryCodes(),
+    getPlacesCountryCodesList(),
     getPlacesList(placesListApiQuery),
     getTotalPlaces(placesListApiQuery)
   ])
