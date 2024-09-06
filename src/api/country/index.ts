@@ -1,14 +1,32 @@
 import { clientPromise } from 'src/helpers/config/mongodb'
+import { filterObjectByKeys } from 'src/helpers/utils/filterObjectByKeys'
 import type { CountryCode } from 'src/types/country'
 
 
-export const getCountryCodes = async (): Promise<CountryCode> => {
+export const getCountryCodesList = async (): Promise<CountryCode> => {
   const mongoClient = await clientPromise
 
-  const countryCodes = await mongoClient
+  const isos = await mongoClient
     .db('ua-db')
     .collection('ua-isos')
     .findOne({}, { projection: { _id: 0 } })
 
-  return countryCodes === null ? {} : countryCodes
+  return isos === null ? {} : isos
+}
+
+export const getPlacesCountryCodesList = async (): Promise<CountryCode> => {
+  const mongoClient = await clientPromise
+
+  const relevantIsos = await mongoClient
+    .db('ua-db')
+    .collection('ua-places')
+    .distinct('iso')
+
+  const isos = await mongoClient
+    .db('ua-db')
+    .collection('ua-isos')
+    .findOne({}, { projection: { _id: 0 } })
+
+  const countryCodes = filterObjectByKeys(isos ?? {}, relevantIsos, true)
+  return countryCodes ?? {}
 }
