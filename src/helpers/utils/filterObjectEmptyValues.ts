@@ -3,7 +3,7 @@ import type { EmptyObject } from 'type-fest'
 import { isObjectNull } from './isObjectNull'
 
 
-export const purgeObjectEmptyValues = (
+export const filterObjectEmptyValues = (
   obj: Record<string, string | null | undefined> | EmptyObject
 ) => {
   if (isObjectNull(obj)) {
