@@ -30,10 +30,16 @@ npm run fix
 
 ## Testing
 
-Tests are built with [Vitest](https://vitest.dev/).
+Unit Tests are built with [Vitest](https://vitest.dev/).
 
 ```bash
-npm run test
+npm run test:unit
+```
+
+E2e Tests are built with [Playwright](https://playwright.dev/).
+
+```bash
+npm run test:e2e
 ```
 
 ## Development configuration
