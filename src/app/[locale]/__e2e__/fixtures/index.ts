@@ -1,2 +1,2 @@
-export * from './page/AppPage'
-export * from './test/testAppPage'
+export * from './page/HomePage'
+export * from './test/testHomePage'

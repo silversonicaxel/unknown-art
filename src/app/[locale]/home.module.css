@@ -1,13 +1,13 @@
-.uaapp_quote {
+.uahome__quote {
   margin: var(--spacing-element) 0;
   text-align: right;
 }
 
-.uaapp_quote q {
+.uahome__quote q {
   font-style: italic;
 }
 
-.uaapp_quote footer {
+.uahome__quote footer {
   font-size: smaller;
   margin-top: var(--spacing-text);
 }

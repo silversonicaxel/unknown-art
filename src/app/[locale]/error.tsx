@@ -9,13 +9,13 @@ import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { ComponentErrorParams } from 'src/types/component'
 
 
-type AppErrorProps = ComponentErrorParams
+type HomeErrorProps = ComponentErrorParams
 
 export const metadata: Metadata = {
   title: 'unknown art',
 }
 
-export default function AppError({ reset }: AppErrorProps) {
+export default function HomeError({ reset }: HomeErrorProps) {
   const params = useParams()
   const locale = params.locale as string
 
