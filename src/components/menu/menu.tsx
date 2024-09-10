@@ -8,12 +8,17 @@ import type { FC } from 'react'
 import styles from './menu.module.css'
 
 import { locales } from 'src/helpers/config/i18n'
+import { useLocalesCurrentUrl } from 'src/helpers/hooks/useLocalesCurrentUrl'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { I18nLocale } from 'src/types/i18n'
 
 
 export const Menu: FC = memo(() => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
+
+  const { urls } = useLocalesCurrentUrl({ currentLocale: locale })
+
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   return (
@@ -38,7 +43,7 @@ export const Menu: FC = memo(() => {
         {locales.map((loc) => {
           return (
             <li role="none" key={loc}>
-              <Link href={`/${loc}`} lang={loc} role="menuitem" aria-label="language">
+              <Link href={urls[loc]} lang={loc} role="menuitem" aria-label="language">
                 {loc}
               </Link>
             </li>

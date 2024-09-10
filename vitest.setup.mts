@@ -6,9 +6,9 @@ export const viMockNextNavigation = () => {
   vi.mock('next/navigation', () => {
     return {
       __esModule: true,
-      useParams: () => ({
-        locale: 'en'
-      })
+      useParams: () => ({ locale: 'en' }),
+      useSearchParams: () => ({ query: '{"website":"without"}' }),
+      usePathname: () => '/en/places'
     }
   })
 }
