@@ -70,5 +70,8 @@
         "label": "reload the {{page}} page"
       }
     }
+  },
+  "notfound": {
+    "description": "the page is not found, visit the home page to solve the problem."
   }
 }
