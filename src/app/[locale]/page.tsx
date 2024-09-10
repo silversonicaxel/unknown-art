@@ -1,4 +1,4 @@
-import styles from './app.module.css'
+import styles from './home.module.css'
 
 import { getRandomQuote } from 'src/api/quote'
 import { HeroImage } from 'src/components/hero-image'
@@ -8,9 +8,9 @@ import type { ComponentParams } from 'src/types/component'
 
 export const dynamic = 'force-dynamic'
 
-type AppPageProps = ComponentParams
+type HomePageProps = ComponentParams
 
-export default async function AppPage({ params: { locale } }: AppPageProps) {
+export default async function HomePage({ params: { locale } }: HomePageProps) {
   const { t: tCommon } = await getTranslationServer({ locale, namespace: 'common' })
   const { t: tHome } = await getTranslationServer({ locale, namespace: 'home' })
 
@@ -28,7 +28,7 @@ export default async function AppPage({ params: { locale } }: AppPageProps) {
 
       <HeroImage />
 
-      <blockquote className={styles.uaapp_quote}>
+      <blockquote className={styles.uahome__quote}>
         <q>{quote.message}</q>
         <footer>{quote.author}</footer>
       </blockquote>

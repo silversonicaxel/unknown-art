@@ -15,11 +15,11 @@ import { isEnvironmentProduction } from 'src/helpers/utils/isEnvironment'
 import type { ComponentParams } from 'src/types/component'
 
 
-type AppLayoutProps = {
+type HomeLayoutProps = {
   children: ReactNode
 } & ComponentParams
 
-export async function generateMetadata({ params: { locale } }: AppLayoutProps): Promise<Metadata> {
+export async function generateMetadata({ params: { locale } }: HomeLayoutProps): Promise<Metadata> {
   const { t } = await getTranslationServer({ locale, namespace: 'common' })
 
   return {
@@ -47,7 +47,7 @@ export const viewport: Viewport = {
   initialScale: 1
 }
 
-export default function AppLayout({ children, params: { locale } }: AppLayoutProps) {
+export default function HomeLayout({ children, params: { locale } }: HomeLayoutProps) {
   const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
 
   return (
