@@ -1,6 +1,7 @@
 import fetchedMeta from 'fetch-meta-tags'
 import type { fetchedMeta as FetchedMetadata } from 'fetch-meta-tags'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 import styles from './place.module.css'
 
@@ -21,9 +22,12 @@ type PlacePageProps = {
 
 type PlaceMeta = FetchedMetadata | null
 
-export async function generateMetadata({ params }: PlacePageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PlacePageProps): Promise<Metadata | void> {
   const { t } = await getTranslationServer({ locale: params.locale, namespace: 'common' })
   const place = await getPlace(params.placeId)
+  if (place === null) {
+    return
+  }
 
   return {
     title: `${meta.siteName} _ ${t('menu.place')} _ ${place.name}`,
@@ -42,6 +46,9 @@ export default async function PlacePage({ params }: PlacePageProps) {
   const { t } = await getTranslationServer({ locale: params.locale, namespace: 'places' })
 
   const place = await getPlace(params.placeId)
+  if (place === null) {
+    notFound()
+  }
 
   let placeMeta: PlaceMeta
   try {
