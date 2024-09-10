@@ -10,6 +10,7 @@ import styles from './search-results.module.css'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import type { CountryCode } from 'src/types/country'
+import { I18nLocale } from 'src/types/i18n'
 import type { Place } from 'src/types/place'
 
 
@@ -21,7 +22,7 @@ type SearchResultsProps = {
 
 export const SearchResults: FC<SearchResultsProps> = ({ places, totalPlaces, countryCodes }) => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
 
   const { t } = useTranslationClient({ locale, namespace: 'places' })
 

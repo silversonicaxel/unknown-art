@@ -8,6 +8,7 @@ import styles from './search-area-summary.module.css'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
+import { I18nLocale } from 'src/types/i18n'
 import { SearchPlacesFormInput, SearchPlacesFormInputOptions } from 'src/types/search'
 
 
@@ -27,7 +28,7 @@ export const SearchAreaSummary: FC<SearchAreaSummaryProps> = ({
   openDialogSearch
 }) => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   return (

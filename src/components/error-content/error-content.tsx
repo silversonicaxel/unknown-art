@@ -6,6 +6,7 @@ import type { FC } from 'react'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { ComponentErrorParams } from 'src/types/component'
+import { I18nLocale } from 'src/types/i18n'
 
 
 type ErrorContentProps = {
@@ -15,7 +16,7 @@ type ErrorContentProps = {
 
 export const ErrorContent: FC<ErrorContentProps> = memo(({ page, onReset }) => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
 
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 

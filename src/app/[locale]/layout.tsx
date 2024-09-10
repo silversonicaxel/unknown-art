@@ -13,6 +13,7 @@ import { DialogProvider } from 'src/helpers/providers/dialog'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isEnvironmentProduction } from 'src/helpers/utils/isEnvironment'
 import type { ComponentParams } from 'src/types/component'
+import { I18nLocale } from 'src/types/i18n'
 
 
 type HomeLayoutProps = {
@@ -32,7 +33,7 @@ export async function generateMetadata({ params: { locale } }: HomeLayoutProps):
       description: t('description'),
       url: META_SITE_BASE_URL,
       siteName: meta.siteName,
-      locale: locales_codes[locale],
+      locale: locales_codes[locale as I18nLocale],
       type: 'website',
     }
   }

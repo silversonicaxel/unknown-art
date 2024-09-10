@@ -1,8 +1,11 @@
+import { I18nLocale } from 'src/types/i18n'
+
+
 export const defaultLocale = 'en'
 
-export const locales = [defaultLocale, 'it']
+export const locales = [defaultLocale, 'it'] as const
 
-export const locales_codes: Record<string, string> = {
+export const locales_codes: Record<I18nLocale, string> = {
   en: 'en_GB',
   it: 'it_IT'
 }

@@ -15,6 +15,7 @@ import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { filterObjectEmptyValues } from 'src/helpers/utils/filterObjectEmptyValues'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
 import { CountryCode } from 'src/types/country'
+import { I18nLocale } from 'src/types/i18n'
 import { SearchPlacesFormInput } from 'src/types/search'
 
 
@@ -25,7 +26,7 @@ type SearchAreaProps = {
 
 export const SearchArea: FC<SearchAreaProps> = ({ countries, totalPlaces }) => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   const id = 'search-places'
