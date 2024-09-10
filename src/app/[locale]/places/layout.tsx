@@ -5,6 +5,7 @@ import { locales_codes } from 'src/helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
+import { I18nLocale } from 'src/types/i18n'
 
 
 type PlacesLayoutProps = {
@@ -24,7 +25,7 @@ export async function generateMetadata(
       description: t('description'),
       url: `${META_SITE_BASE_URL}${locale}/places`,
       siteName: meta.siteName,
-      locale: locales_codes[locale],
+      locale: locales_codes[locale as I18nLocale],
       type: 'website',
     }
   }

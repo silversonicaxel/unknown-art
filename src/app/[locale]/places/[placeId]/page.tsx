@@ -12,6 +12,7 @@ import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isImageSecure } from 'src/helpers/utils/isImageSecure'
 import type { ComponentParams } from 'src/types/component'
+import { I18nLocale } from 'src/types/i18n'
 
 
 type PlacePageProps = {
@@ -22,9 +23,11 @@ type PlacePageProps = {
 
 type PlaceMeta = FetchedMetadata | null
 
-export async function generateMetadata({ params }: PlacePageProps): Promise<Metadata | void> {
-  const { t } = await getTranslationServer({ locale: params.locale, namespace: 'common' })
-  const place = await getPlace(params.placeId)
+export async function generateMetadata(
+  { params: { placeId, locale } }: PlacePageProps
+): Promise<Metadata | void> {
+  const { t } = await getTranslationServer({ locale, namespace: 'common' })
+  const place = await getPlace(placeId)
   if (place === null) {
     return
   }
@@ -34,18 +37,20 @@ export async function generateMetadata({ params }: PlacePageProps): Promise<Meta
     openGraph: {
       title: `${meta.siteName} - ${t('menu.places')}`,
       description: t('description'),
-      url: `${META_SITE_BASE_URL}${params.locale}/places/${place.id}`,
+      url: `${META_SITE_BASE_URL}${locale}/places/${place.id}`,
       siteName: meta.siteName,
-      locale: locales_codes[params.locale],
+      locale: locales_codes[locale as I18nLocale],
       type: 'website',
     }
   }
 }
 
-export default async function PlacePage({ params }: PlacePageProps) {
-  const { t } = await getTranslationServer({ locale: params.locale, namespace: 'places' })
+export default async function PlacePage(
+  { params: { placeId, locale } }: PlacePageProps
+) {
+  const { t } = await getTranslationServer({ locale, namespace: 'places' })
 
-  const place = await getPlace(params.placeId)
+  const place = await getPlace(placeId)
   if (place === null) {
     notFound()
   }
