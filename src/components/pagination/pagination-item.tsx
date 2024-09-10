@@ -6,6 +6,7 @@ import type { FC } from 'react'
 import styles from './pagination-item.module.css'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { I18nLocale } from 'src/types/i18n'
 
 
 type PaginationItemProps = {
@@ -14,7 +15,7 @@ type PaginationItemProps = {
 
 export const PaginationItem: FC<PaginationItemProps> = ({ indexPage }) => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   const pathname = usePathname()

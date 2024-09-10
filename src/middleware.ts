@@ -5,7 +5,7 @@ import type { NextRequest } from 'next/server'
 import { defaultLocale, locales, I18N_COOKIE_NAME } from './helpers/config/i18n'
 
 
-acceptLanguage.languages(locales)
+acceptLanguage.languages([...locales])
 
 /* eslint-disable max-len */
 export const config = {

@@ -9,11 +9,12 @@ import styles from './header.module.css'
 
 import { Menu } from 'src/components/menu'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { I18nLocale } from 'src/types/i18n'
 
 
 export const Header: FC = () => {
   const params = useParams()
-  const locale = params.locale as string
+  const locale = params.locale as I18nLocale
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 
   return (
