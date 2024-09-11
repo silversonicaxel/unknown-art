@@ -1,4 +1,4 @@
-# unknown-art
+# unknown art
 
 [https://unknown-art.club/](https://unknown-art.club/) is the club that will introduce you to arty and independent bookstores, all over the world.
 
