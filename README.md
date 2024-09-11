@@ -52,9 +52,7 @@ npm run test:e2e
 
 ### .env
 
-.env configuration is set on .env.local
-
-You can use the .env.example file as a template.
+`.env` configuration needs to be set on `.env.local`
 
 ### MongoDb
 
@@ -64,7 +62,19 @@ Mongodb security settings for local development require an IP whitelist to work.
 
 Network Access -> IP Access List -> 0.0.0.0/0
 
+Set in .env the remote configuration
+
+```bash
+MONGO_DB_URL=mongodb+srv://[MONGODB_USER]:[MONGODB_PASSWORD]@[MONGODB_URL]/
+```
+
 #### Option 2: Local with Docker Compose
+
+Set in .env the dockerized local configuration
+
+```bash
+MONGO_DB_URL="mongodb://myUser:myPassword@localhost:27017/"
+```
 
 You can use Docker Compose to run a MongoDB instance for local development.
 
