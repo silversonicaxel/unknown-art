@@ -62,7 +62,7 @@ Mongodb security settings for local development require an IP whitelist to work.
 
 Network Access -> IP Access List -> 0.0.0.0/0
 
-Set in .env the remote configuration
+Set in `.env` the remote configuration
 
 ```bash
 MONGO_DB_URL=mongodb+srv://[MONGODB_USER]:[MONGODB_PASSWORD]@[MONGODB_URL]/
@@ -70,7 +70,7 @@ MONGO_DB_URL=mongodb+srv://[MONGODB_USER]:[MONGODB_PASSWORD]@[MONGODB_URL]/
 
 #### Option 2: Local with Docker Compose
 
-Set in .env the dockerized local configuration
+Set in `.env` the dockerized local configuration
 
 ```bash
 MONGO_DB_URL="mongodb://myUser:myPassword@localhost:27017/"
@@ -80,7 +80,7 @@ You can use Docker Compose to run a MongoDB instance for local development.
 
 First, make sure you have Docker and Docker Compose installed on your machine.
 
-Then, you can start the MongoDB instance with the following command:
+Then, you can start and afterwards end the MongoDB instance with the following command:
 
 ```bash
 docker-compose -f docker-compose.yml [up|down]
