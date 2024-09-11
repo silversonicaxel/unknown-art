@@ -2,11 +2,12 @@ import { renderHook } from '@testing-library/react'
 import { changeLanguage, t } from 'i18next'
 import { expect, test, describe } from 'vitest'
 
+import type { UseTranslationClientParams } from './useTranslationClient'
 import { useTranslationClient } from './useTranslationClient'
 
 
 describe('Helpers > Hooks > useTranslationClient', () => {
-  const languageData = { locale: 'en', namespace: 'common' }
+  const languageData: UseTranslationClientParams = { locale: 'en', namespace: 'common' }
 
   test('return expected resolved language', () => {
     const { result } = renderHook(() => useTranslationClient(languageData))
