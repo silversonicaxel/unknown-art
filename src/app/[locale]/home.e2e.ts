@@ -10,21 +10,21 @@ test.beforeEach(async ({ homePage }) => {
 test.describe('src / app / [locale] > home', () => {
   test('check header existance', async ({ homePage }) => {
     expect(homePage.header.getElement()).toBeDefined()
-    expect(homePage.header.getElement()).toBeInViewport()
+    await expect(homePage.header.getElement()).toBeInViewport()
 
     expect(homePage.header.getLogo()).toBeDefined()
-    expect(homePage.header.getLogo()).toBeInViewport()
+    await expect(homePage.header.getLogo()).toBeInViewport()
   })
 
   test('check navigation menu', async ({ homePage }) => {
-    expect(homePage.navigation.getElement()).toBeInViewport()
+    await expect(homePage.navigation.getElement()).toBeInViewport()
 
     expect(homePage.navigation.getMenu('')).toBeDefined()
     expect(homePage.navigation.getMenu('places')).toBeDefined()
   })
 
   test('check locales menu', async ({ homePage }) => {
-    expect(homePage.locales.getElement()).toBeInViewport()
+    await expect(homePage.locales.getElement()).toBeInViewport()
 
     expect(homePage.locales.getLanguage('en')).toBeDefined()
     expect(homePage.locales.getLanguage('it')).toBeDefined()
