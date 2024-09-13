@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 import styles from './place.module.css'
 
-import { getPlace } from 'src/api/place'
+import { getPlace } from 'api/place'
 import { SafeImage } from 'src/components/safe-image'
 import { locales_codes } from 'src/helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
