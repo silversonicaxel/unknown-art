@@ -1,6 +1,6 @@
 import styles from './home.module.css'
 
-import { getRandomQuote } from 'src/api/quote'
+import { getRandomQuote } from 'api/quote'
 import { HeroImage } from 'src/components/hero-image'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'src/types/component'
