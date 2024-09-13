@@ -1,7 +1,7 @@
 import { clientPromise } from 'src/helpers/config/mongodb'
-import type { ApiQuery } from 'src/types/api'
-import type { Place } from 'src/types/place'
-import type { SearchPlacesApi } from 'src/types/search'
+import type { ApiQuery } from 'types/api'
+import type { Place } from 'types/place'
+import type { SearchPlacesApi } from 'types/search'
 
 
 const getFindParamsFilter = (search: string) => {

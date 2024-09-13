@@ -6,8 +6,8 @@ import { useCallback } from 'react'
 
 import { ErrorContent } from 'src/components/error-content'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
-import { ComponentErrorParams } from 'src/types/component'
-import { I18nLocale } from 'src/types/i18n'
+import { ComponentErrorParams } from 'types/component'
+import { I18nLocale } from 'types/i18n'
 
 
 type HomeErrorProps = ComponentErrorParams

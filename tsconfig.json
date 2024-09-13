@@ -13,6 +13,7 @@
     "paths": {
       "src/*": ["./src/*"],
       "api/*": ["./src/api/*"],
+      "types/*": ["./src/types/*"],
       "tests/*": ["./tests/*"]
     },
     "plugins": [

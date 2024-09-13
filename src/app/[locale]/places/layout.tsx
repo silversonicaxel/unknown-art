@@ -4,8 +4,8 @@ import { ReactNode } from 'react'
 import { locales_codes } from 'src/helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
-import type { ComponentParams } from 'src/types/component'
-import { I18nLocale } from 'src/types/i18n'
+import type { ComponentParams } from 'types/component'
+import { I18nLocale } from 'types/i18n'
 
 
 type PlacesLayoutProps = {

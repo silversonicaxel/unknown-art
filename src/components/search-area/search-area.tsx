@@ -14,9 +14,9 @@ import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { filterObjectEmptyValues } from 'src/helpers/utils/filterObjectEmptyValues'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
-import { CountryCode } from 'src/types/country'
-import { I18nLocale } from 'src/types/i18n'
-import { SearchPlacesFormInput } from 'src/types/search'
+import { CountryCode } from 'types/country'
+import { I18nLocale } from 'types/i18n'
+import { SearchPlacesFormInput } from 'types/search'
 
 
 type SearchAreaProps = {

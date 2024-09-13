@@ -8,8 +8,8 @@ import styles from './search-area-summary.module.css'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
 import { isObjectNull } from 'src/helpers/utils/isObjectNull'
-import { I18nLocale } from 'src/types/i18n'
-import { SearchPlacesFormInput, SearchPlacesFormInputOptions } from 'src/types/search'
+import { I18nLocale } from 'types/i18n'
+import { SearchPlacesFormInput, SearchPlacesFormInputOptions } from 'types/search'
 
 
 type SearchAreaSummaryProps = {
