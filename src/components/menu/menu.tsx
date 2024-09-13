@@ -7,9 +7,9 @@ import type { FC } from 'react'
 
 import styles from './menu.module.css'
 
-import { locales } from 'src/helpers/config/i18n'
-import { useLocalesCurrentUrl } from 'src/helpers/hooks/useLocalesCurrentUrl'
-import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { locales } from 'helpers/config/i18n'
+import { useLocalesCurrentUrl } from 'helpers/hooks/useLocalesCurrentUrl'
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { I18nLocale } from 'types/i18n'
 
 

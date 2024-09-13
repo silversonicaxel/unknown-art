@@ -3,7 +3,7 @@
 import { useParams } from 'next/navigation'
 
 import { Loading } from 'src/components/loading'
-import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { I18nLocale } from 'types/i18n'
 
 

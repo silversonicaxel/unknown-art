@@ -5,7 +5,7 @@ import type { FC } from 'react'
 
 import styles from './pagination-item.module.css'
 
-import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { I18nLocale } from 'types/i18n'
 
 

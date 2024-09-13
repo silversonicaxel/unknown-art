@@ -2,8 +2,8 @@ import type { Metadata } from 'next/types'
 
 import { Analytics } from 'src/components/analytics'
 import { NotFoundContentServer } from 'src/components/not-found-content'
-import { font } from 'src/helpers/config/font'
-import { isEnvironmentProduction } from 'src/helpers/utils/isEnvironment'
+import { font } from 'helpers/config/font'
+import { isEnvironmentProduction } from 'helpers/utils/isEnvironment'
 
 
 export const metadata: Metadata = {

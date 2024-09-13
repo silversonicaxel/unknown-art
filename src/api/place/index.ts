@@ -1,4 +1,4 @@
-import { clientPromise } from 'src/helpers/config/mongodb'
+import { clientPromise } from 'helpers/config/mongodb'
 import type { ApiQuery } from 'types/api'
 import type { Place } from 'types/place'
 import type { SearchPlacesApi } from 'types/search'

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { META_SITE_BASE_URL } from 'src/helpers/config/meta'
+import { META_SITE_BASE_URL } from 'helpers/config/meta'
 
 
 export default function sitemap(): MetadataRoute.Sitemap {

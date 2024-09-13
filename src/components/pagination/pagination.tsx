@@ -6,8 +6,8 @@ import type { FC } from 'react'
 import { PaginationItem } from './pagination-item'
 import styles from './pagination.module.css'
 
-import { PAGINATION_LIMIT, PAGINATION_MAX_ITEMS } from 'src/helpers/config/pagination'
-import { usePagination } from 'src/helpers/hooks/usePagination'
+import { PAGINATION_LIMIT, PAGINATION_MAX_ITEMS } from 'helpers/config/pagination'
+import { usePagination } from 'helpers/hooks/usePagination'
 
 
 type PaginationProps = {
