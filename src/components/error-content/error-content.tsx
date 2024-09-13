@@ -5,8 +5,8 @@ import { memo } from 'react'
 import type { FC } from 'react'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
-import { ComponentErrorParams } from 'src/types/component'
-import { I18nLocale } from 'src/types/i18n'
+import { ComponentErrorParams } from 'types/component'
+import { I18nLocale } from 'types/i18n'
 
 
 type ErrorContentProps = {

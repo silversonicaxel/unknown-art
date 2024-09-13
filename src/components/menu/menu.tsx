@@ -10,7 +10,7 @@ import styles from './menu.module.css'
 import { locales } from 'src/helpers/config/i18n'
 import { useLocalesCurrentUrl } from 'src/helpers/hooks/useLocalesCurrentUrl'
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
-import { I18nLocale } from 'src/types/i18n'
+import { I18nLocale } from 'types/i18n'
 
 
 export const Menu: FC = memo(() => {

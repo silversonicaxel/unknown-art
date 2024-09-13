@@ -12,8 +12,8 @@ import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { DialogProvider } from 'src/helpers/providers/dialog'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isEnvironmentProduction } from 'src/helpers/utils/isEnvironment'
-import type { ComponentParams } from 'src/types/component'
-import { I18nLocale } from 'src/types/i18n'
+import type { ComponentParams } from 'types/component'
+import { I18nLocale } from 'types/i18n'
 
 
 type HomeLayoutProps = {

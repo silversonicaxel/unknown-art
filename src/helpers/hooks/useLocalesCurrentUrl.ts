@@ -4,7 +4,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 
 import { locales } from '../config/i18n'
 
-import { I18nLocale } from 'src/types/i18n'
+import { I18nLocale } from 'types/i18n'
 
 
 export type UseLocalesCurrentUrlParams = {

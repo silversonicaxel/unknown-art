@@ -9,9 +9,9 @@ import { Pagination } from '../pagination'
 import styles from './search-results.module.css'
 
 import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
-import type { CountryCode } from 'src/types/country'
-import { I18nLocale } from 'src/types/i18n'
-import type { Place } from 'src/types/place'
+import type { CountryCode } from 'types/country'
+import { I18nLocale } from 'types/i18n'
+import type { Place } from 'types/place'
 
 
 type SearchResultsProps = {

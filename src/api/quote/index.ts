@@ -1,5 +1,5 @@
 import { clientPromise } from 'src/helpers/config/mongodb'
-import type { Quote } from 'src/types/quote'
+import type { Quote } from 'types/quote'
 
 
 export const getRandomQuote = async (): Promise<Quote> => {

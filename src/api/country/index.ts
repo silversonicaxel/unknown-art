@@ -1,6 +1,6 @@
 import { clientPromise } from 'src/helpers/config/mongodb'
 import { filterObjectByKeys } from 'src/helpers/utils/filterObjectByKeys'
-import type { CountryCode } from 'src/types/country'
+import type { CountryCode } from 'types/country'
 
 
 export const getCountryCodesList = async (): Promise<CountryCode> => {

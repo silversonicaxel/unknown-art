@@ -9,7 +9,7 @@ import { useCookies } from 'react-cookie'
 import { initReactI18next, useTranslation } from 'react-i18next'
 
 import { getOptions, locales, I18N_COOKIE_NAME } from 'src/helpers/config/i18n'
-import { I18nLocale } from 'src/types/i18n'
+import { I18nLocale } from 'types/i18n'
 
 
 export type UseTranslationClientParams = {

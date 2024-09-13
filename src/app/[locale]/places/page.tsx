@@ -5,8 +5,8 @@ import { getPlacesList, getTotalPlaces } from 'api/place'
 import { SearchArea } from 'src/components/search-area'
 import { SearchResults } from 'src/components/search-results'
 import { PAGINATION_LIMIT } from 'src/helpers/config/pagination'
-import { ApiQuery } from 'src/types/api'
-import { ComponentParams } from 'src/types/component'
+import { ApiQuery } from 'types/api'
+import { ComponentParams } from 'types/component'
 
 
 export const dynamic = 'force-dynamic'

@@ -1,4 +1,4 @@
-import { I18nLocale } from 'src/types/i18n'
+import { I18nLocale } from 'types/i18n'
 
 
 export const defaultLocale = 'en'
