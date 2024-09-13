@@ -4,7 +4,7 @@ import { getPlacesCountryCodesList } from 'api/country'
 import { getPlacesList, getTotalPlaces } from 'api/place'
 import { SearchArea } from 'src/components/search-area'
 import { SearchResults } from 'src/components/search-results'
-import { PAGINATION_LIMIT } from 'src/helpers/config/pagination'
+import { PAGINATION_LIMIT } from 'helpers/config/pagination'
 import { ApiQuery } from 'types/api'
 import { ComponentParams } from 'types/component'
 

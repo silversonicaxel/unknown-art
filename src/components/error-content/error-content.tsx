@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation'
 import { memo } from 'react'
 import type { FC } from 'react'
 
-import { useTranslationClient } from 'src/helpers/hooks/useTranslationClient'
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { ComponentErrorParams } from 'types/component'
 import { I18nLocale } from 'types/i18n'
 

@@ -2,7 +2,7 @@ import styles from './home.module.css'
 
 import { getRandomQuote } from 'api/quote'
 import { HeroImage } from 'src/components/hero-image'
-import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
+import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'types/component'
 
 

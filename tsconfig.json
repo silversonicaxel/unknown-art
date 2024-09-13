@@ -13,6 +13,7 @@
     "paths": {
       "src/*": ["./src/*"],
       "api/*": ["./src/api/*"],
+      "helpers/*": ["./src/helpers/*"],
       "types/*": ["./src/types/*"],
       "tests/*": ["./tests/*"]
     },

@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { initReactI18next, useTranslation } from 'react-i18next'
 
-import { getOptions, locales, I18N_COOKIE_NAME } from 'src/helpers/config/i18n'
+import { getOptions, locales, I18N_COOKIE_NAME } from 'helpers/config/i18n'
 import { I18nLocale } from 'types/i18n'
 
 

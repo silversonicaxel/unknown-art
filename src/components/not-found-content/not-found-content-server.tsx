@@ -1,5 +1,5 @@
-import { defaultLocale } from 'src/helpers/config/i18n'
-import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
+import { defaultLocale } from 'helpers/config/i18n'
+import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 
 
 export const NotFoundContentServer = async () => {
