@@ -1,4 +1,4 @@
-import { BasePage } from '../../../../../../tests/fixtures'
+import { BasePage } from 'tests/fixtures'
 
 
 export class HomePage extends BasePage {
