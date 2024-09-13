@@ -83,5 +83,5 @@ First, make sure you have Docker and Docker Compose installed on your machine.
 Then, you can start and afterwards end the MongoDB instance with the following command:
 
 ```bash
-docker-compose -f docker-compose.yml [up|down]
+docker-compose -f .github/docker/docker-compose.yml [up|down]
 ```
