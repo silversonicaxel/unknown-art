@@ -1,13 +1,13 @@
 import { clientPromise } from 'helpers/config/mongodb'
+import type { Bookshop } from 'src/types/bookshop'
 import type { ApiQuery } from 'types/api'
-import type { Place } from 'types/place'
-import type { SearchPlacesApi } from 'types/search'
+import type { SearchBookshopsApi } from 'types/search'
 
 
 const getFindParamsFilter = (search: string) => {
   const searchData = JSON.parse(search)
 
-  const searchFilter: SearchPlacesApi = {}
+  const searchFilter: SearchBookshopsApi = {}
   if (searchData.name) {
     searchFilter.name = { $regex: searchData.name, $options: 'si' }
   }
@@ -38,11 +38,11 @@ const getFindParams = (query: ApiQuery = {}) => {
   return { findFilter, findOptions }
 }
 
-export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
+export const getBookshopsList = async (query: ApiQuery = {}): Promise<Bookshop[]> => {
   const { findFilter, findOptions } = getFindParams(query)
 
   const mongoClient = await clientPromise
-  const places = await mongoClient
+  const bookshops = await mongoClient
     .db('ua-db')
     .collection('ua-places')
     .find(findFilter, findOptions)
@@ -50,29 +50,29 @@ export const getPlacesList = async (query: ApiQuery = {}): Promise<Place[]> => {
     .sort({ name: 1 })
     .toArray()
 
-  return JSON.parse(JSON.stringify(places))
+  return JSON.parse(JSON.stringify(bookshops))
 }
 
-export const getPlace = async (id: string): Promise<Place> => {
+export const getBookshop = async (id: string): Promise<Bookshop> => {
   const mongoClient = await clientPromise
-  const place = await mongoClient
+  const bookshop = await mongoClient
     .db('ua-db')
     .collection('ua-places')
     .findOne({ id })
 
-  return JSON.parse(JSON.stringify(place))
+  return JSON.parse(JSON.stringify(bookshop))
 }
 
-export const getTotalPlaces = async (query: ApiQuery = {}): Promise<number> => {
+export const getTotalBookshops = async (query: ApiQuery = {}): Promise<number> => {
   const { findFilter } = getFindParams(query)
 
   const mongoClient = await clientPromise
-  const places = await mongoClient
+  const bookshops = await mongoClient
     .db('ua-db')
     .collection('ua-places')
     .find(findFilter)
     .collation({ locale: 'en' })
     .toArray()
 
-  return places.length
+  return bookshops.length
 }

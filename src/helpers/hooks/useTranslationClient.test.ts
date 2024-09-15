@@ -27,6 +27,6 @@ describe('Helpers > Hooks > useTranslationClient', () => {
 
     expect(result.current.t.prototype).toEqual(t.prototype)
     expect(result.current.t).toBeInstanceOf(Function)
-    expect(result.current.t('menu.places')).toBe(t('menu.places'))
+    expect(result.current.t('menu.bookshops')).toBe(t('menu.bookshops'))
   })
 })

@@ -9,19 +9,19 @@ import styles from './search-area-summary.module.css'
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { isObjectNull } from 'helpers/utils/isObjectNull'
 import { I18nLocale } from 'types/i18n'
-import { SearchPlacesFormInput, SearchPlacesFormInputOptions } from 'types/search'
+import { SearchBookshopsFormInput, SearchBookshopsFormInputOptions } from 'types/search'
 
 
 type SearchAreaSummaryProps = {
-  totalPlaces: number
-  values: SearchPlacesFormInput
-  valuesOptions: SearchPlacesFormInputOptions
+  totalBookshops: number
+  values: SearchBookshopsFormInput
+  valuesOptions: SearchBookshopsFormInputOptions
   resetSearch: () => void
   openDialogSearch: () => void
 }
 
 export const SearchAreaSummary: FC<SearchAreaSummaryProps> = ({
-  totalPlaces,
+  totalBookshops,
   values,
   valuesOptions,
   resetSearch,
@@ -35,7 +35,7 @@ export const SearchAreaSummary: FC<SearchAreaSummaryProps> = ({
     <div className={styles.uasearchareasummary}>
       <SearchAreaSummaryItem
         label={t('search.field.total.label')}
-        value={totalPlaces.toString()}
+        value={totalBookshops.toString()}
       />
       <SearchAreaSummaryItem
         label={t('search.field.name.label')}

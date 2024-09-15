@@ -30,10 +30,10 @@ describe('Components > Menu', () => {
     render(<Menu />)
 
     expect(screen.getByLabelText('page menu.home')).toBeDefined()
-    expect(screen.getByLabelText('page menu.places')).toBeDefined()
+    expect(screen.getByLabelText('page menu.bookshops')).toBeDefined()
 
     expect(screen.getByText('menu.home')).toBeDefined()
-    expect(screen.getByText('menu.places')).toBeDefined()
+    expect(screen.getByText('menu.bookshops')).toBeDefined()
   })
 
   test('display language menu', () => {

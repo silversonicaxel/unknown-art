@@ -3,8 +3,8 @@
   "description": "unknown art è il club che ti farà conoscere librerie artistiche ed indipendenti, in tutto il mondo.",
   "menu": {
     "home": "home",
-    "places": "posti",
-    "place": "posto"
+    "bookshops": "librerie",
+    "bookshop": "libreria"
   },
   "language": {
     "it": "italiano",
@@ -20,8 +20,8 @@
     "page": "pagina"
   },
   "search": {
-    "title": "ricerca posti",
-    "description": "filtra la lista di posti",
+    "title": "ricerca librerie",
+    "description": "filtra la lista di librerie",
     "field": {
       "total": {
         "label": "totale"
@@ -47,18 +47,18 @@
     "action": {
       "dialog": {
         "title": "cerca",
-        "label": "apri la finestra di ricerca di posti"
+        "label": "apri la finestra di ricerca di librerie"
       },
       "close": {
-        "label": "chiusi la finestra di ricerca di posti"
+        "label": "chiusi la finestra di ricerca di librerie"
       },
       "submit": {
         "title": "cerca",
-        "label": "effettua la ricerca di posti"
+        "label": "effettua la ricerca di librerie"
       },
       "reset": {
         "title": "resetta",
-        "label": "resetta la ricerca di posti"
+        "label": "resetta la ricerca di librerie"
       }
     }
   },

@@ -1,9 +1,9 @@
-.uaplace {
+.uabookshop {
   white-space: break-spaces;
   word-wrap: break-word;
 }
 
-.uaplace_section {
+.uabookshop_section {
   margin-bottom: var(--spacing-group);
   position: relative;
 }
