@@ -1,10 +1,10 @@
 {
   "title": "unknown art",
-  "description": "unknown art is the club that will introduce you to arty and independent bookstores, all over the world.",
+  "description": "unknown art is the club that will introduce you to arty and independent bookshops, all over the world.",
   "menu" : {
     "home": "home",
-    "places": "places",
-    "place": "place"
+    "bookshops": "bookshops",
+    "bookshop": "bookshop"
   },
   "language" : {
     "it": "italian",
@@ -20,8 +20,8 @@
     "page": "page"
   },
   "search": {
-    "title": "search places",
-    "description": "filter the list of places",
+    "title": "search bookshops",
+    "description": "filter the list of bookshops",
     "field": {
       "total": {
         "label": "total"
@@ -47,18 +47,18 @@
     "action": {
       "dialog": {
         "title": "search",
-        "label": "open the dialog search of places"
+        "label": "open the dialog search of bookshops"
       },
       "close": {
-        "label": "close search places dialog"
+        "label": "close search bookshops dialog"
       },
       "submit": {
         "title": "search",
-        "label": "submit the search of places"
+        "label": "submit the search of bookshops"
       },
       "reset": {
         "title": "reset",
-        "label": "reset the search of places"
+        "label": "reset the search of bookshops"
       }
     }
   },

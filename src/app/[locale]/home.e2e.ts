@@ -20,7 +20,7 @@ test.describe('src / app / [locale] > home', () => {
     await expect(homePage.navigation.getElement()).toBeInViewport()
 
     expect(homePage.navigation.getMenu('')).toBeDefined()
-    expect(homePage.navigation.getMenu('places')).toBeDefined()
+    expect(homePage.navigation.getMenu('bookshops')).toBeDefined()
   })
 
   test('check locales menu', async ({ homePage }) => {

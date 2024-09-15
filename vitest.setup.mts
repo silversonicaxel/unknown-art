@@ -8,7 +8,7 @@ export const viMockNextNavigation = () => {
       __esModule: true,
       useParams: () => ({ locale: 'en' }),
       useSearchParams: () => ({ query: '{"website":"without"}' }),
-      usePathname: () => '/en/places'
+      usePathname: () => '/en/bookshops'
     }
   })
 }

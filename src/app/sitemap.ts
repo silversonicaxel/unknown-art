@@ -16,12 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }
     },
     {
-      url: `${META_SITE_BASE_URL}places`,
+      url: `${META_SITE_BASE_URL}bookshop`,
       lastModified: new Date(),
       alternates: {
         languages: {
-          en: `${META_SITE_BASE_URL}en/places`,
-          it: `${META_SITE_BASE_URL}it/places`,
+          en: `${META_SITE_BASE_URL}en/bookshops`,
+          it: `${META_SITE_BASE_URL}it/bookshops`,
         }
       }
     }

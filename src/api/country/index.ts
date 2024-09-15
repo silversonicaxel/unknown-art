@@ -14,7 +14,7 @@ export const getCountryCodesList = async (): Promise<CountryCode> => {
   return isos === null ? {} : isos
 }
 
-export const getPlacesCountryCodesList = async (): Promise<CountryCode> => {
+export const getBookshopsCountryCodesList = async (): Promise<CountryCode> => {
   const mongoClient = await clientPromise
 
   const relevantIsos = await mongoClient

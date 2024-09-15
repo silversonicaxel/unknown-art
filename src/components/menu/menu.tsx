@@ -31,11 +31,11 @@ export const Menu: FC = memo(() => {
         </li>
         <li role="none">
           <Link
-            href={`/${locale}/places`}
+            href={`/${locale}/bookshops`}
             role="menuitem"
-            aria-label={`page ${t('menu.places')}`}
+            aria-label={`page ${t('menu.bookshops')}`}
           >
-            {t('menu.places')}
+            {t('menu.bookshops')}
           </Link>
         </li>
       </ul>

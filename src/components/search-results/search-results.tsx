@@ -9,47 +9,49 @@ import { Pagination } from '../pagination'
 import styles from './search-results.module.css'
 
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
+import type { Bookshop } from 'src/types/bookshop'
 import type { CountryCode } from 'types/country'
-import { I18nLocale } from 'types/i18n'
-import type { Place } from 'types/place'
+import type { I18nLocale } from 'types/i18n'
 
 
 type SearchResultsProps = {
-  places: Place[]
-  totalPlaces: number,
+  bookshops: Bookshop[]
+  totalBookshops: number,
   countryCodes: CountryCode
 }
 
-export const SearchResults: FC<SearchResultsProps> = ({ places, totalPlaces, countryCodes }) => {
+export const SearchResults: FC<SearchResultsProps> = (
+  { bookshops, totalBookshops, countryCodes }
+) => {
   const params = useParams()
   const locale = params.locale as I18nLocale
 
-  const { t } = useTranslationClient({ locale, namespace: 'places' })
+  const { t } = useTranslationClient({ locale, namespace: 'bookshops' })
 
-  if (places.length > 0 && totalPlaces > 0) {
+  if (bookshops.length > 0 && totalBookshops > 0) {
     return (
       <>
-        {places.map((place) => (
-          <div key={`place-${place.id}`} className={styles.uasearchresults__item}>
-            <Link href={`/${locale}/places/${place.id}`}>
-              <span>{place.name}</span>
+        {bookshops.map((bookshop) => (
+          <div key={`bookshop-${bookshop.id}`} className={styles.uasearchresults__item}>
+            <Link href={`/${locale}/bookshops/${bookshop.id}`}>
+              <span>{bookshop.name}</span>
               &nbsp;
               <span className={styles['uasearchresults__item-separator']}>~~</span>
               &nbsp;
               <span>
-                {place.city ? `${place.city} - ` : ``}
-                {countryCodes[place.iso]}
+                {bookshop.city ? `${bookshop.city} - ` : ``}
+                {countryCodes[bookshop.iso]}
               </span>
             </Link>
           </div>
         ))}
 
-        <Pagination totalItems={totalPlaces} />
+        <Pagination totalItems={totalBookshops} />
       </>
     )
   }
 
-  if (places.length === 0 && totalPlaces > 0) {
+  if (bookshops.length === 0 && totalBookshops > 0) {
     return <p className={styles.uasearchresults__notfound}>{t('results.wrongpagination')}</p>
   }
 

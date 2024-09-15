@@ -1,4 +1,4 @@
-export type Place = {
+export type Bookshop = {
   id: string
   name: string
   address: string

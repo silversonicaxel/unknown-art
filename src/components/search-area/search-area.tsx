@@ -9,27 +9,27 @@ import { useForm } from 'react-hook-form'
 import { SearchAreaSummary } from './search-area-summary'
 import styles from './search-area.module.css'
 
-import { DialogLazy } from 'src/components/dialog'
-import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { filterObjectEmptyValues } from 'helpers/utils/filterObjectEmptyValues'
 import { isObjectNull } from 'helpers/utils/isObjectNull'
+import { DialogLazy } from 'src/components/dialog'
+import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { CountryCode } from 'types/country'
 import { I18nLocale } from 'types/i18n'
-import { SearchPlacesFormInput } from 'types/search'
+import { SearchBookshopsFormInput } from 'types/search'
 
 
 type SearchAreaProps = {
   countries: CountryCode
-  totalPlaces: number
+  totalBookshops: number
 }
 
-export const SearchArea: FC<SearchAreaProps> = ({ countries, totalPlaces }) => {
+export const SearchArea: FC<SearchAreaProps> = ({ countries, totalBookshops }) => {
   const params = useParams()
   const locale = params.locale as I18nLocale
   const { t } = useTranslationClient({ locale, namespace: 'common' })
 
-  const id = 'search-places'
+  const id = 'search-bookshops'
   const title = t('search.title')
   const description = t('search.description')
 
@@ -40,7 +40,7 @@ export const SearchArea: FC<SearchAreaProps> = ({ countries, totalPlaces }) => {
   const queryParams = searchParams.get('query')
   const queryValuesParams = queryParams ? JSON.parse(queryParams) : {}
 
-  const defaultValues: DefaultValues<SearchPlacesFormInput> = {
+  const defaultValues: DefaultValues<SearchBookshopsFormInput> = {
     name: queryValuesParams.name ?? null,
     iso: queryValuesParams.iso ?? null,
     city: queryValuesParams.city ?? null,
@@ -49,9 +49,10 @@ export const SearchArea: FC<SearchAreaProps> = ({ countries, totalPlaces }) => {
 
   const { dialogProps, openDialog, closeDialog, toRender } = useDialog({ id })
 
-  const { handleSubmit, register, reset, watch } = useForm<SearchPlacesFormInput>({ defaultValues })
+  const { handleSubmit, register, reset, watch } =
+    useForm<SearchBookshopsFormInput>({ defaultValues })
 
-  const onSubmit = useCallback((data: SearchPlacesFormInput) => {
+  const onSubmit = useCallback((data: SearchBookshopsFormInput) => {
     if (isObjectNull(data)) {
       replace(pathname)
     }
@@ -83,7 +84,7 @@ export const SearchArea: FC<SearchAreaProps> = ({ countries, totalPlaces }) => {
   return (
     <>
       <SearchAreaSummary
-        totalPlaces={totalPlaces}
+        totalBookshops={totalBookshops}
         values={defaultValues}
         valuesOptions={{ iso: countries }}
         resetSearch={onReset}
