@@ -13,4 +13,6 @@ It can be based on an open issue, but also on a spontaneous submission. If the i
 - update the file `src/helpers/config/i18n.ts` in the following configuration:
   - `locales` needs to include the new BCP 47 format language code.
   - `locales_regional_codes` needs to include a new key-value pair to associate the language code with its corresponding regional code.
+- update the files `locales/**/common.json` at the fieldset `language`.
+- update e2e tests.
 - create a new PR and wait for feedback.

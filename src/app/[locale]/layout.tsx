@@ -1,7 +1,7 @@
 import 'src/styles/globals.css'
 import 'src/styles/reset.css'
 import { font } from 'helpers/config/font'
-import { locales, locales_codes } from 'helpers/config/i18n'
+import { locales, locales_regional_codes } from 'helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { DialogProvider } from 'helpers/providers/dialog'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
@@ -32,7 +32,7 @@ export async function generateMetadata({ params: { locale } }: HomeLayoutProps):
       description: t('description'),
       url: META_SITE_BASE_URL,
       siteName: meta.siteName,
-      locale: locales_codes[locale as I18nLocale],
+      locale: locales_regional_codes[locale as I18nLocale],
       type: 'website',
     }
   }
