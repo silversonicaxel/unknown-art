@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 import styles from './bookshop.module.css'
 
-import { locales_codes } from 'helpers/config/i18n'
+import { locales_regional_codes } from 'helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import { isImageSecure } from 'helpers/utils/isImageSecure'
@@ -39,7 +39,7 @@ export async function generateMetadata(
       description: t('description'),
       url: `${META_SITE_BASE_URL}${locale}/bookshops/${bookshop.id}`,
       siteName: meta.siteName,
-      locale: locales_codes[locale as I18nLocale],
+      locale: locales_regional_codes[locale as I18nLocale],
       type: 'website',
     }
   }

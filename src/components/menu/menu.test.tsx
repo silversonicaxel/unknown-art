@@ -41,5 +41,6 @@ describe('Components > Menu', () => {
 
     expect(screen.getByText('en')).toBeDefined()
     expect(screen.getByText('it')).toBeDefined()
+    expect(screen.getByText('zh')).toBeDefined()
   })
 })
