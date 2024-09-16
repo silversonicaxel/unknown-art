@@ -15,7 +15,7 @@ import { isObjectNull } from 'helpers/utils/isObjectNull'
 import { DialogLazy } from 'src/components/dialog'
 import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { CountryCode } from 'types/country'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 import { SearchBookshopsFormInput } from 'types/search'
 
 

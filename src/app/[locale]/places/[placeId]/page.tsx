@@ -12,7 +12,7 @@ import { meta, META_SITE_BASE_URL } from 'src/helpers/config/meta'
 import { getTranslationServer } from 'src/helpers/utils/getTranslationServer'
 import { isImageSecure } from 'src/helpers/utils/isImageSecure'
 import type { ComponentParams } from 'src/types/component'
-import { I18nLocale } from 'src/types/i18n'
+import type { I18nLocale } from 'src/types/i18n'
 
 
 type PlacePageProps = {

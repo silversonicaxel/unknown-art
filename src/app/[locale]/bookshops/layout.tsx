@@ -5,7 +5,7 @@ import { locales_codes } from 'helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 type BookshopsLayoutProps = {
