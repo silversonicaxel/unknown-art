@@ -13,7 +13,7 @@ import { DialogProvider } from 'helpers/providers/dialog'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import { isEnvironmentProduction } from 'helpers/utils/isEnvironment'
 import type { ComponentParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 type HomeLayoutProps = {

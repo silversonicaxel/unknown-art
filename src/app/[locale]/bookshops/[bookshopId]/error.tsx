@@ -7,7 +7,7 @@ import { useCallback } from 'react'
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { ErrorContent } from 'src/components/error-content'
 import { ComponentErrorParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 type BookshopErrorProps = ComponentErrorParams

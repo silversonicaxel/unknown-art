@@ -12,7 +12,7 @@ import { isImageSecure } from 'helpers/utils/isImageSecure'
 import { getBookshop } from 'src/api/bookshop'
 import { SafeImage } from 'src/components/safe-image'
 import type { ComponentParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 type BookshopPageProps = {
