@@ -1,0 +1,77 @@
+{
+  "title": "unknown art",
+  "description": "unknown art 是一个让你了解全球艺术性和独立书店的地方。",
+  "menu" : {
+    "home": "首页",
+    "bookshops": "书店",
+    "bookshop": "书店"
+  },
+  "language" : {
+    "it": "意大利语",
+    "en": "英语"
+  },
+  "logo": {
+    "title": "unknown art 的标志",
+    "label": "主标志"
+  },
+  "loading": "加载中",
+  "pagination": {
+    "current_page": "当前页面",
+    "page": "页面"
+  },
+  "search": {
+    "title": "搜索书店",
+    "description": "筛选书店列表",
+    "field": {
+      "total": {
+        "label": "总计"
+      },
+      "name": {
+        "label": "名称"
+      },
+      "country": {
+        "label": "国家"
+      },
+      "city": {
+        "label": "城市"
+      },
+      "website": {
+        "label": "网站",
+        "option": {
+          "all": "全部",
+          "with": "有网站",
+          "without": "无网站"
+        }
+      }
+    },
+    "action": {
+      "dialog": {
+        "title": "搜索",
+        "label": "打开书店搜索对话框"
+      },
+      "close": {
+        "label": "关闭书店搜索对话框"
+      },
+      "submit": {
+        "title": "搜索",
+        "label": "提交书店搜索"
+      },
+      "reset": {
+        "title": "重置",
+        "label": "重置书店搜索"
+      }
+    }
+  },
+  "error": {
+    "description": "{{page}} 页面有问题，您可以稍后访问我们，或尝试重新加载页面。",
+    "action": {
+      "reload": {
+        "title": "重新加载",
+        "label": "重新加载{{page}}页面"
+      }
+    }
+  },
+  "notfound": {
+    "description": "未找到页面，请访问首页以解决问题。"
+  }
+}
