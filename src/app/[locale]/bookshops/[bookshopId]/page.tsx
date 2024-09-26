@@ -10,6 +10,8 @@ import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import { isImageSecure } from 'helpers/utils/isImageSecure'
 import { getBookshop } from 'src/api/bookshop'
+import { getMapCoordinates } from 'src/api/map'
+import { GeoMap } from 'src/components/geo-map'
 import { SafeImage } from 'src/components/safe-image'
 import type { ComponentParams } from 'types/component'
 import { I18nLocale } from 'types/i18n'
@@ -55,6 +57,8 @@ export default async function BookshopPage(
     notFound()
   }
 
+  const bookshopCoordinates = await getMapCoordinates(bookshop.address)
+
   let bookshopMeta: BookshopMeta
   try {
     bookshopMeta = bookshop.site ? await fetchedMeta(bookshop.site) : null
@@ -76,6 +80,10 @@ export default async function BookshopPage(
           >
             {bookshop.address}
           </a>
+        </section>
+
+        <section className={styles.uaplace_section}>
+          <GeoMap address={bookshop.address} coordinates={bookshopCoordinates}/>
         </section>
 
         {bookshop.site && (
