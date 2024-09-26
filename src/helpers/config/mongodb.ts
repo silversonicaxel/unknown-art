@@ -4,7 +4,7 @@ import { MongoClient } from 'mongodb'
 import { isEnvironmentDevelopment } from '../utils/isEnvironment'
 
 
-const uri = process.env.MONGO_DB_URL
+const uri = process.env.NEXT_MONGO_DB_URL
 const environment = process.env.NEXT_PUBLIC_NODE_ENV || 'development'
 
 function getMongoDbClient(
