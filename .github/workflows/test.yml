@@ -7,5 +7,7 @@ jobs:
     name: Get variables
     runs-on: ubuntu-latest
     steps:
-    - name: Print name
+    - name: Print secret
       run: echo "Hello the NEXT_MONGO_DB_URL is ${{secrets.NEXT_MONGO_DB_URL}}"
+    - name: Print variable
+      run: echo "Hello the NEXT_PUBLIC_NODE_ENV is ${{vars.NEXT_PUBLIC_NODE_ENV}}"
