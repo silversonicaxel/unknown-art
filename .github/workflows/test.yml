@@ -7,7 +7,16 @@ jobs:
     name: Get variables
     runs-on: ubuntu-latest
     steps:
-    - name: Print secret
-      run: echo "Hello the NEXT_MONGO_DB_URL is ${{secrets.NEXT_MONGO_DB_URL}}"
-    - name: Print variable
-      run: echo "Hello the NEXT_PUBLIC_NODE_ENV is ${{vars.NEXT_PUBLIC_NODE_ENV}}"
+    - name: Print secrets
+      env:
+        NEXT_MONGO_DB_URL: ${{ secrets.NEXT_MONGO_DB_URL }}
+      run:
+        echo "Hello the NEXT_MONGO_DB_URL is $NEXT_MONGO_DB_URL"
+        echo "Hello the TEST_MONGO_DB_URL is ${{ secrets.TEST_MONGO_DB_URL }}"
+
+    - name: Print variables
+      env:
+        NEXT_PUBLIC_NODE_ENV: ${{ vars.NEXT_PUBLIC_NODE_ENV }}
+      run:
+        echo "Hello the NEXT_PUBLIC_NODE_ENV is $NEXT_PUBLIC_NODE_ENV"
+        echo "Hello the TEST_PUBLIC_NODE_ENV is ${{ vars.TEST_PUBLIC_NODE_ENV }}"
