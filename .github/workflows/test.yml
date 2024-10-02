@@ -1,0 +1,11 @@
+name: Test variables
+
+on: push
+
+jobs:
+  build:
+    name: Get variables
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print name
+      run: echo "Hello the NEXT_MONGO_DB_URL is ${{secrets.NEXT_MONGO_DB_URL}}"
