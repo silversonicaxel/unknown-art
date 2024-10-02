@@ -13,7 +13,8 @@
     "fix:js": "next lint --fix",
     "fix:css": "stylelint \"**/*.css\" --fix",
     "test:unit": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "accept-language": "^3.0.20",

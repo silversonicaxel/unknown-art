@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
 
-import { locales_codes } from 'helpers/config/i18n'
+import { locales_regional_codes } from 'helpers/config/i18n'
 import { meta, META_SITE_BASE_URL } from 'helpers/config/meta'
 import { getTranslationServer } from 'helpers/utils/getTranslationServer'
 import type { ComponentParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 type BookshopsLayoutProps = {
@@ -25,7 +25,7 @@ export async function generateMetadata(
       description: t('description'),
       url: `${META_SITE_BASE_URL}${locale}/bookshops`,
       siteName: meta.siteName,
-      locale: locales_codes[locale as I18nLocale],
+      locale: locales_regional_codes[locale as I18nLocale],
       type: 'website',
     }
   }
