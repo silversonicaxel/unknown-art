@@ -38,7 +38,7 @@
     "@types/exenv": "^1.2.2",
     "@types/fetch-meta-tags": "^1.0.3",
     "@types/node": "^22.5.5",
-    "@types/react": "^18.3.5",
+    "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.18.0",
