@@ -1,5 +1,4 @@
 import type { EmptyObject } from 'type-fest'
-
 import { isObjectNull } from './isObjectNull'
 
 

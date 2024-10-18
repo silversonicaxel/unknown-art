@@ -1,7 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { changeLanguage, t } from 'i18next'
 import { expect, test, describe } from 'vitest'
-
 import type { UseTranslationClientParams } from './useTranslationClient'
 import { useTranslationClient } from './useTranslationClient'
 

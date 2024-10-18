@@ -1,6 +1,5 @@
 import type { FC } from 'react'
 import { lazy } from 'react'
-
 import type { DialogProps } from './dialog'
 
 

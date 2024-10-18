@@ -1,22 +1,20 @@
 'use client'
 
-import { usePathname, useRouter, useParams, useSearchParams } from 'next/navigation'
-import type { FC } from 'react'
-import { useCallback } from 'react'
-import type { DefaultValues } from 'react-hook-form'
-import { useForm } from 'react-hook-form'
-
-import { SearchAreaSummary } from './search-area-summary'
-import styles from './search-area.module.css'
-
 import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { filterObjectEmptyValues } from 'helpers/utils/filterObjectEmptyValues'
 import { isObjectNull } from 'helpers/utils/isObjectNull'
+import { usePathname, useRouter, useParams, useSearchParams } from 'next/navigation'
+import { useCallback } from 'react'
+import type { FC } from 'react'
+import { useForm } from 'react-hook-form'
+import type { DefaultValues } from 'react-hook-form'
 import { DialogLazy } from 'src/components/dialog'
 import { useDialog } from 'src/components/dialog/hooks/useDialog'
 import { CountryCode } from 'types/country'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 import { SearchBookshopsFormInput } from 'types/search'
+import { SearchAreaSummary } from './search-area-summary'
+import styles from './search-area.module.css'
 
 
 type SearchAreaProps = {

@@ -1,5 +1,6 @@
 'use client'
 
+import { getOptions, locales, I18N_COOKIE_NAME } from 'helpers/config/i18n'
 import type { i18n, TFunction } from 'i18next'
 import { use } from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
@@ -7,9 +8,7 @@ import resourcesToBackend from 'i18next-resources-to-backend'
 import { useEffect, useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { initReactI18next, useTranslation } from 'react-i18next'
-
-import { getOptions, locales, I18N_COOKIE_NAME } from 'helpers/config/i18n'
-import { I18nLocale } from 'types/i18n'
+import type { I18nLocale } from 'types/i18n'
 
 
 export type UseTranslationClientParams = {
@@ -31,6 +30,7 @@ type UseTranslationClientHook =
 const runsOnServerSide = typeof window === 'undefined'
 
 const initI18next = () => {
+  /* eslint-disable react-hooks/rules-of-hooks */
   use(initReactI18next)
     .use(LanguageDetector)
     .use(
@@ -47,6 +47,7 @@ const initI18next = () => {
       },
       preload: runsOnServerSide ? locales : []
     })
+  /* eslint-enable */
 }
 
 initI18next()

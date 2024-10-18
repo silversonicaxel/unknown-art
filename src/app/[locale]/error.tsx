@@ -1,13 +1,12 @@
 'use client'
 
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import { useParams } from 'next/navigation'
 import type { Metadata } from 'next/types'
 import { useCallback } from 'react'
-
 import { ErrorContent } from 'src/components/error-content'
-import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
-import { ComponentErrorParams } from 'types/component'
-import { I18nLocale } from 'types/i18n'
+import type { ComponentErrorParams } from 'types/component'
+import type { I18nLocale } from 'types/i18n'
 
 
 type HomeErrorProps = ComponentErrorParams

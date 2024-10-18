@@ -1,16 +1,14 @@
 'use client'
 
+import { locales } from 'helpers/config/i18n'
+import { useLocalesCurrentUrl } from 'helpers/hooks/useLocalesCurrentUrl'
+import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { memo } from 'react'
 import type { FC } from 'react'
-
+import type { I18nLocale } from 'types/i18n'
 import styles from './menu.module.css'
-
-import { locales } from 'helpers/config/i18n'
-import { useLocalesCurrentUrl } from 'helpers/hooks/useLocalesCurrentUrl'
-import { useTranslationClient } from 'helpers/hooks/useTranslationClient'
-import { I18nLocale } from 'types/i18n'
 
 
 export const Menu: FC = memo(() => {
