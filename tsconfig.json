@@ -31,7 +31,9 @@
   },
   "exclude": ["node_modules"],
   "include": [
+    "scripts/",
     ".next/types/**/*.ts",
+    "eslint.config.js",
     "next-env.d.ts",
     "next.config.mjs",
     "vitest.setup.mts",
