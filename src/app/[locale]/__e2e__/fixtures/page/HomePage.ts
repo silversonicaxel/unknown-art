@@ -1,5 +1,4 @@
 import type { Locator } from '@playwright/test'
-
 import { defaultLocale } from 'src/helpers/config/i18n'
 import type { I18nLocale } from 'src/types/i18n'
 import { BasePage } from 'tests/fixtures'
