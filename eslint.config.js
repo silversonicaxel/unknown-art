@@ -1,10 +1,11 @@
 import js from '@eslint/js'
-import globals from 'globals'
+import importPlugin from 'eslint-plugin-import'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
+import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import importPlugin from 'eslint-plugin-import'
+
 
 export default tseslint.config(
   {
@@ -18,7 +19,7 @@ export default tseslint.config(
       ...tseslint.configs.stylisticTypeChecked,
       importPlugin.flatConfigs.recommended,
     ],
-    files: ['**/*.{ts,tsx}'], // to add .js
+    files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 'latest',
       globals: {
@@ -47,16 +48,16 @@ export default tseslint.config(
       '@typescript-eslint/no-unsafe-call': 'off',
       '@typescript-eslint/no-unsafe-member-access': 'off',
       '@typescript-eslint/no-unsafe-return': 'off',
-      "@typescript-eslint/no-unused-vars": [
-        "error",
+      '@typescript-eslint/no-unused-vars': [
+        'error',
         {
-          "args": "all",
-          "argsIgnorePattern": "^_",
-          "caughtErrors": "all",
-          "caughtErrorsIgnorePattern": "^_",
-          "destructuredArrayIgnorePattern": "^_",
-          "varsIgnorePattern": "^_",
-          "ignoreRestSiblings": true
+          'args': 'all',
+          'argsIgnorePattern': '^_',
+          'caughtErrors': 'all',
+          'caughtErrorsIgnorePattern': '^_',
+          'destructuredArrayIgnorePattern': '^_',
+          'varsIgnorePattern': '^_',
+          'ignoreRestSiblings': true
         }
       ],
       '@typescript-eslint/unbound-method': 'off',
@@ -82,12 +83,12 @@ export default tseslint.config(
           'ignoreUrls': true
         }
       ],
-      "no-trailing-spaces": "error",
-      "no-unused-vars": "off",
-      'quotes': ["error", "single"],
+      'no-trailing-spaces': 'error',
+      'no-unused-vars': 'off',
+      'quotes': ['error', 'single'],
       'react/prop-types': 'off',
       'react-refresh/only-export-components': 'off',
-      "semi": ["error", "never"],
+      'semi': ['error', 'never'],
     },
     settings: { react: { version: '18.3' } },
   },
