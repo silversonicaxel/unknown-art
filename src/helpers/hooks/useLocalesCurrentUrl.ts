@@ -5,7 +5,6 @@ import type { I18nLocale } from 'types/i18n'
 import { locales } from '../config/i18n'
 
 
-
 export type UseLocalesCurrentUrlParams = {
   currentLocale: I18nLocale
 }
