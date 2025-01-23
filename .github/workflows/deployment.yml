@@ -24,5 +24,8 @@ jobs:
       - name: Linting checks
         run: npm run lint
 
+      - name: Locales tests
+        run: npm run test:locales
+
       - name: Unit Tests
         run: npm run test:unit
