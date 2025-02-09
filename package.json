@@ -37,7 +37,7 @@
     "react-i18next": "^15.0.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
+    "@playwright/test": "^1.50.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/exenv": "^1.2.2",
