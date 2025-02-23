@@ -4,7 +4,7 @@ import type { ApiQuery } from 'types/api'
 import type { SearchBookshopsApi } from 'types/search'
 
 
-const getFindParamsFilter = (search: string) => {
+export const getFindParamsFilter = (search: string) => {
   const searchData = JSON.parse(search)
 
   const searchFilter: SearchBookshopsApi = {}
