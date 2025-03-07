@@ -1,9 +1,9 @@
-import { clientPromise } from 'helpers/config/mongodb'
+import { mongoDbPromise } from 'helpers/config/mongodb'
 import type { Quote } from 'types/quote'
 
 
 export const getRandomQuote = async (): Promise<Quote> => {
-  const mongoClient = await clientPromise
+  const mongoClient = await mongoDbPromise
   const quotes = await mongoClient
     .db('ua-db')
     .collection('ua-quotes')

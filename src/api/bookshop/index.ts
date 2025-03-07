@@ -1,4 +1,4 @@
-import { clientPromise } from 'helpers/config/mongodb'
+import { mongoDbPromise } from 'helpers/config/mongodb'
 import type { Bookshop } from 'src/types/bookshop'
 import type { ApiQuery } from 'types/api'
 import type { SearchBookshopsApi } from 'types/search'
@@ -41,7 +41,7 @@ const getFindParams = (query: ApiQuery = {}) => {
 export const getBookshopsList = async (query: ApiQuery = {}): Promise<Bookshop[]> => {
   const { findFilter, findOptions } = getFindParams(query)
 
-  const mongoClient = await clientPromise
+  const mongoClient = await mongoDbPromise
   const bookshops = await mongoClient
     .db('ua-db')
     .collection('ua-places')
@@ -54,7 +54,7 @@ export const getBookshopsList = async (query: ApiQuery = {}): Promise<Bookshop[]
 }
 
 export const getBookshop = async (id: string): Promise<Bookshop> => {
-  const mongoClient = await clientPromise
+  const mongoClient = await mongoDbPromise
   const bookshop = await mongoClient
     .db('ua-db')
     .collection('ua-places')
@@ -66,7 +66,7 @@ export const getBookshop = async (id: string): Promise<Bookshop> => {
 export const getTotalBookshops = async (query: ApiQuery = {}): Promise<number> => {
   const { findFilter } = getFindParams(query)
 
-  const mongoClient = await clientPromise
+  const mongoClient = await mongoDbPromise
   const bookshops = await mongoClient
     .db('ua-db')
     .collection('ua-places')
