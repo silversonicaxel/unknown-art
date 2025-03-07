@@ -8,7 +8,7 @@ import type { FC } from 'react'
 export const Analytics: FC = memo(() => {
   return (
     <>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ED84KW8XBQ" />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-ED84KW8XBQ" strategy="afterInteractive" />
       <Script id="analytics">
         {
           `window.dataLayer = window.dataLayer || [];
