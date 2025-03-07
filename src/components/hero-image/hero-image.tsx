@@ -17,8 +17,8 @@ export const HeroImage: FC = () => {
     <div className={styles.uaheroimage}>
       <Image
         src="/images/hero-image.png"
-        alt={t('logo.title')}
         role="presentation"
+        alt={t('logo.title')}
         aria-label={t('logo.label')}
         fill
       />
