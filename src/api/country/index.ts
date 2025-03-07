@@ -1,10 +1,10 @@
-import { clientPromise } from 'helpers/config/mongodb'
+import { mongoDbPromise } from 'helpers/config/mongodb'
 import { filterObjectByKeys } from 'helpers/utils/filterObjectByKeys'
 import type { CountryCode } from 'types/country'
 
 
 export const getCountryCodesList = async (): Promise<CountryCode> => {
-  const mongoClient = await clientPromise
+  const mongoClient = await mongoDbPromise
 
   const isos = await mongoClient
     .db('ua-db')
@@ -15,7 +15,7 @@ export const getCountryCodesList = async (): Promise<CountryCode> => {
 }
 
 export const getBookshopsCountryCodesList = async (): Promise<CountryCode> => {
-  const mongoClient = await clientPromise
+  const mongoClient = await mongoDbPromise
 
   const relevantIsos = await mongoClient
     .db('ua-db')
